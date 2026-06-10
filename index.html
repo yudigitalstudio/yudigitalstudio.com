@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yudigital Studio — Web & UI/UX Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- IKON LAYANAN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="navbar">
+      <a href="#" class="logo">YU<span>.</span>DIGITAL STUDIO</a>
+      <ul class="nav-links">
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#harga">Harga</a></li>
+      </ul>
+      <a href="#kontak" class="nav-cta">Konsultasi Gratis</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+      <a href="#" class="mob-logo">YU<span>.</span>DIGITAL STUDIO</a>
+      <a href="#layanan" class="mob-link">Layanan</a>
+      <a href="#portofolio" class="mob-link">Portofolio</a>
+      <a href="#tentang" class="mob-link">Tentang</a>
+      <a href="#harga" class="mob-link">Harga</a>
+      <a href="#kontak" class="mobile-cta mob-link">Konsultasi Gratis</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+      <div class="hero-badge">Tersedia untuk proyek baru</div>
+      <h1 class="hero-title">
+        <span class="line">WE BUILD</span>
+        <span class="line accent">DIGITAL</span>
+        <span class="line outline">EXPERIENCE</span>
+      </h1>
+      <p class="hero-desc">
+        <strong>Yudigital Studio</strong> — spesialis pembuatan website
+        profesional &amp; desain UI/UX yang berfokus pada konversi, estetika,
+        dan performa tinggi.
+      </p>
+      <div class="hero-actions">
+        <a href="#portofolio" class="btn-primary">Lihat Portofolio</a>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+      <div class="hero-bg-num" aria-hidden="true">YDS</div>
+
+      <div class="rotating-text">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <path
+              id="circlePath"
+              d="
+          M 100, 100
+          m -75, 0
+          a 75,75 0 1,1 150,0
+          a 75,75 0 1,1 -150,0
+        "
+            />
+          </defs>
+
+          <text>
+            <textPath href="#circlePath">
+              YUDIGITAL STUDIO • WEB DESIGN • UI/UX •
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item"
+          >Web Development <span class="dot"></span
+        ></span>
+        <span class="marquee-item">UI/UX Design <span class="dot"></span></span>
+        <span class="marquee-item">Landing Page <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Company Profile <span class="dot"></span
+        ></span>
+        <span class="marquee-item">E-Commerce <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Design System <span class="dot"></span
+        ></span>
+        <span class="marquee-item">Prototyping <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Responsive Design <span class="dot"></span
+        ></span>
+        <span class="marquee-item"
+          >Web Development <span class="dot"></span
+        ></span>
+        <span class="marquee-item">UI/UX Design <span class="dot"></span></span>
+        <span class="marquee-item">Landing Page <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Company Profile <span class="dot"></span
+        ></span>
+        <span class="marquee-item">E-Commerce <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Design System <span class="dot"></span
+        ></span>
+        <span class="marquee-item">Prototyping <span class="dot"></span></span>
+        <span class="marquee-item"
+          >Responsive Design <span class="dot"></span
+        ></span>
+      </div>
+    </div>
+
+    <!-- LAYANAN -->
+    <section id="layanan">
+      <div class="services-header reveal">
+        <div>
+          <div class="section-label">Apa yang kami tawarkan</div>
+          <h2 class="section-title">Layanan Kami</h2>
+        </div>
+        <p>
+          Setiap proyek dikerjakan dengan standar tinggi, fokus pada hasil, dan
+          komunikasi yang transparan dari awal hingga akhir.
+        </p>
+      </div>
+      <div class="services-grid">
+        <!-- service card 1-->
+        <div
+          class="service-card reveal delay-1"
+          style="
+            background-image: url(&quot;assets/img/Web-Development.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">01</div>
+          <div class="service-icon">
+            <i data-lucide="monitor"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            Membangun website modern yang cepat, aman, dan responsif di semua
+            perangkat. Dari landing page sederhana hingga sistem web yang
+            kompleks.
+          </p>
+          <div class="service-tags">
+            <span class="tag">React / Next.js</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">SEO Ready</span>
+          </div>
+        </div>
+
+        <!-- service card 2-->
+        <div
+          class="service-card reveal delay-2"
+          style="
+            background-image: url(&quot;assets/img/UIUX-Design.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">02</div>
+          <div class="service-icon">
+            <i data-lucide="pen-tool"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Merancang antarmuka yang intuitif dan menarik. Riset pengguna,
+            wireframing, prototyping hingga design system yang siap
+            diimplementasi.
+          </p>
+          <div class="service-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">User Research</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">Design System</span>
+          </div>
+        </div>
+
+        <!-- service card 3-->
+        <div
+          class="service-card reveal delay-3"
+          style="
+            background-image: url(&quot;assets/img/E-Commerce.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">03</div>
+          <div class="service-icon">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+          <h3>E-Commerce</h3>
+          <p>
+            Toko online yang dioptimalkan untuk konversi. Tampilan yang
+            meyakinkan, checkout yang smooth, dan pengalaman belanja yang
+            menyenangkan.
+          </p>
+          <div class="service-tags">
+            <span class="tag">WooCommerce</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">Custom Cart</span>
+            <span class="tag">Payment Gateway</span>
+          </div>
+        </div>
+
+        <!-- service card 4-->
+        <div
+          class="service-card reveal delay-4"
+          style="
+            background-image: url(&quot;assets/img/Company-Profile.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">04</div>
+          <div class="service-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+          <h3>Company Profile</h3>
+          <p>
+            Website company profile yang profesional dan berkesan. Membangun
+            kepercayaan calon klien dengan tampilan yang premium dan konten yang
+            kuat.
+          </p>
+          <div class="service-tags">
+            <span class="tag">Branding</span>
+            <span class="tag">Copywriting</span>
+            <span class="tag">Animasi</span>
+            <span class="tag">CMS</span>
+          </div>
+        </div>
+
+        <!-- service card 5-->
+        <div
+          class="service-card reveal delay-1"
+          style="
+            background-image: url(&quot;assets/img/Maintenance-&-Support.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">05</div>
+          <div class="service-icon">
+            <i data-lucide="wrench"></i>
+          </div>
+          <h3>Maintenance & Support</h3>
+          <p>
+            Tenang soal website kamu — kami yang jaga. Update konten, perbaikan
+            bug, monitoring uptime, dan backup rutin biar website kamu selalu
+            prima.
+          </p>
+          <div class="service-tags">
+            <span class="tag">Bug Fixing</span>
+            <span class="tag">Update Konten</span>
+            <span class="tag">Backup Rutin</span>
+            <span class="tag">Uptime Monitor</span>
+          </div>
+        </div>
+
+        <!-- service card 6-->
+        <div
+          class="service-card reveal delay-2"
+          style="
+            background-image: url(&quot;assets/img/SEO-&-Performance.webp&quot;);
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="service-num">06</div>
+          <div class="service-icon">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3>SEO & Performance</h3>
+          <p>
+            Website cepat dan mudah ditemukan di Google. Optimasi kecepatan
+            load, struktur konten, meta tag, dan core web vitals biar bisnis
+            kamu makin visible.
+          </p>
+          <div class="service-tags">
+            <span class="tag">On-Page SEO</span>
+            <span class="tag">Core Web Vitals</span>
+            <span class="tag">Page Speed</span>
+            <span class="tag">Google Search Console</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTOFOLIO -->
+    <section id="portofolio">
+      <div class="portfolio-header reveal">
+        <div class="section-label">Hasil kerja kami</div>
+        <h2 class="section-title">Portofolio</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal delay-1">
+          <div class="project-thumb p1"></div>
+          <div class="project-overlay">
+            <a
+              href="demos/barbershop/kumis-dan-sisir/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="overlay-btn"
+              >Lihat Detail</a
+            >
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Kumis & Sisir</h3>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 0.8rem;
+                  margin-top: 0.25rem;
+                "
+              >
+                Landingpage bisnis barbershop
+              </p>
+            </div>
+            <span>UI/UX Design</span>
+          </div>
+        </div>
+        <div class="project-card reveal delay-2">
+          <div class="project-thumb p2"></div>
+          <div class="project-overlay">
+            <a
+              href="demos/coffee-shop/blackgold-coffee/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="overlay-btn"
+              >Lihat Detail</a
+            >
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>BlackGold Coffee</h3>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 0.8rem;
+                  margin-top: 0.25rem;
+                "
+              >
+                Landingpage bisnis coffee shop
+              </p>
+            </div>
+            <span>UI/UX Design</span>
+          </div>
+        </div>
+        <div class="project-card reveal delay-3">
+          <div class="project-thumb p3"></div>
+          <div class="project-overlay">
+            <a
+              href="demos/kuliner/donatelo/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="overlay-btn"
+              >Lihat Detail</a
+            >
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>donaTelo</h3>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 0.8rem;
+                  margin-top: 0.25rem;
+                "
+              >
+                Usaha Pembuatan Kue Donat
+              </p>
+            </div>
+            <span>UI/UX Design</span>
+          </div>
+        </div>
+        <div class="project-card reveal delay-4">
+          <div class="project-thumb p4">FLOW</div>
+          <div class="project-overlay">
+            <div class="overlay-btn">Lihat Detail</div>
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Flow Finance</h3>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 0.8rem;
+                  margin-top: 0.25rem;
+                "
+              >
+                Fintech Mobile App Design
+              </p>
+            </div>
+            <span>UI/UX Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="btn-wrap">
+      <a href="portofolio.html" class="btn-glitch">
+        <span class="g-text" data-text="Lihat Semua Portofolio"
+          >Lihat Semua Portofolio</span
+        >
+      </a>
+    </div>
+
+    <!-- TENTANG -->
+    <section id="tentang">
+      <div class="about-visual reveal">
+        <div class="about-box-main">
+          <div class="swiper aboutSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/img/about1.webp" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/about2.webp" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/about3.webp" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="about-overlay"></div>
+
+          <div class="about-big-letter" aria-hidden="true">Y</div>
+        </div>
+        <div class="about-stat-card s1">
+          <div class="num">50+</div>
+          <div class="lbl">Proyek Selesai</div>
+        </div>
+        <div class="about-stat-card s2">
+          <div class="num">98%</div>
+          <div class="lbl">Client Puas</div>
+        </div>
+      </div>
+      <div class="about-content reveal delay-2">
+        <div class="section-label">Tentang kami</div>
+        <h2 class="section-title">Digital Studio<br />Berbasis di Klaten</h2>
+        <p>
+          Yudigital Studio adalah studio desain dan development yang berfokus
+          pada kualitas output dan kepuasan klien. Kami percaya bahwa website
+          bukan hanya tampilan — tapi alat bisnis yang powerful.
+        </p>
+        <p>
+          Setiap proyek dikerjakan dengan penuh dedikasi, komunikasi yang jelas,
+          dan revisi yang fleksibel hingga hasilnya benar-benar sesuai visi
+          kamu.
+        </p>
+        <div class="skills-list">
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Next.js</span>
+          <span class="skill-pill">WordPress</span>
+          <span class="skill-pill">Tailwind CSS</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Framer</span>
+          <span class="skill-pill">Adobe XD</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HARGA -->
+    <section id="harga">
+      <div class="reveal">
+        <div class="section-label">Investasi terbaik untuk bisnis kamu</div>
+        <h2 class="section-title">Paket Harga</h2>
+      </div>
+
+      <!-- BARIS 1: 3 paket -->
+      <div class="pricing-grid">
+        <!-- BASIC -->
+        <div class="price-card reveal delay-1">
+          <div class="price-name">Basic</div>
+          <div class="price-amount"><sup>Rp</sup>500rb</div>
+          <div class="price-period">Mulai dari</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Landing page 1 halaman</li>
+            <li>Template siap pakai</li>
+            <li>Responsive (mobile-friendly)</li>
+            <li>Integrasi WhatsApp</li>
+            <li>Revisi 1x</li>
+            <li>Domain &amp; hosting</li>
+            <li class="no">Desain UI custom</li>
+            <li class="no">SEO Optimization</li>
+          </ul>
+          <a href="#kontak" class="btn-plan">Pilih Paket</a>
+        </div>
+
+        <!-- STARTER (FEATURED) -->
+        <div class="price-card featured reveal delay-2">
+          <div class="featured-badge">Paling Populer</div>
+          <div class="price-name">Starter</div>
+          <div class="price-amount"><sup>Rp</sup>800rb</div>
+          <div class="price-period">Mulai dari</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Landing page 1 halaman</li>
+            <li>Desain UI custom</li>
+            <li>Responsive semua perangkat</li>
+            <li>Integrasi WhatsApp &amp; Maps</li>
+            <li>Domain &amp; hosting setup</li>
+            <li>Revisi hingga 2x</li>
+            <li class="no">CMS / Blog</li>
+            <li class="no">SEO Optimization</li>
+          </ul>
+          <a href="#kontak" class="btn-plan">Pilih Paket</a>
+        </div>
+
+        <!-- BUSINESS -->
+        <div class="price-card reveal delay-3">
+          <div class="price-name">Business</div>
+          <div class="price-amount"><sup>Rp</sup>1,5 Jt</div>
+          <div class="price-period">Mulai dari</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Company profile multi halaman</li>
+            <li>Desain UI/UX custom</li>
+            <li>Responsive semua perangkat</li>
+            <li>CMS sederhana</li>
+            <li>Domain &amp; hosting setup</li>
+            <li>SEO Basic</li>
+            <li>Revisi hingga 3x</li>
+            <li class="no">Toko online / E-Commerce</li>
+          </ul>
+          <a href="#kontak" class="btn-plan">Pilih Paket</a>
+        </div>
+      </div>
+
+      <!-- BARIS 2: 2 paket tengah -->
+      <div class="pricing-row2">
+        <div class="pricing-row2-inner">
+          <!-- PROFESSIONAL -->
+          <div class="price-card reveal delay-1">
+            <div class="price-name">Professional</div>
+            <div class="price-amount"><sup>Rp</sup>3 Jt</div>
+            <div class="price-period">Mulai dari</div>
+            <div class="price-divider"></div>
+            <ul class="price-features">
+              <li>Website lengkap (5–8 halaman)</li>
+              <li>Desain UI/UX full custom</li>
+              <li>Toko online / E-Commerce</li>
+              <li>CMS (kelola konten sendiri)</li>
+              <li>SEO On-Page Optimization</li>
+              <li>Domain &amp; hosting setup</li>
+              <li>Revisi hingga 5x</li>
+              <li>Maintenance 1 bulan</li>
+            </ul>
+            <a href="#kontak" class="btn-plan">Pilih Paket</a>
+          </div>
+
+          <!-- ENTERPRISE -->
+          <div class="price-card reveal delay-2">
+            <div class="price-name">Enterprise</div>
+            <div class="price-amount">Custom</div>
+            <div class="price-period">Hubungi kami untuk penawaran</div>
+            <div class="price-divider"></div>
+            <ul class="price-features">
+              <li>Web app / sistem kompleks</li>
+              <li>Desain UI/UX &amp; prototyping</li>
+              <li>Database &amp; backend custom</li>
+              <li>Integrasi API / third-party</li>
+              <li>Admin dashboard</li>
+              <li>E-Commerce &amp; payment gateway</li>
+              <li>Revisi unlimited</li>
+              <li>Maintenance &amp; support prioritas</li>
+            </ul>
+            <a href="#kontak" class="btn-plan">Diskusi Proyek</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+      <div class="contact-content reveal">
+        <div class="section-label" style="justify-content: center">
+          Mulai proyek kamu
+        </div>
+        <h2 class="section-title">
+          PUNYA PROYEK?<br /><span style="color: var(--accent)"
+            >HUBUNGI KAMI.</span
+          >
+        </h2>
+        <p>
+          Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhan kamu dan kami
+          siap membantu mewujudkannya.
+        </p>
+
+        <!--IKON SOSMED-->
+        <div class="contact-links">
+          <a
+            href="https://wa.me/6281222255086"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+            ><img src="assets/img/whatsapp-svgrepo-com.svg" alt="WhatsApp"
+          /></a>
+          <a
+            href="mailto:yudigital.86@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+            ><img src="assets/img/email-1564-svgrepo-com.svg" alt="Email"
+          /></a>
+          <a
+            href="https://www.instagram.com/yudigital_studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+            ><img
+              src="assets/img/instagram-167-svgrepo-com.svg"
+              alt="Instagram"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/yudhi-prabowo-b2a51538a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+            ><img
+              src="assets/img/linkedin-rounded-svgrepo-com.svg"
+              alt="Linkedin"
+          /></a>
+          <a
+            href="https://www.facebook.com/yudigital.studio.86"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+            ><img src="assets/img/facebook-svgrepo-com.svg" alt="Facebook"
+          /></a>
+        </div>
+        <a href="https://wa.me/081222255086" class="cta-orbit">
+          <span>START YOUR PROJECT</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+
+    <section id="location">
+      <div class="location-grid">
+        <div class="location-left reveal">
+          <div class="section-label">Temukan Kami</div>
+
+          <h2 class="section-title">Kunjungi Kami</h2>
+
+          <p class="location-desc">
+            Digital Studio berbasis di Klaten yang membantu bisnis membangun
+            website modern, pengalaman pengguna yang kuat, dan identitas digital
+            yang berdampak.
+          </p>
+
+          <div class="location-contact">
+            <div class="contact-row">
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <p>Mulwo Muruh Gantiwarno Klaten Jawa Tengah</p>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M22 6l-10 7L2 6" />
+                </svg>
+              </span>
+              <p>yudigital.86@gmail.com</p>
+            </div>
+
+            <div class="contact-row">
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2
+             19.79 19.79 0 0 1-8.63-3.07
+             19.5 19.5 0 0 1-6-6
+             19.79 19.79 0 0 1-3.07-8.67
+             A2 2 0 0 1 4.11 2h3
+             a2 2 0 0 1 2 1.72
+             c.12.9.32 1.78.59 2.63
+             a2 2 0 0 1-.45 2.11L8.09 9.91
+             a16 16 0 0 0 6 6l1.45-1.16
+             a2 2 0 0 1 2.11-.45
+             c.85.27 1.73.47 2.63.59
+             A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </span>
+              <p>+62 812-222-550-86</p>
+            </div>
+          </div>
+
+          <a
+            href="https://www.google.com/maps?q=-7.760664119812276, 110.53149062079495"
+            target="_blank"
+            class="cta-orbit map-btn"
+          >
+            <span>VIEW ON MAP</span>
+          </a>
+        </div>
+
+        <div class="location-right reveal">
+          <div class="location-orbit"></div>
+
+          <div class="location-card">
+            <div class="location-city">KLATEN</div>
+
+            <div class="location-country">INDONESIA</div>
+
+            <div class="location-divider"></div>
+
+            <div class="location-stats">
+              <div class="stat-item">
+                <span>50+</span>
+                <small>PROJECT BUILT</small>
+              </div>
+
+              <div class="stat-item">
+                <span>98%</span>
+                <small>CLIENT SATISFACTION</small>
+              </div>
+
+              <div class="stat-item">
+                <span>24/7</span>
+                <small>SUPPORT</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 <strong>Yudigital Studio</strong> — All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#beranda">Beranda</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#harga">Harga</a>
+      </div>
+    </footer>
+
+    <script>
+      // Sticky nav
+      const nav = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 40);
+      });
+
+      // Reveal on scroll
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // Logo scramble effect
+      (function () {
+        const logoEl = document.querySelector(".logo");
+        if (!logoEl) return;
+        const original = [
+          "Y",
+          "U",
+          ".",
+          "D",
+          "I",
+          "G",
+          "I",
+          "T",
+          "A",
+          "L",
+          " ",
+          "S",
+          "T",
+          "U",
+          "D",
+          "I",
+          "O",
+        ];
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+        let running = false;
+
+        function scramble() {
+          if (running) return;
+          running = true;
+          let iter = 0;
+          const iv = setInterval(() => {
+            logoEl.innerHTML = original
+              .map((l, i) => {
+                if (l === " ") return " ";
+                if (l === ".") return "<span>.</span>";
+                if (i < iter) return l;
+                return chars[Math.floor(Math.random() * chars.length)];
+              })
+              .join("");
+            iter += 0.45;
+            if (iter >= original.length) {
+              logoEl.innerHTML = "YU<span>.</span>DIGITAL STUDIO";
+              clearInterval(iv);
+              running = false;
+            }
+          }, 38);
+        }
+
+        (function () {
+          const logoEl = document.querySelector(".mob-logo");
+          if (!logoEl) return;
+          const original = [
+            "Y",
+            "U",
+            ".",
+            "D",
+            "I",
+            "G",
+            "I",
+            "T",
+            "A",
+            "L",
+            " ",
+            "S",
+            "T",
+            "U",
+            "D",
+            "I",
+            "O",
+          ];
+          const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+          let running = false;
+
+          function scramble() {
+            if (running) return;
+            running = true;
+            let iter = 0;
+            const iv = setInterval(() => {
+              logoEl.innerHTML = original
+                .map((l, i) => {
+                  if (l === " ") return " ";
+                  if (l === ".") return "<span>.</span>";
+                  if (i < iter) return l;
+                  return chars[Math.floor(Math.random() * chars.length)];
+                })
+                .join("");
+              iter += 0.45;
+              if (iter >= original.length) {
+                logoEl.innerHTML = "YU<span>.</span>DIGITAL STUDIO";
+                clearInterval(iv);
+                running = false;
+              }
+            }, 38);
+          }
+
+          // Auto run saat menu hamburger dibuka
+          document.getElementById("hamburger").addEventListener("click", () => {
+            setTimeout(scramble, 300); // delay dikit biar nunggu animasi overlay
+          });
+
+          // Run on hover
+          logoEl.addEventListener("mouseenter", scramble);
+        })();
+
+        // Auto run on load + loop
+        function loopScramble() {
+          scramble();
+          // delay = waktu animasi selesai + jeda sebelum ulang
+          setTimeout(loopScramble, (original.length / 0.45) * 38 + 2000);
+        }
+        setTimeout(loopScramble, 400);
+
+        // Run on hover
+        logoEl.addEventListener("mouseenter", scramble);
+      })();
+
+      document.querySelectorAll(".hero-title .line").forEach((line, i) => {
+        line.style.opacity = "0";
+        line.style.transform = "translateY(40px)";
+        line.style.transition = `opacity .8s ease ${i * 0.15}s, transform .8s ease ${i * 0.15}s`;
+        setTimeout(() => {
+          line.style.opacity = "1";
+          line.style.transform = "none";
+        }, 100);
+      });
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!--CUSTOM CURSOR-->
+    <script src="assets/js/custom-cursor.js"></script>
+    <script>
+      initCursor({ color: "#0e7600" }); // ganti warna sesuka lo
+    </script>
+
+    <!--styling ikon layanan-->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

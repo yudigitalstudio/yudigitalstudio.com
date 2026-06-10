@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes"
+    />
+    <title>DonaTelo | Donat Homemade Segar</title>
+    <!-- Google Fonts Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar dengan Hamburger -->
+    <nav class="navbar">
+      <div class="logo">
+        <div class="logo-icon">🍩</div>
+        <div class="logo-text">
+          <span>DonaTelo</span>
+          <small>Artisan Donuts</small>
+        </div>
+      </div>
+      <!-- nav-links di tengah (urutan HTML tetap, tapi hamburger pakai order CSS) -->
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Beranda</a>
+        <a href="#produk">Donat</a>
+        <a href="#kontak">Pesan</a>
+        <a href="#" class="btn-outline">+62 812 3456 7890</a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home">
+        <div class="container">
+          <div class="hero">
+            <div class="hero-content">
+              <div class="hero-badge">🔥 Fresh Every Morning</div>
+              <h1>
+                Donat premium <span class="highlight">homemade</span> <br />
+                lembut & menggoda
+              </h1>
+              <p>
+                Bahan alami pilihan, tanpa pengawet. Varian topping kekinian.
+                Cocok untuk camilan sehat dan acara spesialmu.
+              </p>
+              <div class="hero-buttons">
+                <a href="#produk" class="btn-primary"> Lihat Varian </a>
+
+                <a href="#kontak" class="btn-primary"> Pesan Sekarang </a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="img/hero-1.webp" alt="Donat lezat" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistik -->
+      <div class="stats">
+        <div class="stat-card">
+          <span class="stat-number">5.000+</span>
+          <p>Donat Terjual</p>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">4.9★</span>
+          <p>Rating Pelanggan</p>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">30+</span>
+          <p>Varian Topping</p>
+        </div>
+      </div>
+
+      <!-- Produk Donat -->
+      <section id="produk" style="background: #fefcf5">
+        <div class="container">
+          <h2 class="section-title">🍩 Pilihan Donat Spesial</h2>
+          <div class="products-grid">
+            <div class="product-card">
+              <img
+                class="product-img"
+                src="img/vanilla.webp"
+                alt="Donat Glaze"
+                loading="lazy"
+              />
+              <div class="product-info">
+                <h3>Donat Glaze Vanilla</h3>
+                <p>Topping glaze susu vanilla, taburan warna-warni.</p>
+                <div class="price">Rp 12.000</div>
+                <a href="#kontak" class="btn-small"
+                  ><i class="fas fa-shopping-cart"></i> Pesan</a
+                >
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                class="product-img"
+                src="img/cokelat.webp"
+                alt="Donat Coklat"
+                loading="lazy"
+              />
+              <div class="product-info">
+                <h3>Donat Dark Coklat</h3>
+                <p>Coklat belgia premium + meses renyah.</p>
+                <div class="price">Rp 14.000</div>
+                <a href="#kontak" class="btn-small"
+                  ><i class="fas fa-shopping-cart"></i> Pesan</a
+                >
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                class="product-img"
+                src="img/matcha.webp"
+                alt="Matcha"
+                loading="lazy"
+              />
+              <div class="product-info">
+                <h3>Donat Matcha Azuki</h3>
+                <p>Matcha premium & pasta kacang merah.</p>
+                <div class="price">Rp 15.000</div>
+                <a href="#kontak" class="btn-small"
+                  ><i class="fas fa-shopping-cart"></i> Pesan</a
+                >
+              </div>
+            </div>
+            <div class="product-card">
+              <img
+                class="product-img"
+                src="img/strawberry.webp"
+                alt="Stroberi"
+                loading="lazy"
+              />
+              <div class="product-info">
+                <h3>Donat Strawberry Dream</h3>
+                <p>Topping stroberi segar & sprinkle.</p>
+                <div class="price">Rp 13.000</div>
+                <a href="#kontak" class="btn-small"
+                  ><i class="fas fa-shopping-cart"></i> Pesan</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Keunggulan -->
+      <section>
+        <div class="container">
+          <h2 class="section-title">✨ Kenapa donaTelo?</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <i class="fas fa-leaf"></i>
+              <h4>Bahan Alami</h4>
+              <p>Tanpa pengawet & pewarna buatan</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-heart"></i>
+              <h4>Homemade Cinta</h4>
+              <p>Dibuat langsung oleh pastry chef</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-truck-fast"></i>
+              <h4>Pengiriman Fresh</h4>
+              <p>Sampai dalam kondisi hangat</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-mug-hot"></i>
+              <h4>Kustom Rasa</h4>
+              <p>Request topping untuk acaramu</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERI -->
+      <section id="galeri" class="galeri-section">
+        <div class="container">
+          <h2 class="section-title">📸 Galeri Donat</h2>
+          <p class="galeri-subtitle">
+            Setiap donat dibuat dengan cinta — lihat keindahannya!
+          </p>
+          <div class="galeri-grid">
+            <div
+              class="galeri-item galeri-tall"
+              data-caption="Donat Glaze Vanilla 🍩"
+              data-src="img/vanilla.webp"
+            >
+              <img
+                src="img/vanilla.webp"
+                alt="Donat Glaze Vanilla"
+                loading="lazy"
+              />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Donat Glaze Vanilla 🍩</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+            <div
+              class="galeri-item"
+              data-caption="Dark Coklat Belgia 🍫"
+              data-src="img/cokelat.webp"
+            >
+              <img
+                src="img/cokelat.webp"
+                alt="Donat Dark Coklat"
+                loading="lazy"
+              />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Dark Coklat Belgia 🍫</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+            <div
+              class="galeri-item"
+              data-caption="Matcha Azuki 🍵"
+              data-src="img/matcha.webp"
+            >
+              <img src="img/matcha.webp" alt="Donat Matcha" loading="lazy" />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Matcha Azuki 🍵</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+            <div
+              class="galeri-item galeri-wide"
+              data-caption="Strawberry Dream 🍓"
+              data-src="img/strawberry.webp"
+            >
+              <img
+                src="img/strawberry.webp"
+                alt="Donat Strawberry"
+                loading="lazy"
+              />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Strawberry Dream 🍓</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+            <div
+              class="galeri-item galeri-tall"
+              data-caption="Fresh From The Oven 🔥"
+              data-src="img/hero-1.webp"
+            >
+              <img src="img/hero-1.webp" alt="Fresh Donut" loading="lazy" />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Fresh From The Oven 🔥</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+            <div
+              class="galeri-item"
+              data-caption="Pilihan Terbaik Hari Ini ✨"
+              data-src="img/vanilla.webp"
+            >
+              <img src="img/vanilla.webp" alt="Best Pick" loading="lazy" />
+              <div class="galeri-overlay">
+                <span class="galeri-caption">Pilihan Terbaik ✨</span>
+                <span class="galeri-zoom"
+                  ><i class="fas fa-search-plus"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIGHTBOX -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" id="lightboxPrev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" id="lightboxNext">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+          <img src="" alt="" id="lightboxImg" />
+          <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+      </div>
+
+      <!-- Testimoni -->
+      <section class="testimonial">
+        <div class="container">
+          <h2 class="section-title">💬 Kata Pelanggan</h2>
+
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <p>"Donatnya empuk banget dan toppingnya gak pelit."</p>
+              <strong>Rina</strong>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial-card">
+              <p>"Pesanan kantor datang tepat waktu dan masih fresh."</p>
+              <strong>Dimas</strong>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+
+            <div class="testimonial-card">
+              <p>"Favorit keluarga kami, terutama yang dark chocolate."</p>
+              <strong>Sarah</strong>
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  ABOUT US  -->
+      <section id="tentang" class="about-section">
+        <div class="container">
+          <!-- Header -->
+          <div class="about-header">
+            <span class="about-badge">🍩 Kisah Kami</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem">
+              Dari dapur kecil,<br /><span class="highlight"
+                >lahir cinta besar</span
+              >
+            </h2>
+            <p class="about-intro">
+              Semua bermula dari semangat sederhana — membuat donat yang
+              benar-benar lezat, dibuat dengan tangan, dan dikirim langsung ke
+              pintu rumahmu.
+            </p>
+          </div>
+
+          <!-- Story Cards -->
+          <div class="about-story">
+            <div class="about-image-wrap">
+              <img
+                src="img/about-us.webp"
+                alt="Foto dapur DoNaTelo"
+                class="about-img"
+              />
+              <div class="about-img-tag">Est. 2020 · Klaten, Jawa Tengah</div>
+            </div>
+
+            <div class="about-text">
+              <div class="about-chapter">
+                <div class="chapter-icon">🌱</div>
+                <div>
+                  <h4>Awal Mula</h4>
+                  <p>
+                    DonaTelo lahir di dapur rumahan Klaten pada 2020. Berawal
+                    dari eksperimen resep donat di akhir pekan, Rina — sang
+                    pendiri — akhirnya memberanikan diri berbagi ke tetangga.
+                    Respons mereka? Habis dalam hitungan menit.
+                  </p>
+                </div>
+              </div>
+              <div class="about-chapter">
+                <div class="chapter-icon">🔥</div>
+                <div>
+                  <h4>Berkembang</h4>
+                  <p>
+                    Dari mulut ke mulut, pesanan makin membanjir. Dapur kecil
+                    pun berevolusi — peralatan baru, tim baru, semangat yang
+                    tetap sama. Setiap donat tetap dibuat manual, satu per satu,
+                    dengan bahan pilihan tanpa pengawet.
+                  </p>
+                </div>
+              </div>
+              <div class="about-chapter">
+                <div class="chapter-icon">❤️</div>
+                <div>
+                  <h4>Hari Ini</h4>
+                  <p>
+                    Kini DonaTelo melayani ratusan pelanggan setia, hadir di
+                    berbagai acara spesial, dan terus berinovasi dengan varian
+                    topping kekinian. Tapi satu hal tak pernah berubah: cinta di
+                    setiap gigitan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak & Form -->
+      <section id="kontak" style="background: #ffffff">
+        <div class="container">
+          <h2 class="section-title">📞 Hubungi & Pesan Sekarang</h2>
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <h3>Donat spesial untuk setiap momen</h3>
+              <p>
+                Katering arisan, ulang tahun, atau camilan kantor, kami siap
+                membantu.
+              </p>
+              <div class="contact-details">
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Jl. Raya Donat No. 12
+                </p>
+                <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> halo@donaTelo.com</p>
+                <p><i class="fab fa-instagram"></i> @donaTelo_id</p>
+              </div>
+            </div>
+            <div class="contact-form">
+              <h4 style="margin-bottom: 1rem">Pesan Donat Sekarang</h4>
+              <form id="orderForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="nama"
+                    placeholder="Nama lengkap"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email (opsional)"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    id="telp"
+                    placeholder="Nomor WhatsApp"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    rows="3"
+                    id="pesan"
+                    placeholder="Contoh: Pesan 2 box donat coklat & matcha, tanggal 20 Juni"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn-primary"
+                  style="width: 100%; justify-content: center"
+                >
+                  <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                </button>
+              </form>
+              <p
+                style="font-size: 0.7rem; margin-top: 1rem; text-align: center"
+              >
+                Kami akan konfirmasi dalam 1x24 jam
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 donaTelo - Homemade Artisan Donuts | Rasa otentik, tampilan
+        modern
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20donaTelo%2C%20saya%20mau%20pesan%20donat!"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i> <span>Chat WA</span>
+    </a>
+
+    <script>
+      const hamburger = document.getElementById("hamburgerBtn");
+      const navLinks = document.getElementById("navLinks");
+      const overlay = document.getElementById("menuOverlay");
+
+      function closeMenu() {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = "";
+      }
+
+      function toggleMenu() {
+        const isOpen = navLinks.classList.toggle("active");
+        overlay.classList.toggle("active", isOpen);
+        hamburger.innerHTML = isOpen
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+        // Cegah scroll body saat menu terbuka
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      }
+
+      hamburger.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", closeMenu);
+
+      // Tutup menu & smooth scroll saat link diklik
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("href");
+          if (targetId && targetId !== "#") {
+            e.preventDefault();
+            closeMenu();
+            // Beri jeda agar menu menutup dulu sebelum scroll
+            setTimeout(() => {
+              const targetElem = document.querySelector(targetId);
+              if (targetElem) targetElem.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+          } else {
+            closeMenu();
+          }
+        });
+      });
+
+      // Tutup menu saat resize ke desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) closeMenu();
+      });
+
+      // Form WhatsApp handler
+      const form = document.getElementById("orderForm");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nama = document.getElementById("nama")?.value.trim();
+          const telp = document.getElementById("telp")?.value.trim();
+          const pesanan = document.getElementById("pesan")?.value.trim();
+          const email = document.getElementById("email")?.value.trim();
+
+          if (!nama) return alert("Masukkan nama lengkap");
+          if (!telp) return alert("Nomor WhatsApp diperlukan");
+
+          let msg = `Halo donaTelo! Saya ${nama} ingin memesan donat.%0A`;
+          if (email) msg += `Email: ${email}%0A`;
+          msg += `No. WA: ${telp}%0A`;
+          msg += pesanan
+            ? `Pesanan: ${pesanan}%0A`
+            : `Saya tertarik dengan menu donat, mohon info lebih lanjut.%0A`;
+          msg += `Terima kasih 🙏`;
+
+          window.open(`https://wa.me/6281234567890?text=${msg}`, "_blank");
+        });
+      }
+    </script>
+
+    <script>
+      // ===== GALERI LIGHTBOX =====
+      const galeriItems = document.querySelectorAll(".galeri-item");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+
+      let currentIndex = 0;
+      const galeriData = [...galeriItems].map((item) => ({
+        src: item.dataset.src,
+        caption: item.dataset.caption,
+      }));
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galeriData[index].src;
+        lightboxCaption.textContent = galeriData[index].caption;
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % galeriData.length;
+        lightboxImg.src = galeriData[currentIndex].src;
+        lightboxCaption.textContent = galeriData[currentIndex].caption;
+      }
+
+      function showPrev() {
+        currentIndex =
+          (currentIndex - 1 + galeriData.length) % galeriData.length;
+        lightboxImg.src = galeriData[currentIndex].src;
+        lightboxCaption.textContent = galeriData[currentIndex].caption;
+      }
+
+      galeriItems.forEach((item, i) =>
+        item.addEventListener("click", () => openLightbox(i)),
+      );
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxNext.addEventListener("click", showNext);
+      lightboxPrev.addEventListener("click", showPrev);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
+      });
+
+      // ===== SCROLL ANIMATION GALERI =====
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      galeriItems.forEach((item) => observer.observe(item));
+    </script>
+
+    <!--SCRIPT FORM PEMESANAN-->
+    <script>
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // biar ga reload halaman
+
+          const nama = document.getElementById("nama").value;
+          const email = document.getElementById("email").value;
+          const telp = document.getElementById("telp").value;
+          const pesan = document.getElementById("pesan").value;
+
+          const text = `Halo DoNaTelo! 🍩
+
+*Nama:* ${nama}
+*Email:* ${email || "-"}
+*No. WhatsApp:* ${telp}
+
+*Pesanan:*
+${pesan}`;
+
+          const encoded = encodeURIComponent(text);
+          const nomorToko = "6281234567890"; // ganti nomor WA klien
+          window.open(`https://wa.me/${nomorToko}?text=${encoded}`, "_blank");
+        });
+    </script>
+  </body>
+</html>

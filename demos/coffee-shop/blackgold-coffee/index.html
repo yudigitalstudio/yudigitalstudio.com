@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>BlackGold Coffee - Premium Coffee Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JS -->
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">Black<span>Gold</span> Coffee</div>
+          <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#testimonials">Testimoni</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h4 class="gold" style="letter-spacing: 3px">✦ PREMIUM BLEND ✦</h4>
+          <h1>
+            Racikan <span class="gold">Kopi Terbaik</span> Untuk Pengalaman Yang
+            Berkesan
+          </h1>
+          <p>
+            Kopi pilihan dengan cita rasa istimewa dan suasana yang elegan untuk
+            menemani setiap momen kamu.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-solid-gold">Jelajahi Menu</a>
+            <a href="#contact" class="btn-gold">Pesan Sekarang</a>
+          </div>
+        </div>
+        <!-- Cinematic Slideshow -->
+        <div class="hero-slideshow">
+          <div class="slide active">
+            <img src="img/hero-1.webp" alt="Coffee" />
+            <div class="slide-caption">
+              <div class="slide-caption-tag">✦ Signature Blend</div>
+              <div class="slide-caption-title">BlackGold Latte</div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/hero-2.webp" alt="Coffee Beans" />
+            <div class="slide-caption">
+              <div class="slide-caption-tag">✦ Single Origin</div>
+              <div class="slide-caption-title">Premium Roast</div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/hero-3.webp" alt="Coffee Shop" />
+            <div class="slide-caption">
+              <div class="slide-caption-tag">✦ Our Space</div>
+              <div class="slide-caption-title">Elegant Atmosphere</div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/hero-4.webp" alt="Latte Art" />
+            <div class="slide-caption">
+              <div class="slide-caption-tag">✦ Handcrafted</div>
+              <div class="slide-caption-title">Artisan Latte</div>
+            </div>
+          </div>
+
+          <!-- Counter -->
+          <div class="slide-counter">
+            <span class="current" id="slideCurrentNum">01</span> /
+            <span id="slideTotalNum">04</span>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="slide-progress" id="slideProgress"></div>
+
+          <!-- Nav buttons -->
+          <div class="slide-nav slide-prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="slide-nav slide-next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+
+          <!-- Dots -->
+          <div class="slide-dots" id="slideDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="gold">Menu</span> Andalan Kami
+        </h2>
+        <div class="section-subtitle">
+          Diracik dengan penuh dedikasi, disajikan dengan cita rasa istimewa.
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-icon"><i class="fas fa-mug-hot"></i></div>
+            <h3>BlackGold Latte</h3>
+            <p>Double espresso, velvety milk, gold dusted foam</p>
+            <div class="price">20k</div>
+          </div>
+          <div class="menu-card">
+            <span class="badge">Best Seller</span>
+            <div class="menu-icon"><i class="fas fa-crown"></i></div>
+            <h3>Royal Affogato</h3>
+            <p>Vanilla gelato drowned in hot single origin espresso</p>
+            <div class="price">20k</div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-icon"><i class="fas fa-moon"></i></div>
+            <h3>Midnight Espresso</h3>
+            <p>Dark roast, bold & smoky with caramel undertone</p>
+            <div class="price">20k</div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Golden Matcha</h3>
+            <p>Premium matcha latte with honey & edible gold flakes</p>
+            <div class="price">25k</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">Our <span class="gold">Gallery</span></h2>
+
+        <p class="section-subtitle">
+          Moments, coffee, and atmosphere captured beautifully.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/kopi-1.webp" alt="Coffee Cup" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/kopi-2.webp" alt="Latte Art" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/kopi-3.webp" alt="Coffee Beans" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/kopi-4.webp" alt="Cafe Interior" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/kopi-5.webp" alt="Barista" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/kopi-6.webp" alt="Affogato" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Cerita <span class="gold">BlackGold Coffee</span></h3>
+            <p>
+              Didirikan pada tahun 2024, BlackGold Coffee hadir untuk
+              menghadirkan pengalaman menikmati kopi yang lebih istimewa. Setiap
+              biji kopi dipilih dengan cermat dan diracik dengan penuh perhatian
+              untuk menghasilkan cita rasa terbaik.
+            </p>
+            <a
+              href="#"
+              class="btn-gold"
+              style="margin-top: 12px; display: inline-block"
+              >Pesan Sekarang</a
+            >
+          </div>
+          <div class="about-img">
+            <img src="img/interior.webp" alt="Coffee Shop Interior" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">
+          Apa Kata Para <span class="gold">Pecinta Kopi</span>
+        </h2>
+        <div class="section-subtitle">
+          Pengalaman mereka bersama BlackGold Coffee.
+        </div>
+        <div class="testimonial-grid">
+          <div class="testi-card">
+            <i
+              class="fas fa-quote-left"
+              style="color: #d4af37; font-size: 1.8rem"
+            ></i>
+            <p>
+              "Espresso terbaik di kota! Suasanya sangat elegan, cocok banget
+              buat kerja atau sekadar ngumpul sama teman-teman."
+            </p>
+            <div class="customer-name gold">— Amanda R.</div>
+          </div>
+          <div class="testi-card">
+            <i
+              class="fas fa-quote-left"
+              style="color: #d4af37; font-size: 1.8rem"
+            ></i>
+            <p>
+              "Royal Affogato-nya juara, nagih banget. Eh tema gold-nya? Wah,
+              cakep pol!"
+            </p>
+            <div class="customer-name gold">— Michael T.</div>
+          </div>
+          <div class="testi-card">
+            <i
+              class="fas fa-quote-left"
+              style="color: #d4af37; font-size: 1.8rem"
+            ></i>
+            <p>
+              "Suka banget sama desain minimalisnya dan rasa yang selalu oke.
+              Tempat andalan gue buat WFH."
+            </p>
+            <div class="customer-name gold">— Sarah J.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: #0d0d0d">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Reservasi <span class="gold">Meja</span></h3>
+
+            <p class="contact-desc">
+              Menghadirkan budaya kopi dengan sentuhan elegan.
+            </p>
+
+            <div class="contact-info">
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Jl. Anggrek 3-11, Klaten</span>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>+62 812 3456 7890</span>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>hello@blackgoldcoffee.com</span>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#" class="btn-solid-gold">Book a Table</a>
+            </div>
+          </div>
+          <div class="about-img">
+            <img src="img/contact.webp" alt="Contact us" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h4>BlackGold Coffee</h4>
+            <p>
+              Nikmati secangkir kopi terbaik dan suasana hangat bersama kami.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <p>
+              <a href="#home" style="color: #ccc; text-decoration: none"
+                >Home</a
+              >
+            </p>
+            <p>
+              <a href="#menu" style="color: #ccc; text-decoration: none"
+                >Menu</a
+              >
+            </p>
+            <p>
+              <a href="#about" style="color: #ccc; text-decoration: none"
+                >About</a
+              >
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a
+              ><a href="#"><i class="fab fa-facebook-f"></i></a
+              ><a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; 2026 BlackGold Coffee | Design by yudigitalstudio.com
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
