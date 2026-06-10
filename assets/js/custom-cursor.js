@@ -9,6 +9,8 @@
  */
 
 function initCursor(options = {}) {
+  // Stop jika touch device
+  if (window.matchMedia("(pointer: coarse)").matches) return;
   const color = options.color || "#0e7600";
   const TRAIL = options.trail || 12;
   const BURST = options.burst || 8;
@@ -16,7 +18,9 @@ function initCursor(options = {}) {
   // --- inject CSS ---
   const style = document.createElement("style");
   style.textContent = `
-    * { cursor: none !important; }
+    @media (pointer: fine) {
+  * { cursor: none !important; }
+}
 
     #_cursor-main {
       position: fixed; width: 16px; height: 16px;

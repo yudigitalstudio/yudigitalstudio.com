@@ -1004,9 +1004,24 @@
     <script src="assets/js/script.js"></script>
 
     <!--CUSTOM CURSOR-->
+    <script>
+      function isTouchDevice() {
+        return (
+          "ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0
+        );
+      }
+
+      if (!isTouchDevice()) {
+        initCursor({ color: "#0e7600" });
+      }
+    </script>
     <script src="assets/js/custom-cursor.js"></script>
     <script>
-      initCursor({ color: "#0e7600" }); // ganti warna sesuka lo
+      if (!window.matchMedia("(pointer: coarse)").matches) {
+        initCursor({ color: "#0e7600" });
+      } // ganti warna sesuka lo
     </script>
 
     <!--styling ikon layanan-->
