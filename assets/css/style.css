@@ -1226,7 +1226,7 @@ section {
 /* ======== ALUR KERJA ========= */
 .workflow {
   padding: 120px 0;
-  background: #0a0a0a;
+  background: inherit;
   overflow: hidden;
 }
 
@@ -1244,19 +1244,13 @@ section {
   left: 8%;
   width: 84%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(19, 69, 2, 0.25);
 }
 
 .timeline-line::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #6eff3e;
-  box-shadow:
-    0 0 20px #6eff3e,
-    0 0 40px #6eff3e;
-  transform-origin: left;
+  background: #95ff00;
   transform: scaleX(0);
+  transition: 0.5s ease;
 }
 
 .timeline-line.active::after {
