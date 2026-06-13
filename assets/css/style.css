@@ -1885,6 +1885,53 @@ LOCATION V2
     drop-shadow(0 0 8px rgba(200, 255, 0, 0.2));
 }
 
+/*===FLOATING WA===*/
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wa-float {
+  position: fixed; /* ini yang bikin nempel di pojok */
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: #0a0a0a;
+  border: 2px solid #39ff14;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 10px rgba(57, 255, 20, 0.5),
+    0 0 24px rgba(57, 255, 20, 0.2);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  z-index: 9999;
+  text-decoration: none;
+  animation: spin-slow 6s linear infinite;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 20px rgba(57, 255, 20, 0.9),
+    0 0 50px rgba(57, 255, 20, 0.4);
+  animation-play-state: paused;
+}
+
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+  fill: #39ff14;
+}
+
 /* ── TABLET (max 1024px) ── */
 @media (max-width: 1024px) {
   section {
@@ -2040,6 +2087,18 @@ LOCATION V2
   }
 }
 
+.wa-float {
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.wa-float svg {
+  width: 26px;
+  height: 26px;
+}
+
 /* ── MOBILE (max 640px) ── */
 @media (max-width: 640px) {
   section {
@@ -2166,185 +2225,195 @@ LOCATION V2
   }
 }
 
-/* ── SMALL MOBILE (max 400px) ── */
-@media (max-width: 400px) {
-  .hero-title {
-    font-size: clamp(2.8rem, 15vw, 4rem);
+@media (max-width: 480px) {
+  .wa-float {
+    bottom: 16px;
+    right: 16px;
+    width: 46px;
+    height: 46px;
   }
-  .section-title {
-    font-size: clamp(1.8rem, 9vw, 2.5rem);
+
+  /* ── SMALL MOBILE (max 400px) ── */
+  @media (max-width: 400px) {
+    .hero-title {
+      font-size: clamp(2.8rem, 15vw, 4rem);
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 9vw, 2.5rem);
+    }
+    .hero-badge {
+      font-size: 0.6rem;
+    }
+    .about-visual {
+      height: 250px;
+    }
+    .about-big-letter {
+      font-size: 8rem;
+    }
+    .contact-links {
+      flex-direction: flex;
+      align-items: center;
+    }
   }
-  .hero-badge {
-    font-size: 0.6rem;
-  }
-  .about-visual {
-    height: 250px;
-  }
-  .about-big-letter {
-    font-size: 8rem;
-  }
-  .contact-links {
-    flex-direction: flex;
+
+  /*---CTA cinematic hover---*/
+  .cta-orbit {
+    position: relative;
+
+    display: inline-flex;
     align-items: center;
-  }
-}
+    justify-content: center;
 
-/*---CTA cinematic hover---*/
-.cta-orbit {
-  position: relative;
+    padding: 1rem 2.4rem;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    border-radius: 18px;
 
-  padding: 1rem 2.4rem;
+    overflow: hidden;
 
-  border-radius: 18px;
+    text-decoration: none;
 
-  overflow: hidden;
+    background: #0b0b0b;
 
-  text-decoration: none;
-
-  background: #0b0b0b;
-
-  isolation: isolate;
-}
-
-/* rotating light */
-.cta-orbit::before {
-  content: "";
-
-  position: absolute;
-
-  width: 220%;
-  height: 220%;
-
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 60deg,
-    rgba(200, 255, 0, 0.95) 120deg,
-    #ffffff 160deg,
-    rgba(200, 255, 0, 0.95) 200deg,
-    transparent 260deg,
-    transparent 360deg
-  );
-
-  animation: orbit-spin 3s linear infinite;
-
-  z-index: -2;
-}
-
-/* inner dark layer */
-.cta-orbit::after {
-  content: "";
-
-  position: absolute;
-  inset: 1.5px;
-
-  border-radius: 16px;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(20, 20, 20, 0.96),
-    rgba(8, 8, 8, 0.98)
-  );
-
-  z-index: -1;
-}
-
-/* text */
-.cta-orbit span {
-  position: relative;
-
-  font-family: "Outfit", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  color: white;
-
-  transition:
-    color 0.3s ease,
-    transform 0.35s ease;
-}
-
-/* hover */
-.cta-orbit:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.45),
-    0 0 35px rgba(200, 255, 0, 0.14);
-
-  transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.4s ease;
-}
-
-.cta-orbit:hover span {
-  color: #c8ff00;
-  transform: scale(1.03);
-}
-
-/* animation */
-@keyframes orbit-spin {
-  from {
-    transform: rotate(0deg);
+    isolation: isolate;
   }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
+  /* rotating light */
+  .cta-orbit::before {
+    content: "";
 
-.map-btn {
-  margin-top: 2rem;
-}
+    position: absolute;
 
-/*---styling ikon layanan ----*/
-.service-icon svg {
-  width: 52px;
-  height: 52px;
-  stroke: #9a9a9a; /* ganti sama warna accent lo */
-  stroke-width: 1.5;
-}
+    width: 220%;
+    height: 220%;
 
-.mob-logo {
-  position: absolute;
-  top: 30px;
-  left: 48px;
-  font-family: "Share Tech Mono", monospace; /* samain sama font logo navbar */
-  font-size: 1.2rem;
-  letter-spacing: 0.08em;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      rgba(200, 255, 0, 0.95) 120deg,
+      #ffffff 160deg,
+      rgba(200, 255, 0, 0.95) 200deg,
+      transparent 260deg,
+      transparent 360deg
+    );
 
-.mob-logo span {
-  color: var(--accent); /* warna titik hijau lo */
-}
+    animation: orbit-spin 3s linear infinite;
 
-/*---ALUR KERJA---*/
-@media (max-width: 991px) {
-  .workflow-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .workflow {
-    padding: 80px 0;
+    z-index: -2;
   }
 
-  .workflow-grid {
-    grid-template-columns: 1fr;
+  /* inner dark layer */
+  .cta-orbit::after {
+    content: "";
+
+    position: absolute;
+    inset: 1.5px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0.96),
+      rgba(8, 8, 8, 0.98)
+    );
+
+    z-index: -1;
   }
 
-  .workflow-number {
-    font-size: 3rem;
+  /* text */
+  .cta-orbit span {
+    position: relative;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: white;
+
+    transition:
+      color 0.3s ease,
+      transform 0.35s ease;
+  }
+
+  /* hover */
+  .cta-orbit:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 10px 35px rgba(0, 0, 0, 0.45),
+      0 0 35px rgba(200, 255, 0, 0.14);
+
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s ease;
+  }
+
+  .cta-orbit:hover span {
+    color: #c8ff00;
+    transform: scale(1.03);
+  }
+
+  /* animation */
+  @keyframes orbit-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .map-btn {
+    margin-top: 2rem;
+  }
+
+  /*---styling ikon layanan ----*/
+  .service-icon svg {
+    width: 52px;
+    height: 52px;
+    stroke: #9a9a9a; /* ganti sama warna accent lo */
+    stroke-width: 1.5;
+  }
+
+  .mob-logo {
+    position: absolute;
+    top: 30px;
+    left: 48px;
+    font-family:
+      "Share Tech Mono", monospace; /* samain sama font logo navbar */
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mob-logo span {
+    color: var(--accent); /* warna titik hijau lo */
+  }
+
+  /*---ALUR KERJA---*/
+  @media (max-width: 991px) {
+    .workflow-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .workflow {
+      padding: 80px 0;
+    }
+
+    .workflow-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .workflow-number {
+      font-size: 3rem;
+    }
   }
 }
