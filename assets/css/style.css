@@ -430,6 +430,18 @@ nav.scrolled {
   .hero-scroll {
     display: none;
   }
+
+  .wa-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .wa-float svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* ── MARQUEE ── */
@@ -2087,18 +2099,6 @@ LOCATION V2
   }
 }
 
-.wa-float {
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-}
-
-.wa-float svg {
-  width: 26px;
-  height: 26px;
-}
-
 /* ── MOBILE (max 640px) ── */
 @media (max-width: 640px) {
   section {
@@ -2233,187 +2233,191 @@ LOCATION V2
     height: 46px;
   }
 
-  /* ── SMALL MOBILE (max 400px) ── */
-  @media (max-width: 400px) {
-    .hero-title {
-      font-size: clamp(2.8rem, 15vw, 4rem);
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 9vw, 2.5rem);
-    }
-    .hero-badge {
-      font-size: 0.6rem;
-    }
-    .about-visual {
-      height: 250px;
-    }
-    .about-big-letter {
-      font-size: 8rem;
-    }
-    .contact-links {
-      flex-direction: flex;
-      align-items: center;
-    }
+  .wa-float svg {
+    width: 24px;
+    height: 24px;
   }
+}
 
-  /*---CTA cinematic hover---*/
-  .cta-orbit {
-    position: relative;
-
-    display: inline-flex;
+/* ── SMALL MOBILE (max 400px) ── */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+  .hero-badge {
+    font-size: 0.6rem;
+  }
+  .about-visual {
+    height: 250px;
+  }
+  .about-big-letter {
+    font-size: 8rem;
+  }
+  .contact-links {
+    flex-direction: flex;
     align-items: center;
-    justify-content: center;
+  }
+}
 
-    padding: 1rem 2.4rem;
+/*---CTA cinematic hover---*/
+.cta-orbit {
+  position: relative;
 
-    border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    overflow: hidden;
+  padding: 1rem 2.4rem;
 
-    text-decoration: none;
+  border-radius: 18px;
 
-    background: #0b0b0b;
+  overflow: hidden;
 
-    isolation: isolate;
+  text-decoration: none;
+
+  background: #0b0b0b;
+
+  isolation: isolate;
+}
+
+/* rotating light */
+.cta-orbit::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220%;
+  height: 220%;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    rgba(200, 255, 0, 0.95) 120deg,
+    #ffffff 160deg,
+    rgba(200, 255, 0, 0.95) 200deg,
+    transparent 260deg,
+    transparent 360deg
+  );
+
+  animation: orbit-spin 3s linear infinite;
+
+  z-index: -2;
+}
+
+/* inner dark layer */
+.cta-orbit::after {
+  content: "";
+
+  position: absolute;
+  inset: 1.5px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.96),
+    rgba(8, 8, 8, 0.98)
+  );
+
+  z-index: -1;
+}
+
+/* text */
+.cta-orbit span {
+  position: relative;
+
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: white;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+/* hover */
+.cta-orbit:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(200, 255, 0, 0.14);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.cta-orbit:hover span {
+  color: #c8ff00;
+  transform: scale(1.03);
+}
+
+/* animation */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
   }
 
-  /* rotating light */
-  .cta-orbit::before {
-    content: "";
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-    position: absolute;
+.map-btn {
+  margin-top: 2rem;
+}
 
-    width: 220%;
-    height: 220%;
+/*---styling ikon layanan ----*/
+.service-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke: #9a9a9a; /* ganti sama warna accent lo */
+  stroke-width: 1.5;
+}
 
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent 60deg,
-      rgba(200, 255, 0, 0.95) 120deg,
-      #ffffff 160deg,
-      rgba(200, 255, 0, 0.95) 200deg,
-      transparent 260deg,
-      transparent 360deg
-    );
+.mob-logo {
+  position: absolute;
+  top: 30px;
+  left: 48px;
+  font-family: "Share Tech Mono", monospace; /* samain sama font logo navbar */
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    animation: orbit-spin 3s linear infinite;
+.mob-logo span {
+  color: var(--accent); /* warna titik hijau lo */
+}
 
-    z-index: -2;
+/*---ALUR KERJA---*/
+@media (max-width: 991px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow {
+    padding: 80px 0;
   }
 
-  /* inner dark layer */
-  .cta-orbit::after {
-    content: "";
-
-    position: absolute;
-    inset: 1.5px;
-
-    border-radius: 16px;
-
-    background: linear-gradient(
-      to bottom,
-      rgba(20, 20, 20, 0.96),
-      rgba(8, 8, 8, 0.98)
-    );
-
-    z-index: -1;
+  .workflow-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* text */
-  .cta-orbit span {
-    position: relative;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-
-    color: white;
-
-    transition:
-      color 0.3s ease,
-      transform 0.35s ease;
-  }
-
-  /* hover */
-  .cta-orbit:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-      0 10px 35px rgba(0, 0, 0, 0.45),
-      0 0 35px rgba(200, 255, 0, 0.14);
-
-    transition:
-      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.4s ease;
-  }
-
-  .cta-orbit:hover span {
-    color: #c8ff00;
-    transform: scale(1.03);
-  }
-
-  /* animation */
-  @keyframes orbit-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .map-btn {
-    margin-top: 2rem;
-  }
-
-  /*---styling ikon layanan ----*/
-  .service-icon svg {
-    width: 52px;
-    height: 52px;
-    stroke: #9a9a9a; /* ganti sama warna accent lo */
-    stroke-width: 1.5;
-  }
-
-  .mob-logo {
-    position: absolute;
-    top: 30px;
-    left: 48px;
-    font-family:
-      "Share Tech Mono", monospace; /* samain sama font logo navbar */
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .mob-logo span {
-    color: var(--accent); /* warna titik hijau lo */
-  }
-
-  /*---ALUR KERJA---*/
-  @media (max-width: 991px) {
-    .workflow-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .workflow {
-      padding: 80px 0;
-    }
-
-    .workflow-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .workflow-number {
-      font-size: 3rem;
-    }
+  .workflow-number {
+    font-size: 3rem;
   }
 }
