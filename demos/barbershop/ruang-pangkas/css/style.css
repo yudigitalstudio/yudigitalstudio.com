@@ -81,6 +81,7 @@ body {
   display: flex;
   gap: 1.2rem;
   align-items: center;
+  text-decoration: none;
 }
 
 .nav-icons i {
@@ -104,6 +105,7 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 .btn-appointment:hover {
@@ -209,6 +211,7 @@ body {
   gap: 10px;
   color: #1a1a1a;
   font-family: "Inter", sans-serif;
+  text-decoration: none;
 }
 
 .btn-make:hover {
@@ -1641,7 +1644,7 @@ body {
   .hero-content {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 5%;
+    padding: 6rem 5%;
   }
   .hero-text {
     text-align: center;
