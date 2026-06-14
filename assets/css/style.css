@@ -2444,6 +2444,7 @@ LOCATION V2
   padding: 4rem 0;
   padding-left: 50px;
   overflow: hidden;
+  display: none; /*===== hapus jika ingin menampilkan sesi ======*/
 }
 
 .testi-viewport {
