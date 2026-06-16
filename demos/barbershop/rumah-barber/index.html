@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumah Barber — Barbershop</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ── NAVBAR ── -->
+    <nav>
+      <a href="#" class="logo">Rumah Barber.</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="btn-book">Book Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- ── MOBILE MENU ── -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button
+        class="mobile-menu-close"
+        id="menuClose"
+        onclick="closeMenu()"
+        aria-label="Close menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#" onclick="closeMenu()">Home</a>
+      <a href="#" onclick="closeMenu()">About us</a>
+      <a href="#" onclick="closeMenu()">Services</a>
+      <a href="#" onclick="closeMenu()">Pricing</a>
+      <a href="#" onclick="closeMenu()">Pages</a>
+      <a href="#" onclick="closeMenu()">Contact</a>
+      <button class="btn-book-mobile" onclick="closeMenu()">Book Now</button>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-left">
+        <p class="eyebrow">Welcome to Rumah Barber.</p>
+        <h1 class="hero-title">Temukan Gaya Baru<br />&amp; Keren Abis</h1>
+        <p class="hero-desc">
+          Rambut kamu adalah cerminan dirimu. Barber kami siap bantu kamu tampil
+          lebih percaya diri dan gaya setiap harinya.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="feature-num">01.</span>
+            Potongan Rambut Sesuai Karaktermu
+          </div>
+          <div class="feature-item">
+            <span class="feature-num">02.</span>
+            Hasil Rapi, Harga Bersahabat
+          </div>
+        </div>
+        <div class="cta-row">
+          <button class="btn-primary">Pesan Sekarang</button>
+          <button class="btn-outline">Hubungi Kami</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="circle-frame">
+          <img src="img/hero-1.webp" alt="Hero 1" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TICKER ── -->
+    <div class="ticker-wrapper" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <!-- Items diisi via JS -->
+      </div>
+    </div>
+
+    <!-- ── LAYANAN ── -->
+    <section class="services">
+      <p class="srv-eyebrow">Layanan Profesional</p>
+      <h2 class="srv-title">Keahlian Kami</h2>
+      <div class="srv-grid">
+        <div class="srv-card">
+          <div class="srv-icon">
+            <img src="img/barbershop-1.svg" alt="Potong Rambut" />
+          </div>
+          <p class="srv-name">Potong &amp; Styling</p>
+          <p class="srv-desc">
+            Potongan rambut presisi sesuai bentuk wajah lo, ditangani barber
+            berpengalaman.
+          </p>
+        </div>
+
+        <div class="srv-card">
+          <div class="srv-icon">
+            <img src="img/hairdryer.svg" alt="Perawatan Rambut" />
+          </div>
+          <p class="srv-name">Perawatan Rambut</p>
+          <p class="srv-desc">
+            Treatment rambut biar tetap sehat, kuat, dan nggak kusam seharian.
+          </p>
+        </div>
+
+        <div class="srv-card">
+          <div class="srv-icon">
+            <img src="img/coloring.svg" alt="Pewarnaan" />
+          </div>
+          <p class="srv-name">Pewarnaan Rambut</p>
+          <p class="srv-desc">
+            Warnai rambut lo dengan teknik modern, hasil natural dan tahan lama.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS ── -->
+    <section class="stats">
+      <div class="stats-left">
+        <p class="eyebrow">Tentang Kami</p>
+        <h2>Fakta &amp;<br />Angka Kami</h2>
+      </div>
+      <div class="stats-right">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img src="img/star-formation-svgrepo-com.svg" alt="Pengalaman" />
+          </div>
+          <p class="stat-num">19+</p>
+          <p class="stat-label">Tahun Pengalaman</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img src="img/people-group-svgrepo-com.svg" alt="Pelanggan" />
+          </div>
+          <p class="stat-num">200+</p>
+          <p class="stat-label">Pelanggan Setia</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <img
+              src="img/crowd-people-group-public-svgrepo-com.svg"
+              alt="Staff"
+            />
+          </div>
+          <p class="stat-num">28+</p>
+          <p class="stat-label">Staff Profesional</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="gallery">
+      <div class="gallery-head">
+        <p class="eyebrow">Galeri Foto</p>
+        <h2>Suasana Tempat Kami</h2>
+      </div>
+      <div class="gallery-track">
+        <div class="gallery-img">
+          <img src="img/galeri-1.webp" alt="Gallery 1" />
+        </div>
+        <div class="gallery-img">
+          <img src="img/galeri-2.webp" alt="Gallery 2" />
+        </div>
+        <div class="gallery-img">
+          <img src="img/galeri-3.webp" alt="Gallery 3" />
+        </div>
+        <div class="gallery-img">
+          <img src="img/galeri-4.webp" alt="Gallery 4" />
+        </div>
+        <div class="gallery-img">
+          <img src="img/galeri-5.webp" alt="Gallery 5" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRICING ── -->
+    <section class="pricing">
+      <div class="pricing-head">
+        <p class="eyebrow">Daftar Harga</p>
+        <h2>Harga Terbaik Kami</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Potong Rambut</h3>
+            <p>Potongan rapi sesuai selera, hasil tahan lama.</p>
+          </div>
+          <div class="price-tag">35K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Blow Dry &amp; Curl</h3>
+            <p>Rambut lo jadi lebih bervolume dan stylish.</p>
+          </div>
+          <div class="price-tag">50K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Keramas &amp; Set</h3>
+            <p>Bersih, segar, dan wangi sepanjang hari.</p>
+          </div>
+          <div class="price-tag">25K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Potong Pria</h3>
+            <p>Khusus pria, presisi dan maskulin.</p>
+          </div>
+          <div class="price-tag">30K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Highlight Rambut</h3>
+            <p>Warna highlight natural, elegan, dan kekinian.</p>
+          </div>
+          <div class="price-tag">120K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Warna Alami</h3>
+            <p>Cat rambut dengan bahan organik, aman di kulit.</p>
+          </div>
+          <div class="price-tag">95K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Rapiin Alis</h3>
+            <p>Alis rapi dan simetris, tampil lebih percaya diri.</p>
+          </div>
+          <div class="price-tag">20K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Cukur Jenggot</h3>
+            <p>Jenggot rapi dan bersih, kesan maskulin terjaga.</p>
+          </div>
+          <div class="price-tag">25K</div>
+        </div>
+        <div class="price-card">
+          <div class="price-info">
+            <h3>Facial Organik</h3>
+            <p>Perawatan wajah alami, kulit bersih dan cerah.</p>
+          </div>
+          <div class="price-tag">75K</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY CHOOSE US ── -->
+    <section class="why">
+      <div class="why-left">
+        <p class="why-eyebrow">Kenapa Pilih Kami?</p>
+        <h2 class="why-title">Siap Tampil Beda<br />dan Lebih Keren?</h2>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feat-icon">
+              <img src="img/certificate-svgrepo-com.svg" alt="Bersertifikat" />
+            </div>
+            <div class="why-feat-text">
+              <h3>Barber Bersertifikat</h3>
+              <p>
+                Semua barber kami udah terlatih dan berpengalaman, jadi hasil
+                potongan selalu rapi dan sesuai ekspektasi.
+              </p>
+            </div>
+          </div>
+
+          <div class="why-feature">
+            <div class="why-feat-icon">
+              <img src="img/organic-maps-svgrepo-com.svg" alt="Organik" />
+            </div>
+            <div class="why-feat-text">
+              <h3>Produk 100% Organik</h3>
+              <p>
+                Kami pakai produk perawatan rambut berbahan alami, aman buat
+                kulit kepala dan ramah lingkungan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-right">
+        <div class="why-circle">
+          <img src="img/why-us.webp" alt="Why Choose Us" />
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24" fill="#fff">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testi">
+      <div class="testi-head">
+        <p class="eyebrow">Testimoni Pelanggan</p>
+        <h2>Kata Mereka Tentang Kami</h2>
+      </div>
+
+      <div class="testi-slider">
+        <div class="testi-track" id="testiTrack"></div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <!-- TOP -->
+      <div class="footer-top">
+        <div class="footer-info">
+          <div class="footer-info-icon">
+            <img src="img/map-maps-and-location-svgrepo-com.svg" alt="Lokasi" />
+          </div>
+          <h3>Lokasi Kami</h3>
+          <p>
+            Jl. Contoh No. 123<br />Klaten, Jawa Tengah 57400<br />Indonesia
+          </p>
+        </div>
+
+        <div class="footer-info">
+          <div class="footer-info-icon">
+            <img src="img/phone-call-end-svgrepo-com.svg" alt="Kontak" />
+          </div>
+          <h3>Hubungi Kami</h3>
+          <p>
+            <a href="tel:+6281234567890">+62 812 3456 7890</a><br />
+            <a href="mailto:info@rumahbarber.id">info@rumahbarber.id</a><br />
+            <a href="https://wa.me/6281234567890">WhatsApp Kami</a>
+          </p>
+        </div>
+
+        <div class="footer-info">
+          <div class="footer-info-icon">
+            <img src="img/clock-two-svgrepo-com.svg" alt="Jam Buka" />
+          </div>
+          <h3>Jam Buka</h3>
+          <p>
+            Sen–Jum: 09.00 – 21.00<br />
+            Sabtu: 09.00 – 19.00<br />
+            Minggu: 10.00 – 17.00
+          </p>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="footer-divider"></div>
+
+      <!-- BOTTOM -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <a href="#" class="footer-logo">Rumah Barber.</a>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <img src="img/facebook-svgrepo-com.svg" alt="Facebook" />
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <img src="img/instagram-svgrepo-com.svg" alt="Instagram" />
+            </a>
+            <a href="#" class="social-btn" aria-label="TikTok">
+              <img src="img/tiktok-svgrepo-com.svg" alt="TikTok" />
+            </a>
+            <a href="#" class="social-btn" aria-label="WhatsApp">
+              <img src="img/whatsapp-svgrepo-com.svg" alt="WhatsApp" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-right">
+          <nav class="footer-nav">
+            <a href="#">Beranda</a>
+            <a href="#">Tentang Kami</a>
+            <a href="#">Harga</a>
+            <a href="#">Layanan</a>
+            <a href="#">Kontak</a>
+          </nav>
+          <p class="footer-copy">
+            Copyright © 2025 Rumah Barber. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // JS nya di sini
+    </script>
+
+    <script>
+      // ── Smooth Marquee via requestAnimationFrame ──────────────────────
+      (function () {
+        const services = [
+          "Hair Cut",
+          "Hair Dryer",
+          "Hair Style",
+          "Hair Coloring",
+          "Shaving",
+          "Organic Facial",
+          "Eyebrow",
+          "Nail Care",
+          "Beard Trim",
+          "Scalp Treatment",
+        ];
+
+        const track = document.getElementById("tickerTrack");
+        const speed = 0.6; // px per frame — naikin buat lebih cepat
+
+        // Build satu set item
+        function buildSet() {
+          const frag = document.createDocumentFragment();
+          services.forEach((s) => {
+            const item = document.createElement("span");
+            item.className = "ticker-item";
+            item.innerHTML = `<span class="ticker-dot"></span>${s}`;
+            frag.appendChild(item);
+          });
+          return frag;
+        }
+
+        // Isi 3x supaya seamless di semua lebar layar
+        track.appendChild(buildSet());
+        track.appendChild(buildSet());
+        track.appendChild(buildSet());
+
+        let x = 0;
+        let setWidth = 0;
+        let rafId;
+        let paused = false;
+
+        function getSetWidth() {
+          // Lebar satu set = total lebar / 3
+          return track.scrollWidth / 3;
+        }
+
+        function animate() {
+          if (!paused) {
+            x -= speed;
+            // Reset posisi setelah satu set habis → infinite loop
+            if (Math.abs(x) >= setWidth) {
+              x += setWidth;
+            }
+            track.style.transform = `translateX(${x}px)`;
+          }
+          rafId = requestAnimationFrame(animate);
+        }
+
+        // Hitung setelah font & layout selesai
+        window.addEventListener("load", () => {
+          setWidth = getSetWidth();
+          animate();
+        });
+
+        // Fallback kalau load sudah lewat
+        if (document.readyState === "complete") {
+          setWidth = getSetWidth();
+          animate();
+        }
+
+        // Pause on hover
+        const wrapper = document.querySelector(".ticker-wrapper");
+        wrapper.addEventListener("mouseenter", () => {
+          paused = true;
+        });
+        wrapper.addEventListener("mouseleave", () => {
+          paused = false;
+        });
+
+        // Recalc on resize
+        window.addEventListener("resize", () => {
+          setWidth = getSetWidth();
+        });
+      })();
+
+      // ── Hamburger Menu Toggle ─────────────────────────────────────────
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open", isOpen);
+        // Kunci scroll body saat menu terbuka
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      });
+
+      function closeMenu() {
+        hamburger.classList.remove("open");
+        mobileMenu.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      // Tutup menu saat resize ke desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) closeMenu();
+      });
+
+      // ── Testimonial Slider ─────────────────────────────
+      (function () {
+        const allCards = [
+          {
+            name: "Supriadji",
+            stars: "★★★★★",
+            img: "img/supriadji.webp",
+            text: "Barbernya pro banget, hasil potongannya rapi dan sesuai sama yang gue minta. Udah jadi langganan tetap di sini, ga mau pindah ke tempat lain!",
+          },
+          {
+            name: "Samijan Kartanegara",
+            stars: "★★★★★",
+            img: "img/samijan-kartanegara.webp",
+            text: "Tempatnya nyaman, bersih, dan barbernya ramah. Harga juga terjangkau untuk kualitas sebagus ini. Recommended banget!",
+          },
+          {
+            name: "Bonang Hadiningrat",
+            stars: "★★★★★",
+            img: "img/bonang-hadiningrat.webp",
+            text: "Pelayanannya cepat tapi hasilnya ga asal-asalan. Barbernya ngerti banget apa yang gue mau bahkan sebelum gue jelasin panjang lebar.",
+          },
+          {
+            name: "Kabul Sanjaya",
+            stars: "★★★★☆",
+            img: "img/kabul-sanjaya.webp",
+            text: "Produk yang dipake organik dan ga bikin kulit kepala iritasi. Rambut jadi lebih sehat dan wangi tahan lama. Pasti balik lagi!",
+          },
+        ];
+
+        const track = document.getElementById("testiTrack");
+        const dotsContainer = document.getElementById("testiDots");
+        let current = 1; // mulai dari index 1 karena index 0 = clone terakhir
+        let isTransitioning = false;
+        let autoSlide;
+
+        function isMobile() {
+          return window.innerWidth <= 900;
+        }
+
+        function buildCard(card) {
+          return `
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-profile">
+            <div class="testi-avatar">
+              <img src="${card.img}" alt="${card.name}" onerror="this.parentElement.innerHTML='👤'"/>
+            </div>
+            <div>
+              <p class="testi-name">${card.name}</p>
+              <p class="testi-stars">${card.stars}</p>
+            </div>
+          </div>
+          <div class="testi-quote">"</div>
+        </div>
+        <p class="testi-text">${card.text}</p>
+      </div>`;
+        }
+
+        function chunkArray(arr, size) {
+          const chunks = [];
+          for (let i = 0; i < arr.length; i += size) {
+            chunks.push(arr.slice(i, i + size));
+          }
+          return chunks;
+        }
+
+        function buildSlides() {
+          track.innerHTML = "";
+          dotsContainer.innerHTML = "";
+          current = 1;
+          isTransitioning = false;
+
+          const perSlide = isMobile() ? 1 : 2;
+          const chunks = chunkArray(allCards, perSlide);
+          const totalSlides = chunks.length;
+
+          // Clone terakhir ditaruh di depan
+          const cloneFirst = document.createElement("div");
+          cloneFirst.className = "testi-slide clone";
+          cloneFirst.innerHTML = chunks[totalSlides - 1]
+            .map(buildCard)
+            .join("");
+          track.appendChild(cloneFirst);
+
+          // Slide asli
+          chunks.forEach((chunk) => {
+            const slide = document.createElement("div");
+            slide.className = "testi-slide";
+            slide.innerHTML = chunk.map(buildCard).join("");
+            track.appendChild(slide);
+          });
+
+          // Clone pertama ditaruh di belakang
+          const cloneLast = document.createElement("div");
+          cloneLast.className = "testi-slide clone";
+          cloneLast.innerHTML = chunks[0].map(buildCard).join("");
+          track.appendChild(cloneLast);
+
+          // Set posisi awal tanpa animasi
+          track.style.transition = "none";
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          // Dots — hanya untuk slide asli
+          chunks.forEach((_, i) => {
+            const dot = document.createElement("button");
+            dot.className = "dot" + (i === 0 ? " active" : "");
+            dot.addEventListener("click", () => goTo(i + 1)); // +1 karena ada clone di depan
+            dotsContainer.appendChild(dot);
+          });
+
+          // Touch swipe
+          let startX = 0;
+          track.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            clearInterval(autoSlide);
+          });
+          track.addEventListener("touchend", (e) => {
+            const diff = startX - e.changedTouches[0].clientX;
+            const total = track.querySelectorAll(".testi-slide").length;
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) goTo(current + 1);
+              else goTo(current - 1);
+            }
+            startAuto();
+          });
+        }
+
+        function updateDots(realIndex) {
+          // realIndex = current - 1 (karena ada clone di depan)
+          const dots = dotsContainer.querySelectorAll(".dot");
+          const perSlide = isMobile() ? 1 : 2;
+          const totalReal = Math.ceil(allCards.length / perSlide);
+          const dotIndex = (realIndex - 1 + totalReal) % totalReal;
+          dots.forEach((d, i) => d.classList.toggle("active", i === dotIndex));
+        }
+
+        function goTo(index) {
+          if (isTransitioning) return;
+          isTransitioning = true;
+
+          const totalSlides = track.querySelectorAll(".testi-slide").length;
+
+          track.style.transition = "transform 0.5s ease";
+          track.style.transform = `translateX(-${index * 100}%)`;
+          current = index;
+
+          updateDots(current);
+
+          track.addEventListener("transitionend", function handler() {
+            track.removeEventListener("transitionend", handler);
+            isTransitioning = false;
+
+            // Kalau sampai clone terakhir → lompat ke slide pertama asli (tanpa animasi)
+            if (current >= totalSlides - 1) {
+              track.style.transition = "none";
+              current = 1;
+              track.style.transform = `translateX(-${current * 100}%)`;
+            }
+
+            // Kalau sampai clone pertama → lompat ke slide terakhir asli (tanpa animasi)
+            if (current <= 0) {
+              track.style.transition = "none";
+              current = totalSlides - 2;
+              track.style.transform = `translateX(-${current * 100}%)`;
+            }
+
+            updateDots(current);
+          });
+        }
+
+        function startAuto() {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(() => goTo(current + 1), 4000);
+        }
+
+        // Build awal
+        buildSlides();
+        startAuto();
+
+        // Rebuild saat resize
+        let resizeTimer;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer);
+          clearInterval(autoSlide);
+          resizeTimer = setTimeout(() => {
+            buildSlides();
+            startAuto();
+          }, 200);
+        });
+      })();
+    </script>
+  </body>
+</html>

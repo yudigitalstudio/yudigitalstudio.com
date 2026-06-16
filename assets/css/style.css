@@ -1210,7 +1210,7 @@ section {
   color: var(--muted);
 }
 .price-features li.no::before {
-  content: "—";
+  content: "✘";
   color: var(--muted);
 }
 .btn-plan {
