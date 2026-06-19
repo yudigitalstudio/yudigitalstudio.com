@@ -759,6 +759,11 @@
       </div>
     </section>
 
+    <!-- MARQUEE CHIP -->
+    <div class="chip-marquee-wrap" aria-hidden="true">
+      <div class="chip-marquee-track" id="chipMarqueeTrack"></div>
+    </div>
+
     <!-- KONTAK -->
     <section id="kontak">
       <div class="contact-content reveal">
@@ -1337,6 +1342,38 @@
 
         /* Resize */
         window.addEventListener("resize", () => updateTrack(false));
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const items = [
+          { icon: "css.svg", label: "CSS" },
+          { icon: "figma.svg", label: "Figma" },
+          { icon: "git.svg", label: "Git" },
+          { icon: "github.svg", label: "Github" },
+          { icon: "html5.svg", label: "HTML5" },
+          { icon: "javascript.svg", label: "Javascript" },
+          { icon: "mongodb.svg", label: "MongoDB" },
+          { icon: "mysql.svg", label: "mySQL" },
+          { icon: "nextdotjs.svg", label: "nextJS" },
+          { icon: "nodedotjs.svg", label: "nodeJS" },
+          { icon: "react.svg", label: "React" },
+          { icon: "tailwindcss.svg", label: "Tailwindcss" },
+        ];
+
+        const track = document.getElementById("chipMarqueeTrack");
+
+        // Render 2x untuk infinite loop seamless
+        [...items, ...items].forEach(({ icon, label }) => {
+          const pill = document.createElement("span");
+          pill.className = "chip-pill";
+          pill.innerHTML = `
+  <img src="assets/icons/${icon}" class="chip-pill-icon" alt="${label}">
+  <span>${label}</span>
+`;
+          track.appendChild(pill);
+        });
       })();
     </script>
   </body>
