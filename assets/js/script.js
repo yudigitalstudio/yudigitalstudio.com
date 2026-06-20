@@ -82,10 +82,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     effect: "fade",
 
-    speed: 1500,
+    speed: 3000,
 
     autoplay: {
-      delay: 3000,
+      delay: 6500,
       disableOnInteraction: false,
     },
   });

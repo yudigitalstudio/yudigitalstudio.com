@@ -963,6 +963,7 @@ section {
 .about-box-main {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface2);
   display: flex;
@@ -977,22 +978,39 @@ section {
 }
 .about-stat-card {
   position: absolute;
-  background: var(--accent);
-  padding: 1.25rem 1.75rem;
-  z-index: 1;
+  padding: 1.2rem 1.6rem;
+  z-index: 5;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 .about-stat-card.s1 {
   bottom: 2rem;
   left: -2rem;
+  animation: floaty 4s ease-in-out infinite;
 }
 .about-stat-card.s2 {
   top: 2rem;
   right: -2rem;
+  animation: floaty 4s ease-in-out infinite 1.5s;
 }
 .about-stat-card .num {
   font-family: "Bebas Neue", sans-serif;
   font-size: 3rem;
-  color: var(--bg);
+  color: var(--muted2);
   line-height: 1;
 }
 .about-stat-card .lbl {
@@ -1000,7 +1018,7 @@ section {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(8, 8, 8, 0.6);
+  color: var(--muted2);
 }
 .about-content .section-title {
   margin-bottom: 1rem;
@@ -1030,16 +1048,6 @@ section {
 .skill-pill:hover {
   border-color: var(--accent);
   color: var(--accent);
-}
-
-.about-box-main {
-  position: absolute;
-  inset: 0;
-
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-  background: var(--surface2);
 }
 
 /* SWIPER */
@@ -2717,4 +2725,52 @@ LOCATION V2
 
 .chip-pill:hover span {
   color: #d9ff00;
+}
+
+/*=====about====*/
+@media (max-width: 992px) {
+  #tentang {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-visual {
+    height: 400px;
+  }
+
+  .about-stat-card.s1 {
+    left: 1rem;
+    bottom: 1rem;
+  }
+
+  .about-stat-card.s2 {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-visual {
+    height: 320px;
+  }
+
+  .about-stat-card {
+    padding: 0.8rem 1rem;
+  }
+
+  .about-stat-card .num {
+    font-size: 1.8rem;
+  }
+
+  .about-big-letter {
+    font-size: 8rem;
+  }
+
+  .skills-list {
+    gap: 0.4rem;
+  }
+
+  .skill-pill {
+    font-size: 0.65rem;
+  }
 }
