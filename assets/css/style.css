@@ -1020,7 +1020,7 @@ section {
 .about-stat-card .num {
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.6rem;
-  color: var(--muted2);
+  color: var(--accent-dim);
   line-height: 1;
 }
 .about-stat-card .lbl {
