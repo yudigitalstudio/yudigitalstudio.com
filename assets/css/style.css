@@ -107,9 +107,18 @@ nav.scrolled {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: color 0.2s;
+
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 .nav-links a:hover {
   color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
 }
 .nav-cta {
   position: relative;
@@ -978,14 +987,15 @@ section {
 }
 .about-stat-card {
   position: absolute;
-  padding: 1.2rem 1.6rem;
+  padding: 0.75rem 1rem;
   z-index: 5;
+  border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 @keyframes floaty {
@@ -1009,7 +1019,7 @@ section {
 }
 .about-stat-card .num {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
+  font-size: 1.6rem;
   color: var(--muted2);
   line-height: 1;
 }
