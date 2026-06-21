@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/:client((?!assets|demos|portofolio|undangan-digital|undangan|robots.txt|sitemap.xml|favicon.ico|index.html)[^/]+)",
+      "destination": "/undangan/:client"
+    },
+    {
+      "source": "/:client((?!assets|demos|portofolio|undangan-digital|undangan|robots.txt|sitemap.xml|favicon.ico|index.html)[^/]+)/:path*",
+      "destination": "/undangan/:client/:path*"
+    }
+  ]
+}
