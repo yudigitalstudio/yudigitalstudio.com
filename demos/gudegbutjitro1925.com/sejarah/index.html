@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sejarah perjalanan kuliner legendaris Gudeg Bu Tjitro 1925. Ketahui filosofi rasa, warisan resep, dan dedikasi kami merawat tradisi Jogja.">
+    <title>Sejarah & Filosofi - Gudeg Bu Tjitro 1925</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .history-hero {
+            background: linear-gradient(rgba(43, 5, 11, 0.85), rgba(43, 5, 11, 0.95)), url('../assets/images/restoran.png') center/cover no-repeat;
+            padding: 10rem 0 6rem;
+            color: white;
+            text-align: center;
+        }
+        .history-hero h1 {
+            color: var(--color-gold-main);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-full {
+            max-width: 800px;
+            margin: 5rem auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--color-gold-main);
+            transform: translateX(-50%);
+        }
+        .timeline-full-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        .timeline-full-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-full-item::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 18px;
+            height: 18px;
+            background: var(--color-maroon-main);
+            border: 4px solid var(--color-gold-light);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .timeline-full-card {
+            width: 45%;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(197, 168, 92, 0.1);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        .timeline-full-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-maroon-main);
+        }
+        .timeline-full-year {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-maroon-main);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-full-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-dark);
+        }
+        .philosophy-section {
+            background-color: var(--color-gold-subtle);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .philosophy-quote {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-style: italic;
+            color: var(--color-maroon-main);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .timeline-full::before {
+                left: 20px;
+            }
+            .timeline-full-item {
+                flex-direction: row !important;
+                margin-bottom: 3rem;
+            }
+            .timeline-full-item::after {
+                left: 20px;
+            }
+            .timeline-full-card {
+                width: calc(100% - 50px);
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-main">BU TJITRO</span>
+                <span class="logo-sub">1925</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html#sejarah" class="nav-link">Sejarah</a></li>
+                <li><a href="../index.html#restoran" class="nav-link">Restoran</a></li>
+                <li><a href="../index.html#kaleng" class="nav-link">Gudeg Kaleng</a></li>
+                <li><a href="../index.html#maklon" class="nav-link">Layanan Maklon</a></li>
+                <li><a href="../index.html#kemitraan" class="nav-link">Kemitraan</a></li>
+                <li><a href="../index.html#legalitas" class="nav-link">Legalitas</a></li>
+                <li><a href="../index.html#kontak" class="btn btn-secondary" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Inner Hero -->
+    <section class="history-hero">
+        <div class="container">
+            <h1>Sejarah Perjalanan</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.85);">Menapaki kembali jejak cita rasa legendaris Gudeg Bu Tjitro yang telah setia menemani keluarga Indonesia selama hampir satu abad.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kronologi Rasa</span>
+                <h2 class="section-title">Perjalanan Melintasi Waktu</h2>
+                <p class="section-desc">Dari warung emperan tradisional hingga melanglang buana ke berbagai negara dalam bentuk kemasan kaleng steril modern.</p>
+            </div>
+
+            <!-- Full Timeline -->
+            <div class="timeline-full">
+                <!-- 1925 -->
+                <div class="timeline-full-item">
+                    <div class="timeline-full-card">
+                        <div class="timeline-full-year">1925</div>
+                        <h3 class="timeline-full-title">Mula Langkah di Yogyakarta</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem;">Ibu Tjitro mendirikan sebuah warung lesehan sederhana di Yogyakarta. Dengan racikan resep bumbu rempah kelapa gurih (areh) dan paduan sayur nangka muda yang khas, warung ini dengan cepat digemari penduduk lokal maupun wisatawan istana.</p>
+                    </div>
+                </div>
+
+                <!-- 1960 -->
+                <div class="timeline-full-item">
+                    <div class="timeline-full-card">
+                        <div class="timeline-full-year">1960 - 1980</div>
+                        <h3 class="timeline-full-title">Eksistensi Generasi Kedua</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem;">Eksistensi warung dikembangkan oleh generasi penerus dengan mendirikan rumah makan permanen yang lebih besar untuk menyambut kunjungan wisatawan asing dan domestik yang membanjiri kota Jogja.</p>
+                    </div>
+                </div>
+
+                <!-- 2002 -->
+                <div class="timeline-full-item">
+                    <div class="timeline-full-card">
+                        <div class="timeline-full-year">2002</div>
+                        <h3 class="timeline-full-title">Inovasi Gudeg Kaleng Pertama</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem;">Menghadapi tantangan daya tahan makanan tradisional yang sangat singkat (cepat basi), Gudeg Bu Tjitro bekerja sama dengan lembaga penelitian LIPI memelopori pengalengan Gudeg pertama di Indonesia dengan teknologi sterilisasi retort modern.</p>
+                    </div>
+                </div>
+
+                <!-- Present -->
+                <div class="timeline-full-item">
+                    <div class="timeline-full-card">
+                        <div class="timeline-full-year">Kini</div>
+                        <h3 class="timeline-full-title">Merajai Pasar Global</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem;">Kini Gudeg Kaleng Bu Tjitro 1925 telah diekspor ke Asia Tenggara, Eropa, hingga Amerika Utara, menjadi oleh-oleh khas nusantara terbaik bagi para perantau dan pencinta kuliner dunia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <span class="section-tag">Filosofi Dapur</span>
+            <p class="philosophy-quote">"Alon-alon Waton Kelakon - Memasak dengan kesabaran, melahirkan kelezatan yang mendalam."</p>
+            <p style="max-width: 700px; margin: 0 auto; color: var(--color-text-muted);">Memasak gudeg autentik membutuhkan waktu lebih dari 12 jam proses penguapan dan pengadukan perlahan di atas tungku. Kesabaran tradisi inilah yang terus kami jaga di era serba instan, demi menyajikan cita rasa yang jujur dan tulus.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>BU TJITRO 1925</h3>
+                <p>Warisan cita rasa gudeg legendaris dari Yogyakarta. Melayani dengan rasa cinta dan resep rahasia otentik nusantara sejak 1925.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Navigasi</h4>
+                <ul class="footer-links-list">
+                    <li><a href="../index.html#sejarah">Sejarah Perjalanan</a></li>
+                    <li><a href="../index.html#restoran">Restoran Joglo</a></li>
+                    <li><a href="../index.html#kaleng">Gudeg Kaleng</a></li>
+                    <li><a href="../index.html#maklon">Jasa Maklon Pabrik</a></li>
+                    <li><a href="../index.html#kemitraan">Kemitraan Jual/Magang</a></li>
+                    <li><a href="../index.html#legalitas">Sertifikasi Legalitas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Informasi Kontak</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Jl. Janti No. 330, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+62 (274) 484-753</span>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gudeg Bu Tjitro 1925. Seluruh hak cipta dilindungi undang-undang.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
