@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informasi menu, lokasi, jam buka, dan reservasi meja makan di Restoran Gudeg Bu Tjitro 1925 Yogyakarta.">
+    <title>Restoran & Menu - Gudeg Bu Tjitro 1925</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .restoran-hero {
+            background: linear-gradient(rgba(43, 5, 11, 0.8), rgba(43, 5, 11, 0.95)), url('../assets/images/restoran.png') center/cover no-repeat;
+            padding: 10rem 0 6rem;
+            color: white;
+            text-align: center;
+        }
+        .restoran-hero h1 {
+            color: var(--color-gold-main);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        .menu-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(197, 168, 92, 0.1);
+            transition: var(--transition-smooth);
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-gold-main);
+        }
+        .menu-info {
+            padding: 2rem;
+        }
+        .menu-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+        .menu-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-maroon-dark);
+        }
+        .menu-price {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            color: var(--color-gold-dark);
+            font-size: 1.1rem;
+        }
+        .menu-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        .booking-section {
+            background-color: var(--color-maroon-subtle);
+            padding: 6rem 0;
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(92, 6, 24, 0.05);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-maroon-dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 1px solid #DCD1D3;
+            border-radius: 30px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-maroon-main);
+            box-shadow: 0 0 0 3px rgba(92, 6, 24, 0.1);
+        }
+        @media (max-width: 768px) {
+            .booking-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .booking-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-main">BU TJITRO</span>
+                <span class="logo-sub">1925</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html#sejarah" class="nav-link">Sejarah</a></li>
+                <li><a href="../index.html#restoran" class="nav-link">Restoran</a></li>
+                <li><a href="../index.html#kaleng" class="nav-link">Gudeg Kaleng</a></li>
+                <li><a href="../index.html#maklon" class="nav-link">Layanan Maklon</a></li>
+                <li><a href="../index.html#kemitraan" class="nav-link">Kemitraan</a></li>
+                <li><a href="../index.html#legalitas" class="nav-link">Legalitas</a></li>
+                <li><a href="../index.html#kontak" class="btn btn-secondary" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Inner Hero -->
+    <section class="restoran-hero">
+        <div class="container">
+            <h1>Restoran Joglo Jogja</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.85);">Menikmati santapan di bawah bangunan Joglo khas kerajaan Jawa dengan alunan gamelan tradisional yang tenang.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Menu Pilihan</span>
+                <h2 class="section-title">Hidangan Khas Keraton</h2>
+                <p class="section-desc">Pilihan sajian gudeg basah, lauk pauk opor, krecek, serta minuman herbal tradisional jamu wedangan hangat.</p>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Menu 1 -->
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <div class="menu-header-row">
+                            <h3 class="menu-title">Nasi Gudeg Kendil Komplit</h3>
+                            <span class="menu-price">Rp 120.000</span>
+                        </div>
+                        <p class="menu-desc">Disajikan di dalam wadah tanah liat tradisional (kendil). Porsi untuk 2-3 orang, lengkap dengan ayam kampung opor, telur bebek bacem, krecek pedas, dan areh kental gurih.</p>
+                    </div>
+                </div>
+
+                <!-- Menu 2 -->
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <div class="menu-header-row">
+                            <h3 class="menu-title">Nasi Gudeg Ayam Kampung</h3>
+                            <span class="menu-price">Rp 45.000</span>
+                        </div>
+                        <p class="menu-desc">Porsi perorangan dengan nasi putih hangat, gudeg nangka muda gurih manis, 1 potong ayam opor dada/paha, sambal goreng krecek pedas manis, dan guyuran kuah santan areh.</p>
+                    </div>
+                </div>
+
+                <!-- Menu 3 -->
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <div class="menu-header-row">
+                            <h3 class="menu-title">Wedang Uwuh Secang</h3>
+                            <span class="menu-price">Rp 18.000</span>
+                        </div>
+                        <p class="menu-desc">Minuman hangat kaya rempah tradisional Yogyakarta yang terbuat dari jahe bakar, daun cengkeh, kayu secang merah, kapulaga, dan pemanis gula batu kristal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container booking-grid">
+            <div>
+                <span class="section-tag">Reservasi Tempat</span>
+                <h2 class="section-title">Jadwalkan Makan Bersama Keluarga</h2>
+                <p class="section-desc" style="margin-bottom: 2rem;">Apakah Anda berencana mengadakan arisan keluarga, pertemuan bisnis, atau sekadar makan malam keluarga besar? Reservasikan meja Anda lebih awal untuk mendapatkan area terbaik di bawah pendopo utama.</p>
+                <div style="background: rgba(255,255,255,0.5); padding: 1.5rem; border-radius: var(--border-radius-md); border-left: 4px solid var(--color-maroon-main);">
+                    <p style="font-weight: 700; color: var(--color-maroon-dark);">🕒 Jam Operasional:</p>
+                    <p style="color: var(--color-text-dark); font-size: 0.95rem;">Setiap Hari: pukul 07.00 - 21.00 WIB</p>
+                </div>
+            </div>
+            
+            <form class="booking-form">
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" placeholder="Nama Anda" required name="nama">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nomor Telepon (WhatsApp)</label>
+                    <input type="tel" class="form-control" placeholder="Contoh: 081234567890" required name="telepon">
+                </div>
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label class="form-label">Tanggal</label>
+                        <input type="date" class="form-control" required name="tanggal">
+                    </div>
+                    <div>
+                        <label class="form-label">Waktu</label>
+                        <input type="time" class="form-control" required name="waktu">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Jumlah Orang</label>
+                    <input type="number" class="form-control" min="1" max="100" placeholder="Jumlah Kursi" required name="jumlah">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Kirim Permintaan Reservasi</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>BU TJITRO 1925</h3>
+                <p>Warisan cita rasa gudeg legendaris dari Yogyakarta. Melayani dengan rasa cinta dan resep rahasia otentik nusantara sejak 1925.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Navigasi</h4>
+                <ul class="footer-links-list">
+                    <li><a href="../index.html#sejarah">Sejarah Perjalanan</a></li>
+                    <li><a href="../index.html#restoran">Restoran Joglo</a></li>
+                    <li><a href="../index.html#kaleng">Gudeg Kaleng</a></li>
+                    <li><a href="../index.html#maklon">Jasa Maklon Pabrik</a></li>
+                    <li><a href="../index.html#kemitraan">Kemitraan Jual/Magang</a></li>
+                    <li><a href="../index.html#legalitas">Sertifikasi Legalitas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Informasi Kontak</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Jl. Janti No. 330, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+62 (274) 484-753</span>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gudeg Bu Tjitro 1925. Seluruh hak cipta dilindungi undang-undang.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

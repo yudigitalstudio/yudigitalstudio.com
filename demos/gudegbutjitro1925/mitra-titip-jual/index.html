@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Program kerja sama kemitraan titip jual (konsinyasi) Gudeg Kaleng Bu Tjitro 1925 untuk toko oleh-oleh dan swalayan.">
+    <title>Kemitraan Titip Jual - Gudeg Bu Tjitro 1925</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .mitra-hero {
+            background: linear-gradient(rgba(43, 5, 11, 0.85), rgba(43, 5, 11, 0.95)), url('../assets/images/hero-gudeg.png') center/cover no-repeat;
+            padding: 10rem 0 6rem;
+            color: white;
+            text-align: center;
+        }
+        .mitra-hero h1 {
+            color: var(--color-gold-main);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .form-section {
+            background-color: var(--color-bg-light);
+            padding: 6rem 0;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .signup-form {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(197, 168, 92, 0.15);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-maroon-dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 1px solid #DCD1D3;
+            border-radius: 30px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-maroon-main);
+        }
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .signup-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-main">BU TJITRO</span>
+                <span class="logo-sub">1925</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html#sejarah" class="nav-link">Sejarah</a></li>
+                <li><a href="../index.html#restoran" class="nav-link">Restoran</a></li>
+                <li><a href="../index.html#kaleng" class="nav-link">Gudeg Kaleng</a></li>
+                <li><a href="../index.html#maklon" class="nav-link">Layanan Maklon</a></li>
+                <li><a href="../index.html#kemitraan" class="nav-link">Kemitraan</a></li>
+                <li><a href="../index.html#legalitas" class="nav-link">Legalitas</a></li>
+                <li><a href="../index.html#kontak" class="btn btn-secondary" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Inner Hero -->
+    <section class="mitra-hero">
+        <div class="container">
+            <h1>Mitra Titip Jual (Konsinyasi)</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.85);">Kesempatan emas untuk meningkatkan profit usaha ritel atau pusat oleh-oleh Anda dengan menitipkan produk Gudeg Kaleng kami.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container form-grid">
+            <div>
+                <span class="section-tag">Kerja Sama Retail</span>
+                <h2 class="section-title">Mengapa Bermitra dengan Kami?</h2>
+                <p class="section-desc" style="margin-bottom: 2rem;">Gudeg Kaleng Bu Tjitro 1925 memiliki nama besar legendaris yang sudah sangat dikenal konsumen nasional. Menitipkan produk kami di etalase Anda akan menarik lebih banyak pembeli belanja oleh-oleh.</p>
+                <div style="background: var(--color-maroon-subtle); padding: 2rem; border-radius: var(--border-radius-md);">
+                    <p style="font-weight: 700; color: var(--color-maroon-dark); margin-bottom: 1rem;">💼 Keuntungan Sistem Konsinyasi:</p>
+                    <p style="color: var(--color-text-dark); font-size: 0.95rem; margin-bottom: 0.5rem;">✔️ **Bagi Hasil Menarik**: Margin keuntungan tinggi bagi pemilik outlet toko.</p>
+                    <p style="color: var(--color-text-dark); font-size: 0.95rem; margin-bottom: 0.5rem;">✔️ **Bebas Risiko**: Barang tidak laku atau mendekati expired dapat ditukar/retur 100%.</p>
+                    <p style="color: var(--color-text-dark); font-size: 0.95rem;">✔️ **Support Promosi**: Kami sediakan rak display batik kayu eksklusif dan spanduk brosur marketing.</p>
+                </div>
+            </div>
+
+            <form class="signup-form">
+                <div class="form-group">
+                    <label class="form-label">Nama Outlet/Toko Anda</label>
+                    <input type="text" class="form-control" placeholder="Contoh: Toko Oleh-oleh Jaya" required name="nama_toko">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Jenis Bisnis</label>
+                    <select class="form-control" name="jenis_bisnis" required>
+                        <option value="">-- Pilih Jenis Bisnis --</option>
+                        <option value="souvenir">Pusat Oleh-oleh</option>
+                        <option value="minimarket">Minimarket / Ritel Lokal</option>
+                        <option value="restaurant">Restoran / Warung Makan</option>
+                        <option value="online">Reseller / Dropshipper Online</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nama Pemilik/Contact Person</label>
+                    <input type="text" class="form-control" placeholder="Nama Lengkap Anda" required name="nama_pemilik">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nomor WhatsApp Aktif</label>
+                    <input type="tel" class="form-control" placeholder="Contoh: 081234567890" required name="telepon">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Alamat Lengkap Toko</label>
+                    <textarea class="form-control" style="border-radius: 15px; height: 100px;" placeholder="Nama jalan, kota, provinsi, kode pos" required name="alamat_toko"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Kirim Pengajuan Kemitraan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>BU TJITRO 1925</h3>
+                <p>Warisan cita rasa gudeg legendaris dari Yogyakarta. Melayani dengan rasa cinta dan resep rahasia otentik nusantara sejak 1925.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Navigasi</h4>
+                <ul class="footer-links-list">
+                    <li><a href="../index.html#sejarah">Sejarah Perjalanan</a></li>
+                    <li><a href="../index.html#restoran">Restoran Joglo</a></li>
+                    <li><a href="../index.html#kaleng">Gudeg Kaleng</a></li>
+                    <li><a href="../index.html#maklon">Jasa Maklon Pabrik</a></li>
+                    <li><a href="../index.html#kemitraan">Kemitraan Jual/Magang</a></li>
+                    <li><a href="../index.html#legalitas">Sertifikasi Legalitas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Informasi Kontak</h4>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Jl. Janti No. 330, Banguntapan, Bantul, Daerah Istimewa Yogyakarta 55198</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+62 (274) 484-753</span>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gudeg Bu Tjitro 1925. Seluruh hak cipta dilindungi undang-undang.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
