@@ -637,6 +637,18 @@
         opacity: 1;
       }
 
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+
       .service-card .icon {
         font-size: 2.8rem;
         color: var(--gold);
@@ -1096,6 +1108,45 @@
         font-size: 0.8rem;
       }
 
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        z-index: 9999;
+      }
+
+      .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90vh;
+        border-radius: 20px;
+        transform: scale(0.8);
+        transition: 0.3s ease;
+      }
+
+      .lightbox.active img {
+        transform: scale(1);
+      }
+
+      .close-lightbox {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+      }
+
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1024px) {
         .hero .container {
@@ -1271,12 +1322,13 @@
             Grooming
           </div>
           <h1>
-            Where Style<br />
-            <span class="highlight">Meets Precision</span>
+            Dimana Gaya<br />
+            <span class="highlight">Bertemu Presisi</span>
           </h1>
           <p>
-            More than just a haircut — an experience. Our master barbers craft
-            timeless looks with modern edge. Walk in, leave legendary.
+            Lebih dari sekadar potong rambut—ini adalah pengalaman. Barber kami
+            menghadirkan gaya klasik dengan sentuhan modern. Datang biasa,
+            pulang penuh percaya diri.
           </p>
           <div class="hero-buttons">
             <a href="#booking" class="btn-primary">
@@ -1290,11 +1342,11 @@
           <div class="hero-stats">
             <div class="stat">
               <h3>12+</h3>
-              <p>Years of Craft</p>
+              <p>Tahun Pengalaman</p>
             </div>
             <div class="stat">
               <h3>8.5k</h3>
-              <p>Happy Clients</p>
+              <p>Klien Puas</p>
             </div>
             <div class="stat">
               <h3>4.9</h3>
@@ -1319,50 +1371,51 @@
           </div>
           <h2>Premium <span>Services</span></h2>
           <p>
-            From classic cuts to modern fades — every detail is sharpened to
-            perfection.
+            Dari potongan klasik hingga gaya modern, setiap detail dikerjakan
+            dengan presisi.
           </p>
         </div>
 
         <div class="services-grid">
           <div class="service-card animate-on-scroll">
-            <div class="icon"><i class="fas fa-cut"></i></div>
+            <div class="icon">
+              <img src="img/classic-cut.png" alt="Icon Service" />
+            </div>
             <h3>Classic Cut</h3>
             <p>
-              Timeless, tailored haircut with precision blending and
-              hand-finished details.
+              Potong rambut klasik dengan detail presisi dan hasil akhir yang
+              rapi.
             </p>
-            <span class="price">$35</span>
+            <span class="price">30k</span>
           </div>
 
           <div class="service-card animate-on-scroll">
-            <div class="icon"><i class="fas fa-bolt"></i></div>
+            <div class="icon">
+              <img src="img/executive-fade.png" alt="Icon Service" />
+            </div>
             <h3>Executive Fade</h3>
-            <p>
-              Sharp, seamless fades with razor-sharp lines and a perfectly
-              blended finish.
-            </p>
-            <span class="price">$45</span>
+            <p>Fade modern dengan transisi halus dan finishing premium.</p>
+            <span class="price">60k</span>
           </div>
 
           <div class="service-card animate-on-scroll">
-            <div class="icon"><i class="fas fa-razor"></i></div>
+            <div class="icon">
+              <img src="img/hot-towel.png" alt="Icon Service" />
+            </div>
             <h3>Hot Towel Shave</h3>
             <p>
-              Luxurious straight-razor shave with steaming towels and premium
-              oils.
+              Cukur premium dengan handuk hangat untuk pengalaman yang nyaman.
             </p>
-            <span class="price">$50</span>
+            <span class="price">50k</span>
           </div>
 
           <div class="service-card animate-on-scroll">
-            <div class="icon"><i class="fas fa-crown"></i></div>
+            <div class="icon">
+              <img src="img/the-royal.png" alt="Icon Service" />
+            </div>
             <h3>The Royal</h3>
-            <p>
-              Full experience: cut, shave, beard trim &amp; scalp massage — the
-              ultimate treat.
-            </p>
-            <span class="price">$85</span>
+            <p>Paket grooming lengkap untuk pengalaman barber terbaik.</p>
+            <span class="price">100k</span>
           </div>
         </div>
       </div>
@@ -1374,11 +1427,11 @@
         <div class="about-grid">
           <div class="about-image animate-on-scroll">
             <div class="placeholder">
-              <i class="fas fa-cut"></i>
+              <img src="img/about.webp" alt="Icon Service" />
             </div>
             <div class="floating-badge">
               <strong>12+</strong>
-              <span>Years of Excellence</span>
+              <span>Tahun Pengalaman</span>
             </div>
           </div>
 
@@ -1390,32 +1443,30 @@
               <div class="label">
                 <i class="fas fa-store" style="margin-right: 8px"></i> About Us
               </div>
-              <h2>Where <span>Tradition</span> Meets <span>Edge</span></h2>
+              <h2>Tradisi <span>Klasik</span> Sentuhan <span>Modern</span></h2>
             </div>
             <p>
-              At RAZOR &amp; CO., we believe a great cut is more than technique
-              — it's an art form. Our barbers are masters of their craft,
-              blending old-school tradition with contemporary style to give you
-              a look that commands respect.
+              Di Tuan Pangkas, kami percaya grooming bukan sekadar layanan—
+              melainkan seni.
             </p>
             <p>
-              Every chair tells a story. Every cut is a conversation. Walk in as
-              a client, leave as family.
+              Barber kami menggabungkan teknik klasik dengan gaya modern untuk
+              menciptakan tampilan yang sesuai dengan karakter Anda.
             </p>
             <ul class="about-features">
               <li>
-                <i class="fas fa-check-circle"></i> Master barbers with 10+
-                years
+                <i class="fas fa-check-circle"></i> Master barbers pengalaman 12
+                tahun
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Premium organic products
+                <i class="fas fa-check-circle"></i> Produk premium pilihan
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Sanitized &amp; premium
-                tools
+                <i class="fas fa-check-circle"></i> Alat standar profesional
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Complimentary refreshments
+                <i class="fas fa-check-circle"></i> Minuman gratis untuk
+                pelanggan
               </li>
             </ul>
           </div>
@@ -1431,34 +1482,44 @@
             <i class="fas fa-images" style="margin-right: 8px"></i> Our Work
           </div>
           <h2>Gallery <span>Highlights</span></h2>
-          <p>Sharp cuts, clean lines, and smiles that last.</p>
+          <p>Potongan tajam, garis presisi, dan detail yang berbicara.</p>
         </div>
 
         <div class="gallery-grid">
           <div class="gallery-item animate-on-scroll">
-            <div class="gallery-placeholder"><i class="fas fa-cut"></i></div>
-            <div class="overlay"><i class="fas fa-search-plus"></i></div>
-          </div>
-          <div class="gallery-item animate-on-scroll">
             <div class="gallery-placeholder">
-              <i class="fas fa-user-tie"></i>
+              <img src="img/galeri-1.webp" alt="Icon Service" />
             </div>
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
           </div>
           <div class="gallery-item animate-on-scroll">
-            <div class="gallery-placeholder"><i class="fas fa-razor"></i></div>
+            <div class="gallery-placeholder">
+              <img src="img/galeri-2.webp" alt="Icon Service" />
+            </div>
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
           </div>
           <div class="gallery-item animate-on-scroll">
-            <div class="gallery-placeholder"><i class="fas fa-spa"></i></div>
+            <div class="gallery-placeholder">
+              <img src="img/galeri-3.webp" alt="Icon Service" />
+            </div>
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
           </div>
           <div class="gallery-item animate-on-scroll">
-            <div class="gallery-placeholder"><i class="fas fa-smile"></i></div>
+            <div class="gallery-placeholder">
+              <img src="img/galeri-4.webp" alt="Icon Service" />
+            </div>
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
           </div>
           <div class="gallery-item animate-on-scroll">
-            <div class="gallery-placeholder"><i class="fas fa-users"></i></div>
+            <div class="gallery-placeholder">
+              <img src="img/galeri-5.webp" alt="Icon Service" />
+            </div>
+            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <div class="gallery-placeholder">
+              <img src="img/galeri-6.webp" alt="Icon Service" />
+            </div>
             <div class="overlay"><i class="fas fa-search-plus"></i></div>
           </div>
         </div>
@@ -1474,15 +1535,19 @@
             Testimonials
           </div>
           <h2>What Our <span>Clients</span> Say</h2>
-          <p>Real words from real people who trust us with their look.</p>
+          <p>
+            Pendapat jujur dari pelanggan yang mempercayakan style mereka kepada
+            kami.
+          </p>
         </div>
 
         <div class="testimonial-grid">
           <div class="testimonial-card animate-on-scroll">
             <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
             <blockquote>
-              “Best cut I've ever had. The attention to detail is unreal — I've
-              never felt more confident walking out of a barbershop.”
+              “Cukur paling mantap yang pernah gue dapet. Detailnya tuh gila
+              banget—belum pernah gue ngerasa se-PD ini pas keluar dari
+              barbershop.”
             </blockquote>
             <div class="author">
               <div class="avatar">MR</div>
@@ -1496,8 +1561,8 @@
           <div class="testimonial-card animate-on-scroll">
             <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
             <blockquote>
-              “The hot towel shave is pure luxury. The atmosphere, the music,
-              the service — everything is top-tier. Highly recommended.”
+              “Cukur hot towel nya bener-bener mewah, bro. Suasananya, musiknya,
+              pelayanannya—semuanya top banget. Highly recommended.”
             </blockquote>
             <div class="author">
               <div class="avatar">DS</div>
@@ -1511,8 +1576,8 @@
           <div class="testimonial-card animate-on-scroll">
             <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
             <blockquote>
-              “I've been coming here for 3 years and I wouldn't go anywhere
-              else. The team is skilled, friendly, and always on point.”
+              “Udah 3 tahun ke sini dan nggak bakal pindah ke tempat lain.
+              Timnya jago, ramah, dan selalu on point, bro.”
             </blockquote>
             <div class="author">
               <div class="avatar">AP</div>
@@ -1539,11 +1604,11 @@
                 <i class="fas fa-calendar-alt" style="margin-right: 8px"></i>
                 Book Now
               </div>
-              <h2>Reserve Your <span>Chair</span></h2>
+              <h2>Reservasi <span>Sekarang</span></h2>
             </div>
             <p>
-              Ready for a fresh look? Secure your spot with our master barbers.
-              Walk-ins are welcome, but appointments get priority.
+              Siap tampil fresh? Amankan jadwal Anda bersama barber terbaik
+              kami.
             </p>
 
             <div class="contact-detail">
@@ -1556,7 +1621,7 @@
             </div>
             <div class="contact-detail">
               <i class="fas fa-clock"></i>
-              <span>Mon – Sat • 09:00 – 21:00</span>
+              <span>senin – Sabtu • 09:00 – 21:00</span>
             </div>
           </div>
 
@@ -1608,7 +1673,7 @@
       <div class="container">
         <a href="#" class="logo">
           <i class="fas fa-cut"></i>
-          RAZOR<span>&</span>CO
+          Tuan<span>Pangkas</span>.
         </a>
 
         <div class="footer-socials">
@@ -1623,11 +1688,16 @@
         </div>
 
         <p class="footer-copy">
-          &copy; 2026 RAZOR &amp; CO. — Crafted with
+          &copy; 2026 Tuan Pangkas. — Crafted with
           <i class="fas fa-heart" style="color: var(--gold)"></i>
         </p>
       </div>
     </footer>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close-lightbox">&times;</span>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
@@ -1679,6 +1749,7 @@
 
       // ——— Booking form (simple handler) ———
       const bookingForm = document.getElementById("bookingForm");
+
       bookingForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -1686,15 +1757,26 @@
         const email = document.getElementById("email").value.trim();
         const service = document.getElementById("service").value;
         const date = document.getElementById("date").value;
+        const notes = document.getElementById("notes").value.trim();
 
         if (!name || !email || !date) {
           alert("Please fill in all required fields 🙏");
           return;
         }
 
-        alert(
-          `✅ Thanks, ${name}! Your ${service} appointment on ${date} has been requested. We'll confirm via email.`,
-        );
+        const message = `✂️ *NEW APPOINTMENT*
+  
+👤 Name: ${name}
+📧 Email: ${email}
+💈 Service: ${service}
+📅 Date: ${date}
+📝 Notes: ${notes || "-"}`;
+
+        const phoneNumber = "628123456789"; // ganti dengan nomor WA client
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+
         bookingForm.reset();
       });
 
@@ -1704,15 +1786,27 @@
       dateInput.setAttribute("min", today);
 
       // ——— Gallery click (lightbox simulation) ———
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeLightbox = document.querySelector(".close-lightbox");
+
       document.querySelectorAll(".gallery-item").forEach((item) => {
         item.addEventListener("click", () => {
-          const icon = item.querySelector(".gallery-placeholder i");
-          if (icon) {
-            alert(
-              `🖼️ Gallery preview: ${icon.className.replace("fas ", "").replace("fa-", "").toUpperCase()}`,
-            );
-          }
+          const img = item.querySelector("img");
+
+          lightboxImg.src = img.src;
+          lightbox.classList.add("active");
         });
+      });
+
+      closeLightbox.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
       });
 
       console.log("✂️ RAZOR & CO. — Sharp style, sharper code.");
