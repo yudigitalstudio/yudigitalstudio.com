@@ -62,7 +62,7 @@
 }
 .porto-hero-text p {
   font-size: 13px;
-  color: #ededed;
+  color: #e8e6f0;
   line-height: 1.6;
   max-width: 420px;
 }
@@ -188,7 +188,7 @@
 .tabs-label {
   font-size: 10px;
   font-family: "Space Mono", monospace;
-  color: #ededed;
+  color: #aaa;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 14px 16px 10px;
@@ -278,12 +278,12 @@
 }
 .panel-meta {
   font-size: 11px;
-  color: #ededed;
+  color: #aaa;
   font-family: "Space Mono", monospace;
 }
 .panel-desc {
   font-size: 12px;
-  color: #ededed;
+  color: #e8e6f0;
   line-height: 1.6;
   margin-top: 6px;
 }
@@ -476,7 +476,7 @@
 }
 .demo-type {
   font-size: 11px;
-  color: #444;
+  color: #aaa;
   font-family: "Space Mono", monospace;
 }
 
