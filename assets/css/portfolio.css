@@ -62,7 +62,7 @@
 }
 .porto-hero-text p {
   font-size: 13px;
-  color: #555;
+  color: #ededed;
   line-height: 1.6;
   max-width: 420px;
 }
@@ -188,7 +188,7 @@
 .tabs-label {
   font-size: 10px;
   font-family: "Space Mono", monospace;
-  color: #333;
+  color: #ededed;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 14px 16px 10px;
@@ -278,12 +278,12 @@
 }
 .panel-meta {
   font-size: 11px;
-  color: #444;
+  color: #ededed;
   font-family: "Space Mono", monospace;
 }
 .panel-desc {
   font-size: 12px;
-  color: #555;
+  color: #ededed;
   line-height: 1.6;
   margin-top: 6px;
 }
@@ -855,4 +855,16 @@ mark.porto-hl {
   color: inherit;
   border-radius: 3px;
   padding: 0 2px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
 }
