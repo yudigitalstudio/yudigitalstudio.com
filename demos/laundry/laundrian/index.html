@@ -1,0 +1,3376 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laundrian — Your Laundry, Our Spin Perfection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --navy: #0e1b4d;
+        --blue: #5b7fff;
+        --blue-dark: #3d5bdb;
+        --blue-light: #eaf0ff;
+        --orange: #ffa826;
+        --orange-dark: #f59300;
+        --ink: #0e1b4d;
+        --ink-soft: #5c6584;
+        --white: #ffffff;
+        --bg-soft: #f6f8ff;
+        --border: #e4e9f7;
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --radius-sm: 10px;
+        --shadow: 0 20px 40px -10px rgba(14, 27, 77, 0.12);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        background: var(--white);
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Baloo 2", sans-serif;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 14px 28px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+        font-family: "Inter", sans-serif;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-navy {
+        background: var(--navy);
+        color: var(--white);
+      }
+      .btn-navy:hover {
+        background: #162569;
+        box-shadow: 0 10px 24px rgba(14, 27, 77, 0.25);
+      }
+      .btn-orange {
+        background: var(--orange);
+        color: var(--navy);
+      }
+      .btn-orange:hover {
+        background: var(--orange-dark);
+        box-shadow: 0 10px 24px rgba(255, 168, 38, 0.35);
+      }
+      .btn-white {
+        background: var(--white);
+        color: var(--navy);
+      }
+      .eyebrow {
+        color: var(--blue);
+      }
+      section {
+        position: relative;
+      }
+      :focus-visible {
+        outline: 2px solid var(--blue-dark);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+
+      /* ===== INFOBAR ===== */
+      .infobar {
+        background: var(--blue);
+        padding: 14px 0;
+      }
+      .infobar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+      }
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+      }
+      .info-icon {
+        font-size: 18px;
+      }
+      .info-item strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .info-item span:not(.info-icon) {
+        font-size: 12px;
+        opacity: 0.85;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        background: var(--white);
+        padding: 18px 0;
+        box-shadow: 0 2px 16px rgba(14, 27, 77, 0.06);
+        position: relative;
+        z-index: 20;
+      }
+      .navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-text {
+        font-family: "Baloo 2", sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        color: var(--navy);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+      }
+      .nav-links a {
+        font-weight: 500;
+        font-size: 15px;
+        color: var(--navy);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .socials {
+        display: flex;
+        gap: 8px;
+      }
+      .social-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--blue);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--navy);
+        cursor: pointer;
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        background: linear-gradient(180deg, var(--blue-light) 0%, #dce6ff 100%);
+        padding: 60px 0 0;
+        overflow: hidden;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding-bottom: 40px;
+      }
+      .hero-text h1 {
+        font-size: clamp(34px, 4.6vw, 52px);
+        font-weight: 700;
+        line-height: 1.15;
+        color: var(--navy);
+        margin-bottom: 20px;
+      }
+      .hero-desc {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        max-width: 460px;
+        margin-bottom: 32px;
+      }
+      .hero-cta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .hero-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        min-height: 520px;
+      }
+      .hero-image-wrap {
+        width: 100%;
+        max-width: 420px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .hero-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .float-card {
+        position: absolute;
+        background: var(--white);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+        padding: 14px 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+      .float-icon {
+        font-size: 20px;
+      }
+      .float-hours {
+        top: 30px;
+        left: -10px;
+        background: var(--blue);
+        color: var(--white);
+      }
+      .float-hours strong {
+        display: block;
+        font-size: 14px;
+      }
+      .float-hours span:not(.float-icon) {
+        font-size: 12px;
+        opacity: 0.9;
+      }
+
+      .float-rating {
+        top: 0;
+        right: -10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+      }
+      .rating-img {
+        width: 90px;
+        border-radius: 10px;
+      }
+      .rating-stars {
+        color: var(--orange-dark);
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .float-team {
+        bottom: 140px;
+        left: -20px;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 200px;
+      }
+      .avatars {
+        display: flex;
+      }
+      .avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 2px solid var(--white);
+        margin-left: -8px;
+      }
+      .avatar:first-child {
+        margin-left: 0;
+      }
+      .float-team span {
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--navy);
+      }
+      .plus-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--orange);
+        color: var(--navy);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+      }
+
+      .float-stat {
+        bottom: 120px;
+        right: -20px;
+        background: var(--navy);
+        color: var(--white);
+      }
+      .float-icon-circle {
+        font-size: 20px;
+      }
+      .float-stat strong {
+        font-size: 16px;
+      }
+      .float-stat span:not(.float-icon-circle) {
+        font-size: 11px;
+        opacity: 0.85;
+      }
+
+      .dark-strip {
+        background: var(--navy);
+        height: 64px;
+        width: 100%;
+      }
+
+      /* ===== ELEVATE ===== */
+      .elevate {
+        padding: 70px 0;
+        background: var(--white);
+      }
+      .elevate-inner {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr 0.9fr;
+        gap: 30px;
+        align-items: center;
+      }
+      .elevate-text h2 {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--navy);
+        margin-bottom: 24px;
+      }
+      .elevate-image-wrap {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .elevate-img {
+        width: 100%;
+        border-radius: var(--radius-lg);
+      }
+      .rating-pill {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: var(--white);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--orange-dark);
+        box-shadow: var(--shadow);
+      }
+      .mission-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+      }
+      .mission-icon {
+        display: inline-flex;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: var(--orange);
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+      }
+      .mission-card h3 {
+        font-size: 18px;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .mission-card p {
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+        margin-bottom: 6px;
+      }
+
+      /* ===== SECTION HEAD ===== */
+      .section-head {
+        text-align: center;
+        max-width: 560px;
+        margin: 0 auto 50px;
+      }
+      .section-head h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+      .section-head p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+
+      /* ===== SERVICES ===== */
+      .services {
+        padding: 70px 0;
+        background: var(--bg-soft);
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .service-card {
+        position: relative;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .service-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .service-badge {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        background: var(--white);
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--navy);
+        box-shadow: 0 8px 18px rgba(14, 27, 77, 0.15);
+      }
+
+      /* ===== STATS ===== */
+      .stats {
+        background: var(--blue);
+        padding: 36px 0;
+      }
+      .stats-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--white);
+        justify-content: center;
+      }
+      .stat-icon {
+        font-size: 26px;
+        background: rgba(255, 255, 255, 0.15);
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .stat-item strong {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .stat-item span {
+        font-size: 12px;
+        opacity: 0.9;
+      }
+
+      /* ===== HOW IT WORKS ===== */
+      .how {
+        padding: 80px 0;
+        background: var(--white);
+      }
+      .how-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .how-image-wrap {
+        position: relative;
+      }
+      .how-img {
+        width: 100%;
+        border-radius: var(--radius-lg);
+      }
+      .call-now-card {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: var(--white);
+        border-radius: var(--radius-md);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: var(--shadow);
+      }
+      .call-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .call-now-card strong {
+        display: block;
+        font-size: 13px;
+        color: var(--navy);
+      }
+      .call-now-card span {
+        font-size: 12px;
+        color: var(--ink-soft);
+      }
+
+      .how-text h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .how-desc {
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-bottom: 28px;
+      }
+      .how-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .how-steps li {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .step-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .how-steps strong {
+        display: block;
+        font-size: 16px;
+        color: var(--navy);
+        margin-bottom: 4px;
+      }
+      .how-steps p {
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      /* ===== PRICING ===== */
+      .pricing {
+        padding: 80px 0;
+        background: var(--bg-soft);
+      }
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        align-items: center;
+      }
+      .price-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 36px 30px;
+        position: relative;
+      }
+      .price-card h3 {
+        font-size: 20px;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+      .price-sub {
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+      .price-tag {
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+      .price-tag span {
+        font-size: 34px;
+        font-weight: 700;
+        color: var(--orange-dark);
+        font-family: "Baloo 2", sans-serif;
+      }
+      .price-features {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .price-features li {
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+      .price-btn {
+        width: 100%;
+      }
+      .price-card-featured {
+        background: var(--blue);
+        border: none;
+        padding-top: 48px;
+        transform: scale(1.04);
+        box-shadow: var(--shadow);
+      }
+      .price-card-featured h3,
+      .price-card-featured .price-tag,
+      .price-card-featured .price-features li {
+        color: var(--white);
+      }
+      .price-card-featured .price-tag span {
+        color: var(--orange);
+      }
+      .price-card-featured .price-sub {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .best-deal {
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--white);
+        color: var(--blue-dark);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 18px;
+        border-radius: 0 0 12px 12px;
+      }
+
+      /* ===== TESTIMONIALS ===== */
+      .testimonials {
+        padding: 80px 0;
+        background: var(--navy);
+      }
+      .testimonials .section-head h2 {
+        color: var(--white);
+      }
+      .testimonials .section-head p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .testi-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 30px;
+      }
+      .testi-stars {
+        color: var(--orange);
+        font-size: 14px;
+        display: block;
+        margin-bottom: 14px;
+      }
+      .testi-quote {
+        font-size: 13px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        margin-bottom: 24px;
+        min-height: 90px;
+      }
+      .testi-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+      }
+      .testi-author img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+      }
+      .testi-author strong {
+        display: block;
+        font-size: 14px;
+        color: var(--navy);
+      }
+      .testi-author span:not(.quote-mark) {
+        font-size: 12px;
+        color: var(--ink-soft);
+      }
+      .quote-mark {
+        position: absolute;
+        right: 0;
+        font-size: 34px;
+        color: var(--blue-light);
+        font-family: "Baloo 2", sans-serif;
+      }
+
+      /* ===== FAQ ===== */
+      .faq {
+        padding: 80px 0;
+        background: var(--white);
+      }
+      .faq-inner {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 50px;
+        align-items: flex-start;
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .faq-item {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .faq-item:not(.faq-open) {
+        background: var(--bg-soft);
+      }
+      .faq-open {
+        background: var(--orange);
+      }
+      .faq-q {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 18px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--navy);
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+      }
+      .faq-q-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 13px;
+      }
+      .faq-toggle {
+        margin-left: auto;
+        font-size: 18px;
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        margin: 0;
+        padding: 0 20px 0 58px;
+        line-height: 1.7;
+        font-size: 15px;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+
+      .faq-open .faq-a {
+        max-height: 300px;
+        opacity: 1;
+        padding-bottom: 20px;
+      }
+      .faq-toggle {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-open .faq-toggle {
+        transform: rotate(180deg);
+      }
+      .faq-side h2 {
+        font-size: 30px;
+        color: var(--navy);
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+      .faq-side p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-bottom: 26px;
+      }
+
+      /* ===== BLOG ===== */
+      .blog {
+        padding: 80px 0;
+        background: var(--bg-soft);
+      }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .blog-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .blog-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+      }
+      .blog-body {
+        padding: 22px;
+      }
+      .blog-body h3 {
+        font-size: 16px;
+        color: var(--navy);
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      .blog-body p {
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+      .blog-link {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--blue-dark);
+      }
+
+      /* ===== BOOKING ===== */
+      .booking-premium {
+        padding: 120px 0;
+        background: linear-gradient(135deg, #eef4ff, #f7f9ff);
+        position: relative;
+      }
+
+      .booking-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .booking-badge {
+        display: inline-block;
+        padding: 10px 18px;
+        background: rgba(79, 109, 245, 0.12);
+        border-radius: 999px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .booking-left h2 {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+
+      .booking-left p {
+        font-size: 18px;
+        line-height: 1.8;
+        opacity: 0.8;
+        margin-bottom: 30px;
+      }
+
+      .booking-benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        font-weight: 500;
+      }
+      .booking-benefits div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .booking-benefits i {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(79, 109, 245, 0.12);
+        flex-shrink: 0;
+      }
+
+      .premium-form {
+        padding: 40px;
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .premium-form input,
+      .premium-form select,
+      .premium-form textarea {
+        width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .premium-form textarea {
+        min-height: 120px;
+        resize: none;
+      }
+
+      .premium-form button {
+        padding: 18px;
+        border: none;
+        border-radius: 18px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .booking-premium::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        filter: blur(80px);
+        background: rgba(79, 109, 245, 0.2);
+        top: 10%;
+        right: 5%;
+      }
+
+      /* ===== KONTAK & LOKASI ===== */
+      .contact-section {
+        padding: 100px 0;
+        background: #f8fbff;
+      }
+
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+        align-items: stretch;
+      }
+
+      .contact-badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(79, 109, 245, 0.12);
+        margin-bottom: 18px;
+      }
+
+      .contact-info h2 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 16px;
+      }
+
+      .contact-info > p {
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .contact-card {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-item span {
+        font-size: 28px;
+      }
+
+      .map-box {
+        min-height: 500px;
+        overflow: hidden;
+        border-radius: 30px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+      }
+
+      .map-box iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: var(--navy);
+        padding: 64px 0 0;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+      }
+      .footer-logo-text {
+        color: var(--white);
+      }
+      .footer-brand p {
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 16px 0 20px;
+        max-width: 280px;
+      }
+      .social-circle-dark {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .footer-col h4 {
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        color: var(--white);
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+      .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-col a {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .footer-col a:hover {
+        color: var(--white);
+      }
+      .contact-list li {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .contact-list i {
+        width: 20px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      /*=====floating wa=====*/
+      .floating-wa {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #25d366;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 32px;
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+        z-index: 999;
+        animation: waBounce 2s infinite;
+        transition: all 0.3s ease;
+      }
+
+      .floating-wa:hover {
+        transform: translateY(-5px) scale(1.05);
+      }
+
+      @keyframes waBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* ============================================ */
+      /* ===== RESPONSIVE ============================ */
+      /* ============================================ */
+
+      @media (max-width: 1080px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          margin-top: 40px;
+          min-height: 460px;
+        }
+        .elevate-inner {
+          grid-template-columns: 1fr;
+        }
+        .service-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats-inner {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .how-inner {
+          grid-template-columns: 1fr;
+        }
+        .price-grid {
+          grid-template-columns: 1fr;
+          max-width: 420px;
+          margin: 0 auto;
+        }
+        .price-card-featured {
+          transform: none;
+        }
+        .testi-grid {
+          grid-template-columns: 1fr;
+        }
+        .faq-inner {
+          grid-template-columns: 1fr;
+        }
+        .faq-side {
+          order: -1;
+        }
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-right .socials {
+          display: none;
+        }
+        .burger {
+          display: block;
+        }
+        .infobar-inner {
+          gap: 24px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .info-item span:not(.info-icon) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 18px;
+        }
+
+        .infobar {
+          display: none;
+        }
+        .navbar {
+          padding: 14px 0;
+        }
+        .nav-right .btn {
+          padding: 10px 18px;
+          font-size: 13px;
+        }
+
+        .logo-text {
+          font-size: 22px;
+        }
+
+        .hero {
+          padding-top: 30px;
+        }
+        .hero-text h1 {
+          font-size: 30px;
+        }
+        .hero-cta {
+          flex-wrap: wrap;
+        }
+        .hero-visual {
+          min-height: 420px;
+        }
+        .float-card {
+          padding: 10px 12px;
+          font-size: 11px;
+        }
+        .float-hours {
+          left: 0;
+          top: -20px;
+        }
+        .float-rating {
+          right: 0;
+          top: -50px;
+        }
+        .float-rating .rating-img {
+          width: 70px;
+        }
+
+        .float-stat {
+          right: 0;
+          bottom: 100px;
+        }
+        .hero-image-wrap {
+          max-width: 280px;
+        }
+
+        .elevate-text h2,
+        .section-head h2,
+        .how-text h2,
+        .faq-side h2 {
+          font-size: 24px;
+        }
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        .service-card img {
+          height: 170px;
+        }
+        .stats-inner {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .stat-item {
+          justify-content: flex-start;
+        }
+
+        .newsletter-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .newsletter-form {
+          flex-direction: column;
+          background: none;
+          padding: 0;
+          gap: 12px;
+          width: 100%;
+        }
+        .newsletter-form input {
+          background: var(--white);
+          border-radius: 999px;
+          padding: 14px 20px;
+          width: 100%;
+        }
+        .newsletter-form .btn {
+          width: 100%;
+        }
+
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .booking-layout {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .booking-left {
+          text-align: center;
+        }
+
+        .booking-benefits {
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .booking-premium {
+          padding: 70px 0;
+        }
+
+        .premium-form {
+          padding: 24px;
+          border-radius: 24px;
+        }
+
+        .booking-left h2 {
+          font-size: 2rem;
+        }
+
+        .booking-left p {
+          font-size: 15px;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .premium-form input,
+        .premium-form select,
+        .premium-form textarea,
+        .premium-form button {
+          padding: 15px;
+          font-size: 14px;
+        }
+
+        .floating-wa {
+          width: 56px;
+          height: 56px;
+          right: 16px;
+          bottom: 16px;
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .premium-form {
+          padding: 18px;
+        }
+
+        .booking-left h2 {
+          font-size: 1.7rem;
+          line-height: 1.2;
+        }
+
+        .booking-badge {
+          font-size: 12px;
+          padding: 8px 14px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .map-box {
+          min-height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact-section {
+          padding: 70px 0;
+        }
+
+        .map-box {
+          min-height: 300px;
+        }
+      }
+
+      .nav-links-open {
+        display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 18px;
+        box-shadow: 0 12px 24px rgba(14, 27, 77, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== INFO BAR ===== -->
+    <div class="infobar">
+      <div class="container infobar-inner">
+        <div class="info-item">
+          <span class="info-icon">
+            <svg
+              width="35px"
+              height="35px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7V12L9.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <div>
+            <strong>Buka</strong>
+            <span>Setiap Hari, 9.00 - 21.00</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">
+            <svg
+              width="35px"
+              height="35px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.20404 15C3.43827 15.5883 3 16.2714 3 17C3 18.5705 5.03656 19.9297 8 20.5842M12 21C16.9706 21 21 19.2091 21 17C21 16.2714 20.5617 15.5883 19.796 15M12 17C8.68629 15.4444 6 12.6587 6 9.22222C6 5.78578 8.68629 3 12 3C15.3137 3 18 5.78578 18 9.22222C18 11.4856 16.8347 13.4667 15.0922 15M12 6.5V11.5M9.5 9H10M12 9H14.5"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <div>
+            <strong>Lokasi</strong>
+            <span>16 Sunset St, Malang</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">
+            <svg
+              width="35px"
+              height="35px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 12C19.7614 12 22 9.76142 22 7C22 4.23858 19.7614 2 17 2C14.2386 2 12 4.23858 12 7C12 7.79984 12.1878 8.55582 12.5217 9.22624C12.6105 9.4044 12.64 9.60803 12.5886 9.80031L12.2908 10.9133C12.1615 11.3965 12.6035 11.8385 13.0867 11.7092L14.1997 11.4114C14.392 11.36 14.5956 11.3895 14.7738 11.4783C15.4442 11.8122 16.2002 12 17 12Z"
+                stroke="#ffffff"
+                stroke-width="1.5"
+              />
+              <path
+                d="M2.00655 9.93309C1.93421 11.8412 2.41713 15.0817 5.6677 18.3323C6.45191 19.1165 7.23553 19.7396 8 20.2327M3.53781 6.93723C4.93076 5.54428 7.15317 5.73144 8.03759 7.31617L8.6866 8.4791C9.2723 9.52858 9.03718 10.9053 8.11471 11.8278C8.11471 11.8278 8.11471 11.8278 8.11471 11.8278C8.11459 11.8279 6.99588 12.9468 9.02451 14.9755C11.0525 17.0035 12.1714 15.8861 12.1722 15.8853C12.1722 15.8853 12.1722 15.8853 12.1722 15.8853C13.0947 14.9628 14.4714 14.7277 15.5209 15.3134L16.6838 15.9624C18.2686 16.8468 18.4557 19.0692 17.0628 20.4622C16.2258 21.2992 15.2004 21.9505 14.0669 21.9934C13.2529 22.0243 12.1963 21.9541 11 21.6111"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <div>
+            <strong>Hubungi Kami</strong>
+            <span>+123-456-789</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <div class="logo">
+          <svg
+            height="40px"
+            width="40px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <path
+              style="fill: #99774f"
+              d="M312.325,202.105h170.03c12.815,0,22.801,11.112,21.435,23.855l-27.717,258.695
+	c-1.174,10.955-10.418,19.261-21.435,19.261H312.325V202.105z"
+            />
+            <path
+              style="fill: #ffc0cf"
+              d="M396.126,320.674L396.126,320.674V191.326h43.116c5.953,0,10.779,4.826,10.779,10.779v64.674
+	C450.021,296.544,425.891,320.674,396.126,320.674z"
+            />
+            <path
+              style="fill: #dbdbdb"
+              d="M353.01,503.916H51.2c-23.812,0-43.116-19.304-43.116-43.116V29.642
+	c0-11.906,9.651-21.558,21.558-21.558h344.926c11.906,0,21.558,9.651,21.558,21.558V460.8
+	C396.126,484.612,376.822,503.916,353.01,503.916z"
+            />
+            <path
+              style="fill: #e5e5e5"
+              d="M396.126,29.642v64.674H8.084V29.642c0-11.906,9.651-21.558,21.558-21.558h344.926
+	C386.475,8.084,396.126,17.736,396.126,29.642z"
+            />
+            <path
+              style="fill: #9b9b9b"
+              d="M153.6,126.653H8.084V51.2H153.6c20.836,0,37.726,16.891,37.726,37.726l0,0
+	C191.326,109.762,174.436,126.653,153.6,126.653z M266.779,83.537L266.779,83.537c0-11.906-9.651-21.558-21.558-21.558l0,0
+	c-11.906,0-21.558,9.651-21.558,21.558l0,0c0,11.906,9.651,21.558,21.558,21.558l0,0C257.127,105.095,266.779,95.443,266.779,83.537
+	z M342.232,83.537L342.232,83.537c0-11.906-9.651-21.558-21.558-21.558l0,0c-11.906,0-21.558,9.651-21.558,21.558l0,0
+	c0,11.906,9.651,21.558,21.558,21.558l0,0C332.58,105.095,342.232,95.443,342.232,83.537z M353.01,309.895
+	c0-83.343-67.562-150.905-150.905-150.905S51.2,226.552,51.2,309.895S118.762,460.8,202.105,460.8S353.01,393.238,353.01,309.895z"
+            />
+            <path
+              style="fill: #c1c1c1"
+              d="M61.979,94.316H8.084V51.2h53.895H153.6c20.836,0,37.726,16.891,37.726,37.726l0,0
+	c0,1.83-0.138,3.628-0.389,5.389H153.6H61.979z"
+            />
+            <path
+              style="fill: #a2ccdb"
+              d="M202.105,417.684c-59.53,0-107.789-48.26-107.789-107.789s48.259-107.789,107.789-107.789
+	s107.789,48.26,107.789,107.789S261.635,417.684,202.105,417.684z"
+            />
+            <path
+              style="fill: #b5e1f4"
+              d="M309.895,309.895c0,59.53-48.259,107.789-107.789,107.789c-15.331,0-29.912-3.208-43.116-8.978
+	c38.067-16.634,64.674-54.613,64.674-98.812s-26.607-82.178-64.674-98.812c13.204-5.77,27.785-8.978,43.116-8.978
+	C261.635,202.105,309.895,250.364,309.895,309.895z"
+            />
+            <path
+              d="M194.021,245.221c0-4.466,3.62-8.084,8.084-8.084c40.119,0,72.758,32.639,72.758,72.758c0,4.466-3.62,8.084-8.084,8.084
+	s-8.084-3.618-8.084-8.084c0-31.203-25.385-56.589-56.589-56.589C197.641,253.305,194.021,249.687,194.021,245.221z M86.232,309.895
+	c0-63.892,51.98-115.874,115.874-115.874s115.874,51.981,115.874,115.874s-51.98,115.874-115.874,115.874
+	S86.232,373.787,86.232,309.895z M102.4,309.895c0,54.978,44.727,99.705,99.705,99.705s99.705-44.727,99.705-99.705
+	s-44.727-99.705-99.705-99.705S102.4,254.917,102.4,309.895z M361.095,309.895c0-87.667-71.322-158.989-158.989-158.989
+	c-38.498,0-75.643,13.938-104.596,39.247c-28.673,25.066-47.419,59.529-52.785,97.04c-0.632,4.419,2.438,8.514,6.858,9.147
+	c4.418,0.62,8.515-2.439,9.147-6.859c9.983-69.783,70.761-122.407,141.376-122.407c78.752,0,142.821,64.069,142.821,142.821
+	s-64.069,142.821-142.821,142.821c-74.637,0-137.214-58.249-142.462-132.611c-0.314-4.454-4.182-7.801-8.633-7.495
+	c-4.454,0.315-7.809,4.18-7.496,8.634c2.826,40.042,20.577,77.248,49.982,104.764c29.548,27.649,68.12,42.876,108.609,42.876
+	C289.773,468.884,361.095,397.562,361.095,309.895z M202.105,382.653c4.465,0,8.084-3.618,8.084-8.084
+	c0-4.466-3.62-8.084-8.084-8.084c-31.204,0-56.589-25.387-56.589-56.589c0-4.466-3.62-8.084-8.084-8.084
+	c-4.465,0-8.084,3.618-8.084,8.084C129.347,350.014,161.986,382.653,202.105,382.653z M512,503.916c0,4.466-3.62,8.084-8.084,8.084
+	h-64.674c-4.465,0-8.084-3.618-8.084-8.084s3.62-8.084,8.084-8.084h15.397c6.902,0,12.662-5.176,13.397-12.038l27.717-258.695
+	c0.413-3.851-0.786-7.56-3.375-10.442c-2.589-2.882-6.148-4.469-10.022-4.469h-24.25v56.589c0,31.437-23.524,57.481-53.895,61.454
+	V460.8c0,13.539-5.282,25.866-13.893,35.032h16.588c4.465,0,8.084,3.618,8.084,8.084S411.37,512,406.905,512H105.095
+	c-4.465,0-8.084-3.618-8.084-8.084s3.62-8.084,8.084-8.084H353.01c19.316,0,35.032-15.715,35.032-35.032V256
+	c0-4.466,3.62-8.084,8.084-8.084c4.465,0,8.084,3.618,8.084,8.084v55.875c21.418-3.83,37.726-22.594,37.726-45.096v-64.674
+	c0-1.486-1.209-2.695-2.695-2.695h-35.032v24.253c0,4.466-3.62,8.084-8.084,8.084c-4.465,0-8.084-3.618-8.084-8.084V102.4h-13.474
+	c-4.465,0-8.084-3.618-8.084-8.084c0-4.466,3.62-8.084,8.084-8.084h13.474V29.642c0-7.43-6.044-13.474-13.474-13.474H29.642
+	c-7.43,0-13.474,6.044-13.474,13.474v13.474H153.6c25.26,0,45.811,20.55,45.811,45.811s-20.55,45.811-45.811,45.811H16.168V460.8
+	c0,19.317,15.716,35.032,35.032,35.032h21.558c4.465,0,8.084,3.618,8.084,8.084S77.223,512,72.758,512H8.084
+	C3.62,512,0,508.382,0,503.916s3.62-8.084,8.084-8.084h5.809C5.282,486.666,0,474.339,0,460.8V29.642C0,13.298,13.297,0,29.642,0
+	h344.926c16.345,0,29.642,13.298,29.642,29.642v153.6h35.032c7.51,0,14.009,4.412,17.042,10.779h26.072
+	c8.399,0,16.436,3.583,22.048,9.829c5.614,6.247,8.32,14.619,7.426,22.971l-27.717,258.695c-0.397,3.699-1.456,7.176-3.054,10.315
+	h22.857C508.38,495.832,512,499.45,512,503.916z M16.168,59.284v59.284H153.6c16.345,0,29.642-13.298,29.642-29.642
+	S169.945,59.284,153.6,59.284H16.168z M245.221,113.179c-16.345,0-29.642-13.298-29.642-29.642s13.297-29.642,29.642-29.642
+	s29.642,13.298,29.642,29.642S261.566,113.179,245.221,113.179z M245.221,97.011c7.43,0,13.474-6.044,13.474-13.474
+	c0-7.43-6.044-13.474-13.474-13.474s-13.474,6.044-13.474,13.474C231.747,90.967,237.791,97.011,245.221,97.011z M40.421,102.4
+	h107.789c4.465,0,8.084-3.618,8.084-8.084c0-4.466-3.62-8.084-8.084-8.084H40.421c-4.465,0-8.084,3.618-8.084,8.084
+	C32.337,98.782,35.956,102.4,40.421,102.4z M320.674,113.179c-16.345,0-29.642-13.298-29.642-29.642s13.297-29.642,29.642-29.642
+	c16.345,0,29.642,13.298,29.642,29.642S337.019,113.179,320.674,113.179z M320.674,97.011c7.43,0,13.474-6.044,13.474-13.474
+	c0-7.43-6.044-13.474-13.474-13.474S307.2,76.107,307.2,83.537C307.2,90.967,313.244,97.011,320.674,97.011z"
+            />
+          </svg>
+          <span class="logo-text">Laundrian</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li>
+            <a href="#service">Layanan</a>
+          </li>
+          <li>
+            <a href="#booking">Booking</a>
+          </li>
+          <li><a href="#contact">Kontak Kami</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="socials">
+            <a href="#" aria-label="Facebook" class="social-circle">
+              <svg
+                fill="#ffffff"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="22px"
+                height="22px"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <g id="7935ec95c421cee6d86eb22ecd11b7e3">
+                    <path
+                      style="display: inline"
+                      d="M283.122,122.174c0,5.24,0,22.319,0,46.583h83.424l-9.045,74.367h-74.379 c0,114.688,0,268.375,0,268.375h-98.726c0,0,0-151.653,0-268.375h-51.443v-74.367h51.443c0-29.492,0-50.463,0-56.302 c0-27.82-2.096-41.02,9.725-62.578C205.948,28.32,239.308-0.174,297.007,0.512c57.713,0.711,82.04,6.263,82.04,6.263 l-12.501,79.257c0,0-36.853-9.731-54.942-6.263C293.539,83.238,283.122,94.366,283.122,122.174z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a href="#" aria-label="Tiktok" class="social-circle">
+              <svg
+                fill="#ffffff"
+                width="22px"
+                height="22px"
+                viewBox="0 0 24 24"
+                id="tiktok"
+                data-name="Flat Color"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon flat-color"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    id="primary"
+                    d="M21,7V9a1,1,0,0,1-1,1,8,8,0,0,1-4-1.08V15.5A6.5,6.5,0,1,1,6.53,9.72a1,1,0,0,1,1.47.9v2.52a.92.92,0,0,1-.28.62,2.49,2.49,0,0,0,2,4.23A2.61,2.61,0,0,0,12,15.35V3a1,1,0,0,1,1-1h2.11a1,1,0,0,1,1,.83A4,4,0,0,0,20,6,1,1,0,0,1,21,7Z"
+                    style="fill: #ffffff"
+                  />
+                </g>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-circle">
+              <svg
+                width="20px"
+                height="20px"
+                viewBox="0 0 20 20"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#ffffff"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <title>instagram [#167]</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="Dribbble-Light-Preview"
+                      transform="translate(-340.000000, -7439.000000)"
+                      fill="#ffffff"
+                    >
+                      <g
+                        id="icons"
+                        transform="translate(56.000000, 160.000000)"
+                      >
+                        <path
+                          d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792"
+                          id="instagram-[#167]"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <button class="btn btn-orange">Schedule Pickup</button>
+        </div>
+        <button class="burger" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>
+            Cucian <span class="eyebrow">Numpuk?</span> Serahkan Pada Ahlinya
+          </h1>
+          <p class="hero-desc">
+            Layanan laundry modern dengan pickup mudah, proses cepat, dan hasil
+            memuaskan.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-navy">Booking Sekarang</button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="float-card float-hours">
+            <span class="float-icon">
+              <svg
+                width="25px"
+                height="25px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 7V12L9.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <div>
+              <strong>3 Jam</strong>
+              <span>Express Laundry Service</span>
+            </div>
+          </div>
+
+          <div class="hero-image-wrap">
+            <img src="img/hero.webp" alt="Washing machine" class="hero-img" />
+          </div>
+
+          <div class="float-card float-rating">
+            <svg
+              height="65px"
+              width="65px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 503.315 503.315"
+              xml:space="preserve"
+              fill="#000000"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      style="fill: #797979"
+                      d="M156.199,429.556c0-23.96-19.43-43.39-43.39-43.39s-43.39,19.43-43.39,43.39 s19.43,43.39,43.39,43.39S156.199,453.516,156.199,429.556"
+                    />
+                    <path
+                      style="fill: #797979"
+                      d="M494.64,429.556c0-23.96-19.43-43.39-43.39-43.39c-23.96,0-43.39,19.43-43.39,43.39 s19.43,43.39,43.39,43.39C475.21,472.946,494.64,453.516,494.64,429.556"
+                    />
+                  </g>
+                  <g>
+                    <path
+                      style="fill: #c0c0c0"
+                      d="M112.809,446.912c-9.58,0-17.356-7.775-17.356-17.356s7.775-17.356,17.356-17.356 s17.356,7.775,17.356,17.356S122.39,446.912,112.809,446.912"
+                    />
+                    <path
+                      style="fill: #c0c0c0"
+                      d="M451.25,446.912c-9.58,0-17.356-7.775-17.356-17.356s7.775-17.356,17.356-17.356 s17.356,7.775,17.356,17.356S460.83,446.912,451.25,446.912"
+                    />
+                  </g>
+                  <polygon
+                    style="fill: #c69666"
+                    points="0,308.064 121.492,308.064 121.492,186.573 0,186.573 "
+                  />
+                  <path
+                    style="fill: #337faa"
+                    d="M234.301,73.759c0-23.96-19.43-43.39-43.39-43.39s-43.39,19.43-43.39,43.39s19.43,43.39,43.39,43.39 S234.301,97.719,234.301,73.759"
+                  />
+                  <polygon
+                    style="fill: #f89954"
+                    points="416.538,212.607 399.182,212.607 381.826,203.929 381.826,169.217 399.182,160.539 416.538,160.539 "
+                  />
+                  <path
+                    style="fill: #48a0dc"
+                    d="M282.811,272.379c-3.046-9.745-12.071-16.384-22.285-16.384h-0.191h-43.39l-0.009-43.39h77.182 c8.643,0,16.662-5.91,18.05-14.44c1.762-10.873-6.578-20.272-17.122-20.272h-60.746V147.52c0-16.775-13.598-30.373-30.373-30.373 h-17.356c-16.775,0-30.373,13.598-30.373,30.373V277.69c0,16.775,13.598,30.373,30.373,30.373h65.085l26.034,86.78h43.39 L282.811,272.379z"
+                  />
+                  <path
+                    style="fill: #ffd479"
+                    d="M490.611,345.722c-11.923-13.564-29.844-20.298-47.902-20.298h-8.817 c-5.406-27.075-24.125-49.577-49.759-59.826l-2.308-0.92v-95.458h-86.78v8.678c9.589,0,17.356,7.767,17.356,17.356 c0,9.58-7.767,17.356-17.356,17.356v8.678h52.068v104.136v69.424H208.264l11.871-26.928c3.627-10.9,5.484-22.302,5.484-33.783 c0.009-14.379-11.655-26.069-26.034-26.069H34.705c-14.379,0-26.034,11.654-26.034,26.034v10.769c0,4.426,2.517,8.261,6.205,10.717 c11.134,7.411,14.536,22.233,7.749,33.757l-11.064,18.805c-5.233,6.552-3.107,16.263,4.4,20.011 c1.831,0.92,3.844,1.397,5.892,1.397h21.53c0-38.287,31.145-69.424,69.424-69.424s69.424,31.137,69.424,69.424h199.593 c0-38.279,31.154-69.424,69.424-69.424c30.92,0,40.812,6.101,52.068,17.356C503.315,365.508,498.464,354.661,490.611,345.722"
+                  />
+                  <polygon
+                    style="fill: #e8d5b2"
+                    points="43.39,221.285 78.102,221.285 78.102,186.573 43.39,186.573 "
+                  />
+                  <path
+                    style="fill: #337faa"
+                    d="M216.945,221.285c-14.345,0-26.025-11.672-26.025-26.025v-26.043c0-4.79,3.879-8.678,8.678-8.678 c4.799,0,8.678,3.888,8.678,8.678v26.043c0,4.782,3.888,8.669,8.669,8.669c4.799,0,8.678,3.888,8.678,8.678 S221.744,221.285,216.945,221.285"
+                  />
+                </g>
+              </g>
+            </svg>
+            <span class="rating-stars">★★★★★ (4.6/5)</span>
+          </div>
+
+          <div class="float-card float-stat">
+            <span class="float-icon-circle">
+              <svg
+                height="35px"
+                width="35px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+                fill="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    style="fill: #a7e5cb"
+                    d="M503.916,245.221v43.116c0,11.906-9.651,21.558-21.558,21.558h-10.779l-32.337,174.843 c-1.213,10.918-10.442,19.178-21.426,19.178H94.184c-10.985,0-20.213-8.26-21.426-19.178L40.421,309.895H29.642 c-11.906,0-21.558-9.651-21.558-21.558v-43.116c0-11.906,9.651-21.558,21.558-21.558h10.779l0,0 c0-47.625,38.607-86.232,86.232-86.232h99.168C235.809,88.231,279.305,51.2,331.453,51.2h32.337 c59.531,0,107.789,48.258,107.789,107.789v64.674h10.779C494.264,223.663,503.916,233.315,503.916,245.221z"
+                  />
+                  <path
+                    style="fill: #64af8f"
+                    d="M503.916,245.221v43.116c0,11.906-9.651,21.558-21.558,21.558h-10.779l-3.987,21.558H44.408 l-3.987-21.558H29.642c-11.906,0-21.558-9.651-21.558-21.558v-43.116c0-11.906,9.651-21.558,21.558-21.558h452.716 C494.264,223.663,503.916,233.315,503.916,245.221z"
+                  />
+                  <path
+                    style="fill: #84d88b"
+                    d="M299.116,180.547H180.547c-41.671,0-75.453-33.781-75.453-75.453l0,0 c0-53.578,43.433-97.011,97.011-97.011h75.453c47.625,0,86.232,38.607,86.232,86.232v21.558 C363.789,151.592,334.834,180.547,299.116,180.547z"
+                  />
+                  <path
+                    style="fill: #93d6bb"
+                    d="M503.916,245.221v43.116c0,11.906-9.651,21.558-21.558,21.558H29.642 c-11.906,0-21.558-9.651-21.558-21.558v-43.116c0-11.906,9.651-21.558,21.558-21.558h452.716 C494.264,223.663,503.916,233.315,503.916,245.221z"
+                  />
+                  <path
+                    style="fill: #ff9cab"
+                    d="M331.453,51.2h32.337c59.53,0,107.789,48.26,107.789,107.789v64.674H223.663v-64.674 C223.663,99.46,271.923,51.2,331.453,51.2z"
+                  />
+                  <path
+                    style="fill: #ffe77c"
+                    d="M406.905,223.663L406.905,223.663c0,23.813-19.304,43.116-43.116,43.116h-97.011 c-18.781,0-34.758-12.009-40.67-28.766c-3.036-8.606-11.182-14.35-20.309-14.35H40.421l0,0c0-47.625,38.607-86.232,86.232-86.232 h194.021C368.298,137.432,406.905,176.039,406.905,223.663z"
+                  />
+                  <path
+                    d="M83.537,317.979H29.642C13.297,317.979,0,304.681,0,288.337v-43.116c0-16.344,13.297-29.642,29.642-29.642h3.038 c4.114-48.236,44.69-86.232,93.973-86.232h10.779c4.465,0,8.084,3.618,8.084,8.084c0,4.466-3.62,8.084-8.084,8.084h-10.779 c-40.361,0-73.673,30.758-77.732,70.063h239.417c4.466,0,8.084,3.618,8.084,8.084s-3.618,8.084-8.084,8.084h-56.138 c0.584,1.146,1.097,2.34,1.533,3.574c4.932,13.98,18.213,23.373,33.047,23.373h97.011c19.317,0,35.032-15.715,35.032-35.032 c0-43.091-35.056-78.147-78.147-78.147h-94.688c-0.106,0.002-0.21,0.002-0.317,0h-55.901c-4.465,0-8.084-3.618-8.084-8.084 c0-4.466,3.62-8.084,8.084-8.084h49.638c6.619-25.097,21.538-47.3,42.506-63.053c7.182-5.396,14.983-9.949,23.189-13.534 c14.646-6.399,30.241-9.645,46.352-9.645h32.337c63.892,0,115.874,51.981,115.874,115.874v32.337c0,4.466-3.618,8.084-8.084,8.084 s-8.084-3.618-8.084-8.084v-32.337c0-54.978-44.727-99.705-99.705-99.705h-32.337c-13.868,0-27.285,2.791-39.879,8.292 c-7.057,3.083-13.768,7.001-19.95,11.644c-16.89,12.691-29.22,30.236-35.399,50.126h84.449c52.006,0,94.316,42.31,94.316,94.316 c0,28.231-22.969,51.2-51.2,51.2h-97.011c-21.676,0-41.084-13.728-48.294-34.161c-1.89-5.356-6.988-8.955-12.685-8.955H29.642 c-7.43,0-13.474,6.044-13.474,13.474v43.116c0,7.43,6.044,13.474,13.474,13.474h53.895c4.465,0,8.084,3.618,8.084,8.084 S88.001,317.979,83.537,317.979z M105.849,123.959c0.382,0,0.766-0.027,1.155-0.082c4.419-0.633,7.49-4.729,6.858-9.148 c-0.453-3.166-0.682-6.407-0.682-9.634c0-49.033,39.892-88.926,88.926-88.926h75.453c17.964,0,34.85,5.925,48.836,17.134 c3.483,2.792,8.57,2.231,11.364-1.253c2.792-3.483,2.231-8.571-1.253-11.364C319.863,7.346,298.928,0,277.558,0h-75.453 C144.155,0,97.011,47.145,97.011,105.095c0,3.99,0.285,8.002,0.846,11.925C98.433,121.051,101.891,123.959,105.849,123.959z M331.453,495.832H94.183c-6.875,0-12.632-5.152-13.391-11.985c-0.022-0.194-0.05-0.386-0.085-0.578L54.351,340.761 c-0.812-4.39-5.032-7.293-9.42-6.479c-4.39,0.812-7.292,5.029-6.479,9.42L64.76,485.945C66.57,500.821,79.164,512,94.183,512 h237.269c4.466,0,8.084-3.618,8.084-8.084S335.918,495.832,331.453,495.832z M97.011,406.905c0,4.466,3.62,8.084,8.084,8.084h52.147 l4.505,36.035c0.511,4.09,3.994,7.082,8.012,7.082c0.334,0,0.673-0.022,1.012-0.064c4.43-0.554,7.573-4.595,7.019-9.025 l-4.253-34.028h74.379v35.032c0,4.466,3.62,8.084,8.084,8.084c4.466,0,8.084-3.618,8.084-8.084v-35.032h56.589 c4.466,0,8.084-3.618,8.084-8.084s-3.618-8.084-8.084-8.084h-56.589v-35.032c0-4.466-3.618-8.084-8.084-8.084 c-4.465,0-8.084,3.618-8.084,8.084v35.032h-76.4l-4.505-36.035c-0.554-4.429-4.597-7.573-9.024-7.019 c-4.43,0.554-7.573,4.595-7.019,9.025l4.253,34.029h-50.126C100.63,398.821,97.011,402.44,97.011,406.905z M354.014,355.768 c-4.432-0.556-8.471,2.589-9.025,7.019l-10.779,86.232c-0.554,4.43,2.589,8.471,7.019,9.025c0.341,0.042,0.679,0.064,1.013,0.064 c4.017,0,7.5-2.992,8.012-7.082l10.779-86.232C361.586,360.362,358.443,356.321,354.014,355.768z M406.905,414.989 c4.466,0,8.084-3.618,8.084-8.084s-3.618-8.084-8.084-8.084h-32.337c-4.466,0-8.084,3.618-8.084,8.084s3.618,8.084,8.084,8.084 H406.905z M482.358,215.579h-43.116c-4.466,0-8.084,3.618-8.084,8.084s3.618,8.084,8.084,8.084h43.116 c7.43,0,13.474,6.044,13.474,13.474v43.116c0,7.43-6.044,13.474-13.474,13.474h-10.637c-0.101-0.002-0.202-0.002-0.302,0H115.874 c-4.465,0-8.084,3.618-8.084,8.084s3.62,8.084,8.084,8.084h345.988l-30.569,165.29c-0.036,0.192-0.065,0.384-0.085,0.578 c-0.759,6.833-6.516,11.985-13.392,11.985h-54.026c-4.466,0-8.084,3.618-8.084,8.084s3.618,8.084,8.084,8.084h54.026 c15.022,0,27.615-11.18,29.425-26.056l31.064-167.965h4.053c16.344,0,29.642-13.298,29.642-29.642v-43.116 C512,228.877,498.702,215.579,482.358,215.579z"
+                  />
+                </g>
+              </svg>
+            </span>
+            <div>
+              <strong>100K+</strong>
+              <span>Clothe Spinned To Perfection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== ELEVATE EXPERIENCE ===== -->
+    <section class="elevate" id="about">
+      <div class="container elevate-inner">
+        <div class="elevate-text">
+          <h2>
+            Pengalaman <span class="eyebrow">Laundry</span> Yang Lebih Praktis &
+            Berkualitas
+          </h2>
+          <button class="btn btn-navy">Learn More <span>→</span></button>
+        </div>
+
+        <div class="elevate-image-wrap">
+          <img
+            src="img/woman-holding-pile-clean-clothes1.webp"
+            alt="Laundry staff at work"
+            class="elevate-img"
+          />
+          <div class="rating-pill">★★★★★ (5/5)</div>
+        </div>
+
+        <div class="mission-card">
+          <span class="mission-icon">
+            <svg
+              width="40px"
+              height="40px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+              <title>ic_fluent_team_add_24_filled</title>
+              <desc>Created with Sketch.</desc>
+              <g
+                id="🔍-Product-Icons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="ic_fluent_team_add_24_filled"
+                  fill="#212121"
+                  fill-rule="nonzero"
+                >
+                  <path
+                    d="M17.5,12 C20.5375661,12 23,14.4624339 23,17.5 C23,20.5375661 20.5375661,23 17.5,23 C14.4624339,23 12,20.5375661 12,17.5 C12,14.4624339 14.4624339,12 17.5,12 Z M17.5,13.9992349 L17.4101244,14.0072906 C17.2060313,14.0443345 17.0450996,14.2052662 17.0080557,14.4093593 L17,14.4992349 L16.9996498,16.9992349 L14.4976498,17 L14.4077742,17.0080557 C14.2036811,17.0450996 14.0427494,17.2060313 14.0057055,17.4101244 L13.9976498,17.5 L14.0057055,17.5898756 C14.0427494,17.7939687 14.2036811,17.9549004 14.4077742,17.9919443 L14.4976498,18 L17.0006498,17.9992349 L17.0011076,20.5034847 L17.0091633,20.5933603 C17.0462073,20.7974534 17.207139,20.9583851 17.411232,20.995429 L17.5011076,21.0034847 L17.5909833,20.995429 C17.7950763,20.9583851 17.956008,20.7974534 17.993052,20.5933603 L18.0011076,20.5034847 L18.0006498,17.9992349 L20.5045655,18 L20.5944411,17.9919443 C20.7985342,17.9549004 20.9594659,17.7939687 20.9965098,17.5898756 L21.0045655,17.5 L20.9965098,17.4101244 C20.9594659,17.2060313 20.7985342,17.0450996 20.5944411,17.0080557 L20.5045655,17 L17.9996498,16.9992349 L18,14.4992349 L17.9919443,14.4093593 C17.9549004,14.2052662 17.7939687,14.0443345 17.5898756,14.0072906 L17.5,13.9992349 Z M14.2540247,10 C15.0885672,10 15.8169906,10.4543496 16.2054276,11.1291814 C13.23532,11.7296535 11,14.3537833 11,17.5 C11,18.7891565 11.3752958,19.9906579 12.0225923,21.0012092 L12.002976,21 C9.51711551,21 7.50192738,18.9848119 7.50192738,16.4989513 L7.50192738,12.25 C7.50192738,11.0073593 8.5092867,10 9.75192738,10 L14.2540247,10 Z M7.40645343,10.000271 C6.89290875,10.5355324 6.56080951,11.2462228 6.50902592,12.0334718 L6.50192738,12.25 L6.50192738,16.4989513 C6.50192738,17.3455959 6.69319107,18.1475684 7.03486751,18.8640179 C6.70577369,18.9530495 6.35898976,19 6.00123996,19 C3.79141615,19 2,17.2085839 2,14.99876 L2,12.25 C2,11.059136 2.92516159,10.0843551 4.09595119,10.0051908 L4.25,10 L7.40645343,10.000271 Z M19.75,10 C20.9926407,10 22,11.0073593 22,12.25 L22.0008195,12.8103588 C20.8328473,11.6891263 19.2469007,11 17.5,11 L17.2568191,11.0044649 L17.2568191,11.0044649 C17.1013063,10.6296432 16.8768677,10.2893694 16.5994986,10.000271 L19.75,10 Z M18.5,4 C19.8807119,4 21,5.11928813 21,6.5 C21,7.88071187 19.8807119,9 18.5,9 C17.1192881,9 16,7.88071187 16,6.5 C16,5.11928813 17.1192881,4 18.5,4 Z M12,3 C13.6568542,3 15,4.34314575 15,6 C15,7.65685425 13.6568542,9 12,9 C10.3431458,9 9,7.65685425 9,6 C9,4.34314575 10.3431458,3 12,3 Z M5.5,4 C6.88071187,4 8,5.11928813 8,6.5 C8,7.88071187 6.88071187,9 5.5,9 C4.11928813,9 3,7.88071187 3,6.5 C3,5.11928813 4.11928813,4 5.5,4 Z"
+                    id="🎨-Color"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </span>
+          <h3>Komitmen Kami</h3>
+          <p>
+            Menghadirkan pengalaman laundry yang praktis, cepat, dan berkualitas
+            melalui layanan profesional yang bisa Anda andalkan setiap hari.
+          </p>
+          <p>+62 123-456-789</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="service">
+      <div class="container">
+        <div class="section-head">
+          <h2>
+            <span class="eyebrow">Layanan</span> yang Dirancang untuk Kemudahan
+            Anda
+          </h2>
+          <p>
+            Nikmati layanan laundry profesional yang dirancang untuk memberikan
+            kemudahan, proses cepat, dan hasil terbaik untuk setiap kebutuhan
+            Anda.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <img src="img/laundry-express.webp" alt="Laundry express" />
+            <div class="service-badge">
+              <svg
+                fill="#000000"
+                height="30px"
+                width="30px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+              >
+                <g>
+                  <g>
+                    <g>
+                      <path
+                        d="M202.105,253.305c31.204,0,56.589,25.387,56.589,56.589c0,4.466,3.62,8.084,8.084,8.084c4.465,0,8.084-3.618,8.084-8.084
+				c0-40.119-32.639-72.758-72.758-72.758c-4.465,0-8.084,3.618-8.084,8.084C194.021,249.687,197.641,253.305,202.105,253.305z"
+                      />
+                      <path
+                        d="M40.421,102.4H148.21c4.465,0,8.084-3.619,8.084-8.084s-3.62-8.084-8.084-8.084H40.421c-4.465,0-8.084,3.619-8.084,8.084
+				S35.956,102.4,40.421,102.4z"
+                      />
+                      <path
+                        d="M361.095,309.895c0-87.667-71.322-158.989-158.989-158.989c-38.498,0-75.643,13.938-104.596,39.247
+				c-28.673,25.066-47.419,59.529-52.784,97.04c-0.632,4.419,2.438,8.514,6.858,9.147c4.418,0.62,8.515-2.439,9.147-6.859
+				c9.983-69.783,70.761-122.407,141.376-122.407c78.752,0,142.821,64.069,142.821,142.821s-64.069,142.821-142.821,142.821
+				c-74.637,0-137.214-58.249-142.462-132.611c-0.314-4.454-4.182-7.801-8.633-7.495c-4.454,0.315-7.809,4.18-7.496,8.634
+				c2.826,40.042,20.577,77.248,49.982,104.764c29.548,27.649,68.12,42.877,108.609,42.877
+				C289.773,468.884,361.095,397.562,361.095,309.895z"
+                      />
+                      <path
+                        d="M202.105,382.653c4.465,0,8.084-3.619,8.084-8.084s-3.62-8.084-8.084-8.084c-31.204,0-56.589-25.387-56.589-56.589
+				c0-4.466-3.62-8.084-8.084-8.084c-4.465,0-8.084,3.618-8.084,8.084C129.347,350.014,161.986,382.653,202.105,382.653z"
+                      />
+                      <path
+                        d="M350.316,83.537c0-16.344-13.297-29.642-29.642-29.642c-16.345,0-29.642,13.298-29.642,29.642
+				s13.297,29.642,29.642,29.642C337.019,113.179,350.316,99.881,350.316,83.537z M307.2,83.537c0-7.43,6.044-13.474,13.474-13.474
+				s13.474,6.044,13.474,13.474s-6.044,13.474-13.474,13.474S307.2,90.967,307.2,83.537z"
+                      />
+                      <path
+                        d="M274.863,83.537c0-16.344-13.297-29.642-29.642-29.642c-16.345,0-29.642,13.298-29.642,29.642
+				s13.297,29.642,29.642,29.642C261.566,113.179,274.863,99.881,274.863,83.537z M231.747,83.537
+				c0-7.43,6.044-13.474,13.474-13.474s13.474,6.044,13.474,13.474s-6.044,13.474-13.474,13.474S231.747,90.967,231.747,83.537z"
+                      />
+                      <path
+                        d="M202.105,425.768c63.893,0,115.874-51.982,115.874-115.874s-51.98-115.874-115.874-115.874
+				S86.232,246.003,86.232,309.895S138.212,425.768,202.105,425.768z M202.105,210.189c54.978,0,99.705,44.727,99.705,99.705
+				S257.083,409.6,202.105,409.6S102.4,364.873,102.4,309.895S147.127,210.189,202.105,210.189z"
+                      />
+                      <path
+                        d="M503.916,495.832h-22.857c1.597-3.14,2.657-6.616,3.054-10.315l27.717-258.695c0.895-8.352-1.812-16.724-7.426-22.971
+				c-5.613-6.246-13.649-9.829-22.048-9.829h-26.072c-3.032-6.367-9.532-10.779-17.042-10.779h-35.032v-153.6
+				C404.211,13.298,390.914,0,374.568,0H29.642C13.297,0,0,13.298,0,29.642V460.8c0,13.539,5.282,25.866,13.893,35.032H8.084
+				C3.62,495.832,0,499.45,0,503.916C0,508.382,3.62,512,8.084,512h64.674c4.465,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.62-8.084-8.084-8.084H51.2c-19.316,0-35.032-15.715-35.032-35.032V134.737H153.6c25.26,0,45.81-20.55,45.81-45.811
+				s-20.55-45.811-45.81-45.811H16.168V29.642c0-7.43,6.044-13.474,13.474-13.474h344.926c7.43,0,13.474,6.044,13.474,13.474v56.589
+				h-13.474c-4.465,0-8.084,3.619-8.084,8.084s3.62,8.084,8.084,8.084h13.474v121.263c0,4.466,3.62,8.084,8.084,8.084
+				c4.465,0,8.084-3.618,8.084-8.084v-24.253h35.032c1.485,0,2.695,1.208,2.695,2.695v64.674c0,22.502-16.309,41.266-37.726,45.096
+				V256c0-4.466-3.62-8.084-8.084-8.084c-4.465,0-8.084,3.619-8.084,8.084v204.8c0,19.317-15.716,35.032-35.032,35.032H105.095
+				c-4.465,0-8.084,3.619-8.084,8.084c0,4.466,3.62,8.084,8.084,8.084h301.811c4.465,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.62-8.084-8.084-8.084h-16.588c8.611-9.165,13.893-21.492,13.893-35.032V328.232
+				c30.371-3.973,53.895-30.017,53.895-61.454v-56.589h24.25c3.874,0,7.433,1.587,10.022,4.469c2.589,2.881,3.788,6.59,3.375,10.442
+				l-27.717,258.695c-0.735,6.862-6.495,12.038-13.397,12.038h-15.397c-4.465,0-8.084,3.619-8.084,8.084
+				c0,4.466,3.62,8.084,8.084,8.084h64.674c4.465,0,8.084-3.618,8.084-8.084C512,499.45,508.38,495.832,503.916,495.832z
+				 M153.6,59.284c16.345,0,29.642,13.298,29.642,29.642s-13.297,29.642-29.642,29.642H16.168V59.284H153.6z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span>Laundry<br />Express</span>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="img/dry-cleaning.webp" alt="Dry cleaning" />
+            <div class="service-badge">
+              <svg
+                fill="#000000"
+                height="30px"
+                width="30px"
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 297 297"
+                xml:space="preserve"
+              >
+                <g>
+                  <circle cx="148.641" cy="177.649" r="9.872" />
+                  <circle cx="52.362" cy="167.031" r="9.872" />
+                  <path
+                    d="M296.708,211.863l-26.956-108.791c-0.63-2.541-2.243-4.729-4.485-6.081c-2.242-1.351-4.928-1.759-7.472-1.127
+		l-19.429,4.814l-2.58-10.414c16.174-2.542,31.452-5.762,45.204-9.588c5.253-1.461,8.327-6.904,6.865-12.156
+		c-1.462-5.254-6.907-8.326-12.156-6.865c-13.535,3.765-28.648,6.916-44.678,9.378l-2.501-10.094
+		c-1.311-5.292-6.665-8.521-11.957-7.208c-5.292,1.311-8.52,6.664-7.208,11.957l1.975,7.969c-17.15,1.949-34.994,3.129-52.817,3.457
+		v-6.32c0-5.452-4.42-9.872-9.872-9.872c-5.452,0-9.872,4.42-9.872,9.872v6.325c-17.917-0.321-35.858-1.503-53.099-3.463
+		l1.975-7.969c1.312-5.293-1.916-10.646-7.208-11.957c-5.289-1.314-10.646,1.915-11.957,7.208l-2.501,10.094
+		c-16.03-2.462-31.144-5.613-44.678-9.378c-5.251-1.462-10.696,1.611-12.156,6.865c-1.462,5.252,1.612,10.696,6.865,12.156
+		c13.752,3.826,29.03,7.046,45.204,9.588l-2.58,10.414l-19.429-4.814c-5.289-1.309-10.646,1.915-11.957,7.208L0.29,211.863
+		c-0.631,2.541-0.225,5.229,1.127,7.472c1.352,2.242,3.539,3.855,6.081,4.485l58.023,14.377c0.797,0.198,1.596,0.292,2.382,0.292
+		c4.431,0,8.461-3.005,9.575-7.5l26.956-108.791c0.631-2.541,0.225-5.229-1.127-7.472c-1.352-2.243-3.539-3.855-6.081-4.485
+		l-19.429-4.814l3.088-12.46c18.777,2.225,38.361,3.562,57.884,3.902v14.868h-20.016c-5.452,0-9.872,4.42-9.872,9.872V233.69
+		c0,5.452,4.42,9.872,9.872,9.872h59.776c5.452,0,9.872-4.42,9.872-9.872V121.609c0-5.452-4.42-9.872-9.872-9.872h-20.016V96.863
+		c19.429-0.347,38.915-1.682,57.601-3.896l3.087,12.46l-19.429,4.814c-5.292,1.311-8.52,6.664-7.208,11.957l26.956,108.791
+		c0.63,2.541,2.243,4.729,4.485,6.081c1.551,0.935,3.316,1.417,5.097,1.417c0.793,0,1.591-0.095,2.375-0.29L289.5,223.82
+		C294.792,222.509,298.02,217.156,296.708,211.863z M80.73,135.766l-17.88,72.159l-10.897,6.569l-21.39-5.3l-6.569-10.898
+		l17.88-72.158l10.898-6.57l1.113,0.276l-1.076,4.341c-1.312,5.293,1.916,10.646,7.208,11.957c0.797,0.198,1.596,0.292,2.382,0.292
+		c4.431,0,8.461-3.005,9.575-7.5l1.076-4.341l1.112,0.276L80.73,135.766z M168.656,140.479v74.34l-8.998,8.998h-22.036l-8.997-8.997
+		v-74.342l8.997-8.997h1.146v4.472c0,5.452,4.42,9.872,9.872,9.872c5.452,0,9.872-4.42,9.872-9.872v-4.472h1.145L168.656,140.479z
+		 M245.045,214.494l-10.897-6.569l-17.88-72.16l6.569-10.897l1.113-0.276l1.076,4.341c1.114,4.495,5.143,7.5,9.575,7.5
+		c0.786,0,1.585-0.094,2.382-0.292c5.292-1.311,8.52-6.664,7.208-11.957l-1.075-4.341l1.113-0.276l10.897,6.569l17.88,72.16
+		l-6.569,10.897L245.045,214.494z"
+                  />
+                  <circle cx="244.637" cy="167.031" r="9.872" />
+                </g>
+              </svg>
+              <span>Dry<br />Cleaning</span>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="img/ironing-service.webp" alt="Ironing service" />
+            <div class="service-badge">
+              <svg
+                fill="#000000"
+                width="30px"
+                height="30px"
+                viewBox="0 0 50 50"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <path
+                  d="M16 13C15.5 13 14.941406 13.234375 14.625 13.65625C14.308594 14.078125 14.25 14.554688 14.28125 15C14.347656 15.890625 14.785156 16.785156 15.53125 17.65625C17.023438 19.398438 19.839844 21 24 21C27.988281 21 30.214844 20.464844 31.75 19.9375C33.285156 19.410156 33.945313 19 35.15625 19C36.367188 19 38.398438 19.457031 40.03125 20.78125C41.664063 22.105469 43 24.25 43 28L37 28L37 26.84375C37 25.292969 35.707031 24 34.15625 24L28.84375 24C27.292969 24 26 25.292969 26 26.84375L26 28.03125C18.265625 28.378906 10.808594 32.734375 3.5 43.21875C3.464844 43.257813 3.433594 43.300781 3.40625 43.34375C3.332031 43.417969 3.269531 43.5 3.21875 43.59375C3.195313 43.632813 3.175781 43.675781 3.15625 43.71875C2.191406 45.128906 1.238281 46.652344 0.28125 48.28125C0.257813 48.3125 0.238281 48.34375 0.21875 48.375C0.210938 48.386719 0.195313 48.394531 0.1875 48.40625C0.175781 48.417969 0.167969 48.425781 0.15625 48.4375C0.144531 48.457031 0.136719 48.480469 0.125 48.5C0.113281 48.511719 0.105469 48.519531 0.09375 48.53125C0.09375 48.550781 0.09375 48.574219 0.09375 48.59375C0.0820313 48.613281 0.0703125 48.636719 0.0625 48.65625C0.0507813 48.667969 0.0429688 48.675781 0.03125 48.6875C0.03125 48.699219 0.03125 48.707031 0.03125 48.71875C0.03125 48.738281 0.03125 48.761719 0.03125 48.78125C0.0195313 48.792969 0.0117188 48.800781 0 48.8125C0 48.832031 0 48.855469 0 48.875C0 48.886719 0 48.894531 0 48.90625C0 48.925781 0 48.949219 0 48.96875C0 48.980469 0 48.988281 0 49C0 49.03125 0 49.0625 0 49.09375C0 49.105469 0 49.113281 0 49.125C0 49.144531 0 49.167969 0 49.1875C0 49.199219 0 49.207031 0 49.21875C0.0078125 49.238281 0.0195313 49.261719 0.03125 49.28125C0.03125 49.292969 0.03125 49.300781 0.03125 49.3125C0.0390625 49.332031 0.0507813 49.355469 0.0625 49.375C0.0703125 49.394531 0.0820313 49.417969 0.09375 49.4375C0.09375 49.449219 0.09375 49.457031 0.09375 49.46875C0.105469 49.480469 0.113281 49.488281 0.125 49.5C0.152344 49.542969 0.183594 49.585938 0.21875 49.625C0.226563 49.644531 0.238281 49.667969 0.25 49.6875C0.261719 49.699219 0.269531 49.707031 0.28125 49.71875C0.292969 49.71875 0.300781 49.71875 0.3125 49.71875C0.320313 49.738281 0.332031 49.761719 0.34375 49.78125C0.355469 49.78125 0.363281 49.78125 0.375 49.78125C0.394531 49.804688 0.414063 49.824219 0.4375 49.84375C0.449219 49.84375 0.457031 49.84375 0.46875 49.84375C0.488281 49.855469 0.511719 49.867188 0.53125 49.875C0.5625 49.898438 0.59375 49.917969 0.625 49.9375C0.683594 49.964844 0.75 49.984375 0.8125 50C0.824219 50 0.832031 50 0.84375 50C0.863281 50 0.886719 50 0.90625 50C0.917969 50 0.925781 50 0.9375 50C1 50.003906 1.0625 50.003906 1.125 50L48 50C49.09375 50 50 49.09375 50 48L50 45.34375C50.003906 45.292969 50.003906 45.238281 50 45.1875L50 45C50.007813 44.9375 50.007813 44.875 50 44.8125L50 29.1875C50.007813 29.125 50.007813 29.0625 50 29C50 28.957031 50 28.917969 50 28.875C50.003906 28.832031 50.003906 28.792969 50 28.75C49.953125 23.203125 48.382813 19.214844 45.6875 16.65625C42.953125 14.058594 39.167969 13 35 13 Z M 16.3125 15L35 15C38.832031 15 42.046875 15.941406 44.3125 18.09375C46.429688 20.101563 47.796875 23.257813 47.96875 28L45 28C45 23.75 43.351563 20.894531 41.28125 19.21875C39.210938 17.542969 36.828125 17 35.15625 17C33.484375 17 32.464844 17.589844 31.09375 18.0625C29.722656 18.535156 27.816406 19 24 19C20.355469 19 18.113281 17.601563 17.03125 16.34375C16.535156 15.765625 16.359375 15.273438 16.3125 15 Z M 28.84375 26L34.15625 26C34.625 26 35 26.375 35 26.84375L35 28L28 28L28 26.84375C28 26.375 28.375 26 28.84375 26 Z M 27.03125 30L48 30L48 43L6.125 43C13.128906 33.441406 19.945313 30 27.03125 30 Z M 24 35C22.894531 35 22 35.894531 22 37C22 38.105469 22.894531 39 24 39C25.105469 39 26 38.105469 26 37C26 35.894531 25.105469 35 24 35 Z M 31 35C29.894531 35 29 35.894531 29 37C29 38.105469 29.894531 39 31 39C32.105469 39 33 38.105469 33 37C33 35.894531 32.105469 35 31 35 Z M 38 35C36.894531 35 36 35.894531 36 37C36 38.105469 36.894531 39 38 39C39.105469 39 40 38.105469 40 37C40 35.894531 39.105469 35 38 35 Z M 4.71875 45L48 45L48 45.1875C48 45.21875 48 45.25 48 45.28125L48 48L2.78125 48C3.421875 46.949219 4.082031 45.945313 4.71875 45Z"
+                />
+              </svg>
+              <span>Ironing<br />Service</span>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="img/stain-cleaning.webp" alt="Stain cleaning" />
+            <div class="service-badge">
+              <svg
+                fill="#000000"
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="30px"
+                height="30px"
+                viewBox="0 0 103.22 103.22"
+                xml:space="preserve"
+              >
+                <g>
+                  <path
+                    d="M68.274,59.991c3.418,0,6.14-1.083,8.124-3.256c2.003-2.184,2.999-5.111,2.999-8.821c0-3.776-0.996-6.775-2.999-8.996
+		c-1.984-2.216-4.706-3.327-8.124-3.327c-3.389,0-6.103,1.111-8.11,3.327c-1.998,2.221-2.993,5.231-2.993,8.996
+		c0,3.71,0.995,6.648,2.993,8.821C62.172,58.908,64.875,59.991,68.274,59.991z M63.662,41.874c1.103-1.45,2.646-2.173,4.604-2.173
+		c1.983,0,3.514,0.723,4.621,2.173c1.116,1.443,1.686,3.452,1.686,6.012c0,2.506-0.569,4.472-1.686,5.877
+		c-1.107,1.406-2.65,2.113-4.621,2.113c-1.967,0-3.513-0.707-4.618-2.113c-1.103-1.405-1.663-3.371-1.663-5.877
+		C61.99,45.326,62.546,43.317,63.662,41.874z M50.795,89.211c0,1.543-1.25,2.802-2.802,2.802c-13.135,0-23.813-10.676-23.813-23.812
+		c0-1.55,1.268-2.804,2.801-2.804c1.552,0,2.802,1.254,2.802,2.804c0,10.039,8.175,18.21,18.21,18.21
+		C49.545,86.41,50.795,87.662,50.795,89.211z M90.253,47.126c0-12.361-10.057-22.413-22.412-22.413
+		c-0.931,0-1.826,0.153-2.726,0.273C50.341-0.639,49.097-0.349,47.268,0.116c-0.647,0.175-1.225,0.585-1.599,1.138
+		C44.336,3.235,12.967,49.758,12.967,68.2c0,19.304,15.718,35.02,35.021,35.02c19.306,0,35.022-15.716,35.022-35.02
+		c0-1.287-0.188-2.759-0.473-4.309C87.223,59.793,90.253,53.834,90.253,47.126z M84.65,47.126c0,9.26-7.551,16.811-16.81,16.811
+		c-9.27,0-16.81-7.551-16.81-16.811c0-9.27,7.54-16.81,16.81-16.81C77.109,30.316,84.65,37.851,84.65,47.126z M77.411,68.2
+		c0,16.223-13.193,29.416-29.418,29.416c-16.222,0-29.417-13.193-29.417-29.416c0-12.795,19.457-45.107,29.417-60.303
+		c2.528,3.858,6.848,10.622,11.447,18.485c-8.197,3.332-14.007,11.355-14.007,20.744c0,12.361,10.048,22.414,22.412,22.414
+		c3.39,0,6.594-0.821,9.473-2.189C77.329,67.607,77.411,67.958,77.411,68.2z"
+                  />
+                </g>
+              </svg>
+              <span>Stain<br />Cleanning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+      <div class="container stats-inner">
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg
+              width="35px"
+              height="35px"
+              viewBox="0 0 24 24"
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #ffffff;
+                    stroke-miterlimit: 10;
+                    stroke-width: 1.91px;
+                  }
+                </style>
+              </defs>
+              <path
+                class="cls-1"
+                d="M18.68,14.86h2.08a1.74,1.74,0,0,0,1.74-1.73,1.76,1.76,0,0,0-1-1.6L12,7.23l-9.48,4.3a1.76,1.76,0,0,0-1,1.6,1.74,1.74,0,0,0,1.74,1.73H5.32"
+              />
+              <path
+                class="cls-1"
+                d="M12,7.23V7a2.54,2.54,0,0,1,1.13-2,1.91,1.91,0,1,0-3-1.54"
+              />
+              <path
+                class="cls-1"
+                d="M7.23,13h9.55a1.91,1.91,0,0,1,1.91,1.91V22.5a0,0,0,0,1,0,0H5.32a0,0,0,0,1,0,0V14.86A1.91,1.91,0,0,1,7.23,13Z"
+              />
+            </svg>
+          </span>
+          <div><strong>1000+</strong><span>Laundry Done</span></div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg
+              fill="#ffffff"
+              height="35px"
+              width="35px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <g>
+                <g>
+                  <g>
+                    <path
+                      d="M91.621,309.895c0-4.466-3.62-8.084-8.084-8.084H29.642c-7.43,0-13.474-6.044-13.474-13.474v-43.116
+				c0-7.43,6.044-13.474,13.474-13.474H205.8c5.697,0,10.795,3.599,12.685,8.955c7.21,20.433,26.617,34.161,48.294,34.161h97.011
+				c28.231,0,51.2-22.969,51.2-51.2c0-52.006-42.31-94.316-94.316-94.316h-84.449c6.18-19.89,18.51-37.435,35.399-50.126
+				c6.182-4.644,12.893-8.562,19.95-11.644c12.594-5.502,26.011-8.292,39.879-8.292h32.337c54.978,0,99.705,44.727,99.705,99.705
+				v32.337c0,4.466,3.618,8.084,8.084,8.084c4.466,0,8.084-3.618,8.084-8.084v-32.337c0-63.892-51.981-115.874-115.874-115.874
+				h-32.337c-16.11,0-31.705,3.246-46.352,9.645c-8.206,3.585-16.007,8.138-23.189,13.534
+				c-20.967,15.752-35.886,37.956-42.506,63.052h-49.638c-4.465,0-8.084,3.619-8.084,8.084c0,4.466,3.62,8.084,8.084,8.084h55.901
+				c0.107,0.002,0.211,0.002,0.317,0h94.688c43.091,0,78.147,35.056,78.147,78.147c0,19.317-15.715,35.032-35.032,35.032h-97.011
+				c-14.834,0-28.115-9.393-33.047-23.373c-0.435-1.234-0.948-2.428-1.533-3.574h56.138c4.466,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.619-8.084-8.084-8.084H48.92c4.059-39.305,37.372-70.063,77.732-70.063h10.779c4.465,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.62-8.084-8.084-8.084h-10.779c-49.284,0-89.859,37.996-93.973,86.232h-3.038C13.297,215.579,0,228.877,0,245.221
+				v43.116c0,16.344,13.297,29.642,29.642,29.642h53.895C88.001,317.979,91.621,314.36,91.621,309.895z"
+                    />
+                    <path
+                      d="M105.849,123.959c0.382,0,0.766-0.027,1.156-0.082c4.419-0.633,7.49-4.729,6.858-9.148
+				c-0.453-3.166-0.682-6.407-0.682-9.634c0-49.033,39.892-88.926,88.926-88.926h75.453c17.964,0,34.85,5.925,48.836,17.134
+				c3.483,2.792,8.57,2.231,11.364-1.253c2.792-3.483,2.231-8.571-1.253-11.364C319.863,7.346,298.928,0,277.558,0h-75.453
+				C144.156,0,97.011,47.145,97.011,105.095c0,3.99,0.285,8.002,0.846,11.925C98.433,121.051,101.891,123.959,105.849,123.959z"
+                    />
+                    <path
+                      d="M97.011,406.905c0,4.466,3.62,8.084,8.084,8.084h52.147l4.505,36.035c0.511,4.09,3.994,7.082,8.012,7.082
+				c0.334,0,0.673-0.022,1.012-0.064c4.43-0.554,7.573-4.595,7.019-9.025l-4.253-34.028h74.379v35.032
+				c0,4.466,3.62,8.084,8.084,8.084c4.466,0,8.084-3.619,8.084-8.084v-35.032h56.589c4.466,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.618-8.084-8.084-8.084h-56.589v-35.032c0-4.466-3.619-8.084-8.084-8.084c-4.465,0-8.084,3.618-8.084,8.084v35.032
+				h-76.4l-4.505-36.035c-0.554-4.429-4.597-7.573-9.024-7.019c-4.43,0.554-7.573,4.595-7.019,9.025l4.253,34.029h-50.126
+				C100.63,398.821,97.011,402.44,97.011,406.905z"
+                    />
+                    <path
+                      d="M354.014,355.768c-4.432-0.556-8.471,2.589-9.025,7.019l-10.779,86.232c-0.554,4.43,2.589,8.471,7.019,9.025
+				c0.341,0.042,0.679,0.064,1.013,0.064c4.017,0,7.5-2.992,8.012-7.082l10.779-86.232
+				C361.586,360.362,358.443,356.321,354.014,355.768z"
+                    />
+                    <path
+                      d="M406.905,414.989c4.466,0,8.084-3.618,8.084-8.084c0-4.466-3.618-8.084-8.084-8.084h-32.337
+				c-4.466,0-8.084,3.618-8.084,8.084c0,4.466,3.619,8.084,8.084,8.084H406.905z"
+                    />
+                    <path
+                      d="M331.453,495.832H94.183c-6.875,0-12.632-5.152-13.391-11.985c-0.022-0.194-0.05-0.386-0.085-0.578L54.351,340.761
+				c-0.812-4.39-5.032-7.293-9.42-6.479c-4.39,0.812-7.292,5.029-6.479,9.42L64.76,485.945C66.57,500.821,79.164,512,94.183,512
+				h237.269c4.466,0,8.084-3.618,8.084-8.084C339.537,499.45,335.918,495.832,331.453,495.832z"
+                    />
+                    <path
+                      d="M482.358,215.579h-43.116c-4.466,0-8.084,3.618-8.084,8.084c0,4.466,3.618,8.084,8.084,8.084h43.116
+				c7.43,0,13.474,6.044,13.474,13.474v43.116c0,7.43-6.044,13.474-13.474,13.474h-10.637c-0.101-0.002-0.202-0.002-0.302,0H115.874
+				c-4.465,0-8.084,3.618-8.084,8.084c0,4.466,3.62,8.084,8.084,8.084h345.988l-30.569,165.29c-0.036,0.192-0.065,0.384-0.085,0.578
+				c-0.759,6.833-6.516,11.985-13.392,11.985h-54.026c-4.466,0-8.084,3.619-8.084,8.084c0,4.466,3.618,8.084,8.084,8.084h54.026
+				c15.022,0,27.615-11.18,29.425-26.056l31.064-167.965h4.053c16.344,0,29.642-13.298,29.642-29.642v-43.116
+				C512,228.877,498.702,215.579,482.358,215.579z"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span>
+          <div><strong>1000+</strong><span>Clothes Cleaned</span></div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg
+              fill="#ffffff"
+              height="35px"
+              width="35px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M318.825,128.104v-9.372c22.28-4.649,39.342-23.688,40.958-46.925h16.269V56.073h-31.878v12.113
+			c0,19.799-16.108,35.908-35.908,35.908h-96.53c-19.799,0-35.909-16.108-35.909-35.908V56.072h-23.874v15.734h8.266
+			c1.595,22.928,18.229,41.768,40.077,46.73v9.568h-88.223V512h287.853V128.104H318.825z M216.03,119.827h87.061v8.277H216.03
+			V119.827z M384.193,223.421h-16.068v15.734h16.068v225.519H216.03v15.734h168.163v15.859H127.807v-15.859h15.847v-15.734h-15.847
+			V239.155h15.847v-15.734h-15.847v-79.583h256.385V223.421z"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="159.384"
+                    y="223.421"
+                    width="193.002"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path
+                    d="M136.083,152.115v63.755h87.766v-63.755H136.083z M208.115,200.136h-56.298v-32.287h56.298V200.136z"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="240.151"
+                    y="176.219"
+                    width="15.734"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="264.277"
+                    y="176.219"
+                    width="31.468"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="240.151"
+                    y="200.345"
+                    width="15.734"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="264.277"
+                    y="200.345"
+                    width="31.468"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="240.151"
+                    y="152.094"
+                    width="15.734"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="264.277"
+                    y="152.094"
+                    width="31.468"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path
+                    d="M352.042,160.118c-10.443,0-19.335,6.742-22.568,16.101h-17.992v15.734h18.056c3.286,9.261,12.131,15.912,22.504,15.912
+			c13.164,0,23.874-10.71,23.874-23.873C375.916,170.828,365.206,160.118,352.042,160.118z M352.042,192.131
+			c-4.488,0-8.14-3.651-8.14-8.14s3.651-8.14,8.14-8.14c4.488,0,8.14,3.651,8.14,8.14
+			C360.182,188.48,356.53,192.131,352.042,192.131z"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="311.478"
+                    y="152.094"
+                    width="16.783"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="311.478"
+                    y="200.345"
+                    width="16.783"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path
+                    d="M348.888,328.192c-10.759-42.107-48.806-72.032-92.888-72.032c-52.883,0-95.906,43.023-95.906,95.905
+			c0,52.883,43.024,95.906,95.906,95.906c44.081,0,82.129-29.924,92.886-72.032h19.026v-47.748H348.888z M256.001,432.238
+			c-44.207,0-80.173-35.964-80.173-80.172c0-44.207,35.966-80.171,80.173-80.171c35.475,0,66.274,23.175,76.548,56.298h-8.712
+			c-10.019-28.56-37.091-48.021-67.836-48.021c-39.643,0-71.895,32.252-71.895,71.895s32.252,71.895,71.895,71.895
+			c30.748,0,57.817-19.46,67.836-48.021h8.712C322.275,409.063,291.474,432.238,256.001,432.238z M306.85,375.939v0.001
+			c-9.1,19.422-28.754,32.287-50.85,32.287c-30.967,0-56.162-25.194-56.162-56.161s25.194-56.161,56.162-56.161
+			c22.093,0,41.748,12.866,50.85,32.287h-26.702v47.748H306.85z M352.178,360.206h-56.298v-16.28h56.298V360.206z"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="227.843"
+                    y="318.187"
+                    transform="matrix(0.7071 -0.7071 0.7071 0.7071 -159.6774 266.6126)"
+                    width="28.297"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect
+                    x="215.701"
+                    y="356.211"
+                    transform="matrix(0.7071 -0.7071 0.7071 0.7071 -185.9767 279.1681)"
+                    width="56.593"
+                    height="15.734"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path
+                    d="M152.091,448.244v39.745h55.751v-39.745H152.091z M192.108,472.255h-24.284v-8.277h24.284V472.255z"
+                  />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <rect x="191.901" y="56.642" width="136.36" height="15.734" />
+                </g>
+              </g>
+              <g>
+                <g>
+                  <path
+                    d="M350.743,31.468c0.822-2.38,1.28-4.924,1.28-7.57C352.022,10.721,341.195,0,328.031,0H191.972
+			c-13.164,0-23.907,10.721-23.907,23.898c0,2.645,0.46,5.189,1.287,7.57h-33.04v15.734h50.5c1.656,0.385,3.361,0.594,5.093,0.594
+			v-0.594h136.36v0.582c1.715,0,3.402-0.206,5.04-0.582h50.553V31.468H350.743z M331.133,31.468H188.997
+			c-2.932-1.209-5.198-4.144-5.198-7.57c0-4.502,3.685-8.164,8.173-8.164h136.06c4.488,0,8.257,3.663,8.257,8.164
+			C336.289,27.33,334.056,30.268,331.133,31.468z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </span>
+          <div><strong>3+</strong><span>Daily Washesed</span></div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">
+            <svg
+              fill="#ffffff"
+              width="35px"
+              height="35px"
+              viewBox="0 0 24 24"
+              id="Layer_1"
+              version="1.1"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <path
+                d="M16.15,5.47l-4.06,6.49l-0.2-0.41c-0.25-0.49-0.85-0.69-1.34-0.45c-0.49,0.25-0.69,0.85-0.45,1.34l1,2  c0.16,0.32,0.49,0.53,0.85,0.55c0.02,0,0.03,0,0.05,0c0.34,0,0.67-0.18,0.85-0.47l5-8c0.29-0.47,0.15-1.08-0.32-1.38  C17.06,4.86,16.44,5,16.15,5.47z"
+              />
+              <path
+                d="M5.95,15.23l-0.93,5.61c-0.06,0.37,0.09,0.75,0.4,0.97c0.31,0.22,0.71,0.25,1.05,0.08L12,18.98l5.54,2.91  C17.68,21.96,17.84,22,18,22c0.21,0,0.41-0.06,0.59-0.19c0.31-0.22,0.46-0.6,0.4-0.97l-0.93-5.61l3.78-5.67  c0.2-0.31,0.22-0.7,0.05-1.03S21.37,8,21,8h-2c-0.55,0-1,0.45-1,1s0.45,1,1,1h0.13l-2.96,4.45c-0.14,0.21-0.2,0.47-0.15,0.72  l0.67,4.01l-4.22-2.21c-0.29-0.15-0.64-0.15-0.93,0l-4.22,2.21l0.67-4.01c0.04-0.25-0.01-0.51-0.15-0.72L4.87,10H9  c0.38,0,0.72-0.21,0.89-0.55l1.97-3.94l0.31,0.84c0.19,0.52,0.77,0.78,1.28,0.59c0.52-0.19,0.78-0.77,0.59-1.28l-1.11-3  C12.8,2.28,12.45,2.02,12.05,2c-0.41-0.02-0.77,0.2-0.95,0.55L8.38,8H3C2.63,8,2.29,8.2,2.12,8.53S1.96,9.25,2.17,9.55L5.95,15.23z"
+              />
+            </svg>
+          </span>
+          <div><strong>5+</strong><span>Years Experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how">
+      <div class="container how-inner">
+        <div class="how-image-wrap">
+          <img
+            src="img/alur-kerja.webp"
+            alt="Laundry shop interior"
+            class="how-img"
+          />
+          <div class="call-now-card">
+            <span class="call-icon">
+              <svg
+                width="25px"
+                height="25px"
+                viewBox="0 0 24 24"
+                fill="#ffffff"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 12C19.7614 12 22 9.76142 22 7C22 4.23858 19.7614 2 17 2C14.2386 2 12 4.23858 12 7C12 7.79984 12.1878 8.55582 12.5217 9.22624C12.6105 9.4044 12.64 9.60803 12.5886 9.80031L12.2908 10.9133C12.1615 11.3965 12.6035 11.8385 13.0867 11.7092L14.1997 11.4114C14.392 11.36 14.5956 11.3895 14.7738 11.4783C15.4442 11.8122 16.2002 12 17 12Z"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M2.00655 9.93309C1.93421 11.8412 2.41713 15.0817 5.6677 18.3323C6.45191 19.1165 7.23553 19.7396 8 20.2327M3.53781 6.93723C4.93076 5.54428 7.15317 5.73144 8.03759 7.31617L8.6866 8.4791C9.2723 9.52858 9.03718 10.9053 8.11471 11.8278C8.11471 11.8278 8.11471 11.8278 8.11471 11.8278C8.11459 11.8279 6.99588 12.9468 9.02451 14.9755C11.0525 17.0035 12.1714 15.8861 12.1722 15.8853C12.1722 15.8853 12.1722 15.8853 12.1722 15.8853C13.0947 14.9628 14.4714 14.7277 15.5209 15.3134L16.6838 15.9624C18.2686 16.8468 18.4557 19.0692 17.0628 20.4622C16.2258 21.2992 15.2004 21.9505 14.0669 21.9934C13.2529 22.0243 12.1963 21.9541 11 21.6111"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <div><strong>Call Us Now!</strong><span>+123-456-789</span></div>
+          </div>
+        </div>
+
+        <div class="how-text">
+          <h2>
+            Cara Kami <span class="eyebrow">Mempermudah</span> Pengalaman
+            Laundry Anda
+          </h2>
+          <p class="how-desc">
+            Nikmati proses laundry yang praktis, cepat, dan tanpa ribet dengan
+            layanan profesional yang dirancang untuk kenyamanan Anda.
+          </p>
+
+          <ul class="how-steps">
+            <li>
+              <span class="step-icon">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="#ffffff"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 12C19.7614 12 22 9.76142 22 7C22 4.23858 19.7614 2 17 2C14.2386 2 12 4.23858 12 7C12 7.79984 12.1878 8.55582 12.5217 9.22624C12.6105 9.4044 12.64 9.60803 12.5886 9.80031L12.2908 10.9133C12.1615 11.3965 12.6035 11.8385 13.0867 11.7092L14.1997 11.4114C14.392 11.36 14.5956 11.3895 14.7738 11.4783C15.4442 11.8122 16.2002 12 17 12Z"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M2.00655 9.93309C1.93421 11.8412 2.41713 15.0817 5.6677 18.3323C6.45191 19.1165 7.23553 19.7396 8 20.2327M3.53781 6.93723C4.93076 5.54428 7.15317 5.73144 8.03759 7.31617L8.6866 8.4791C9.2723 9.52858 9.03718 10.9053 8.11471 11.8278C8.11471 11.8278 8.11471 11.8278 8.11471 11.8278C8.11459 11.8279 6.99588 12.9468 9.02451 14.9755C11.0525 17.0035 12.1714 15.8861 12.1722 15.8853C12.1722 15.8853 12.1722 15.8853 12.1722 15.8853C13.0947 14.9628 14.4714 14.7277 15.5209 15.3134L16.6838 15.9624C18.2686 16.8468 18.4557 19.0692 17.0628 20.4622C16.2258 21.2992 15.2004 21.9505 14.0669 21.9934C13.2529 22.0243 12.1963 21.9541 11 21.6111"
+                    stroke="#ffffff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <strong>Jadwalkan Laundry Anda</strong>
+                <p>
+                  Pilih layanan yang Anda butuhkan dan lakukan pemesanan dengan
+                  mudah sesuai waktu yang paling nyaman untuk Anda.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 48 48"
+                  fill="#ffffff"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="invisible_box" data-name="invisible box">
+                      <rect width="48" height="48" fill="none" />
+                    </g>
+                    <g id="Health_Icons" data-name="Health Icons">
+                      <g>
+                        <path
+                          d="M35.8,11a3.2,3.2,0,0,0-2.2-1H32V8a2.9,2.9,0,0,0-3-3H21.9A11.7,11.7,0,0,0,14,2,12,12,0,0,0,2,14a4.1,4.1,0,0,0,.1,1.1H2V35a2.9,2.9,0,0,0,3,3H7.3a7,7,0,0,0,13.4,0h6.6a7,7,0,0,0,13.4,0H43a2.9,2.9,0,0,0,3-3V22.2Zm-2.7,3,7.3,8H32V14ZM14,6a8,8,0,1,1-8,8A8,8,0,0,1,14,6ZM6,22.9A11.9,11.9,0,0,0,14,26,12,12,0,0,0,26,14a11.8,11.8,0,0,0-1.1-5H28V32.4a7.7,7.7,0,0,0-.7,1.6H20.7A7,7,0,0,0,7.3,34H6ZM14,39a3,3,0,1,1,3-3A2.9,2.9,0,0,1,14,39Zm20,0a3,3,0,1,1,3-3A2.9,2.9,0,0,1,34,39Zm6.7-5A7,7,0,0,0,34,29a6.4,6.4,0,0,0-2,.3V26H42v8Z"
+                        />
+                        <path
+                          d="M20,14a2,2,0,0,0-2-2H16V10a2,2,0,0,0-4,0v6h6A2,2,0,0,0,20,14Z"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <div>
+                <strong>Penjemputan oleh Tim Kami</strong>
+                <p>
+                  Tim kami siap menjemput laundry langsung ke lokasi Anda,
+                  sehingga Anda tidak perlu repot keluar rumah.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon">
+                <svg
+                  fill="#ffffff"
+                  height="30px"
+                  width="30px"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 512 512"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path
+                          d="M202.105,253.305c31.204,0,56.589,25.387,56.589,56.589c0,4.466,3.62,8.084,8.084,8.084c4.465,0,8.084-3.618,8.084-8.084
+				c0-40.119-32.639-72.758-72.758-72.758c-4.465,0-8.084,3.618-8.084,8.084C194.021,249.687,197.641,253.305,202.105,253.305z"
+                        />
+                        <path
+                          d="M40.421,102.4H148.21c4.465,0,8.084-3.619,8.084-8.084s-3.62-8.084-8.084-8.084H40.421c-4.465,0-8.084,3.619-8.084,8.084
+				S35.956,102.4,40.421,102.4z"
+                        />
+                        <path
+                          d="M361.095,309.895c0-87.667-71.322-158.989-158.989-158.989c-38.498,0-75.643,13.938-104.596,39.247
+				c-28.673,25.066-47.419,59.529-52.784,97.04c-0.632,4.419,2.438,8.514,6.858,9.147c4.418,0.62,8.515-2.439,9.147-6.859
+				c9.983-69.783,70.761-122.407,141.376-122.407c78.752,0,142.821,64.069,142.821,142.821s-64.069,142.821-142.821,142.821
+				c-74.637,0-137.214-58.249-142.462-132.611c-0.314-4.454-4.182-7.801-8.633-7.495c-4.454,0.315-7.809,4.18-7.496,8.634
+				c2.826,40.042,20.577,77.248,49.982,104.764c29.548,27.649,68.12,42.877,108.609,42.877
+				C289.773,468.884,361.095,397.562,361.095,309.895z"
+                        />
+                        <path
+                          d="M202.105,382.653c4.465,0,8.084-3.619,8.084-8.084s-3.62-8.084-8.084-8.084c-31.204,0-56.589-25.387-56.589-56.589
+				c0-4.466-3.62-8.084-8.084-8.084c-4.465,0-8.084,3.618-8.084,8.084C129.347,350.014,161.986,382.653,202.105,382.653z"
+                        />
+                        <path
+                          d="M350.316,83.537c0-16.344-13.297-29.642-29.642-29.642c-16.345,0-29.642,13.298-29.642,29.642
+				s13.297,29.642,29.642,29.642C337.019,113.179,350.316,99.881,350.316,83.537z M307.2,83.537c0-7.43,6.044-13.474,13.474-13.474
+				s13.474,6.044,13.474,13.474s-6.044,13.474-13.474,13.474S307.2,90.967,307.2,83.537z"
+                        />
+                        <path
+                          d="M274.863,83.537c0-16.344-13.297-29.642-29.642-29.642c-16.345,0-29.642,13.298-29.642,29.642
+				s13.297,29.642,29.642,29.642C261.566,113.179,274.863,99.881,274.863,83.537z M231.747,83.537
+				c0-7.43,6.044-13.474,13.474-13.474s13.474,6.044,13.474,13.474s-6.044,13.474-13.474,13.474S231.747,90.967,231.747,83.537z"
+                        />
+                        <path
+                          d="M202.105,425.768c63.893,0,115.874-51.982,115.874-115.874s-51.98-115.874-115.874-115.874
+				S86.232,246.003,86.232,309.895S138.212,425.768,202.105,425.768z M202.105,210.189c54.978,0,99.705,44.727,99.705,99.705
+				S257.083,409.6,202.105,409.6S102.4,364.873,102.4,309.895S147.127,210.189,202.105,210.189z"
+                        />
+                        <path
+                          d="M503.916,495.832h-22.857c1.597-3.14,2.657-6.616,3.054-10.315l27.717-258.695c0.895-8.352-1.812-16.724-7.426-22.971
+				c-5.613-6.246-13.649-9.829-22.048-9.829h-26.072c-3.032-6.367-9.532-10.779-17.042-10.779h-35.032v-153.6
+				C404.211,13.298,390.914,0,374.568,0H29.642C13.297,0,0,13.298,0,29.642V460.8c0,13.539,5.282,25.866,13.893,35.032H8.084
+				C3.62,495.832,0,499.45,0,503.916C0,508.382,3.62,512,8.084,512h64.674c4.465,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.62-8.084-8.084-8.084H51.2c-19.316,0-35.032-15.715-35.032-35.032V134.737H153.6c25.26,0,45.81-20.55,45.81-45.811
+				s-20.55-45.811-45.81-45.811H16.168V29.642c0-7.43,6.044-13.474,13.474-13.474h344.926c7.43,0,13.474,6.044,13.474,13.474v56.589
+				h-13.474c-4.465,0-8.084,3.619-8.084,8.084s3.62,8.084,8.084,8.084h13.474v121.263c0,4.466,3.62,8.084,8.084,8.084
+				c4.465,0,8.084-3.618,8.084-8.084v-24.253h35.032c1.485,0,2.695,1.208,2.695,2.695v64.674c0,22.502-16.309,41.266-37.726,45.096
+				V256c0-4.466-3.62-8.084-8.084-8.084c-4.465,0-8.084,3.619-8.084,8.084v204.8c0,19.317-15.716,35.032-35.032,35.032H105.095
+				c-4.465,0-8.084,3.619-8.084,8.084c0,4.466,3.62,8.084,8.084,8.084h301.811c4.465,0,8.084-3.618,8.084-8.084
+				c0-4.466-3.62-8.084-8.084-8.084h-16.588c8.611-9.165,13.893-21.492,13.893-35.032V328.232
+				c30.371-3.973,53.895-30.017,53.895-61.454v-56.589h24.25c3.874,0,7.433,1.587,10.022,4.469c2.589,2.881,3.788,6.59,3.375,10.442
+				l-27.717,258.695c-0.735,6.862-6.495,12.038-13.397,12.038h-15.397c-4.465,0-8.084,3.619-8.084,8.084
+				c0,4.466,3.62,8.084,8.084,8.084h64.674c4.465,0,8.084-3.618,8.084-8.084C512,499.45,508.38,495.832,503.916,495.832z
+				 M153.6,59.284c16.345,0,29.642,13.298,29.642,29.642s-13.297,29.642-29.642,29.642H16.168V59.284H153.6z"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <div>
+                <strong>Proses Pembersihan Profesional</strong>
+                <p>
+                  Setiap pakaian dicuci menggunakan proses yang higienis dan
+                  penanganan terbaik untuk menjaga kualitas serta kebersihannya.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon">
+                <svg
+                  fill="#ffffff"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 256 160"
+                  enable-background="new 0 0 256 160"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M252,113h-5V91c0-7.4-5.52-13-13-13h-24c-0.5,0-1.1-0.27-1.44-0.6l-37.4-36.41c-1.68-1.68-3.72-2.91-6.16-2.99h-27v92h40
+	c0.92,0,1.83-1.16,2-2c2.52-14.46,14.83-25.43,30.04-25.43c15.22,0,27.82,11.01,30.34,25.47c0.17,0.93,1.7,1.96,2.62,1.96h2
+	c4.79,0,9-4.31,9-9.02v-6.22C254,113.84,253.01,113,252,113z M191,78h-41c-1.01,0-2-0.99-2-2l-0.04-25.85
+	c0-1.01,1.03-2.15,2.04-2.15h13c0.5,0,1.52,0.55,1.94,0.89L192,75C193.01,76.26,192.6,78,191,78z M2,2v119.44
+	c0,4.48,3.52,8.56,8,8.56h22c0.92,0,1.83-1.16,2-2c2.52-14.46,15.33-24.44,30.54-24.44s27.82,10.02,30.34,24.48
+	c0.17,0.93,1.2,1.96,2.12,1.96h33V2H2z M90.18,59.51c0,0-0.3,15.5-25.13,25.13c-24.83-9.63-25.12-25.13-25.12-25.13v-33.5
+	l25.11-8.37h0.02l25.12,8.37V59.51z M53.99,44.45l-4.44,4.44l12.24,12.25l18.76-18.71l-4.43-4.45L61.8,52.26L53.99,44.45z
+	 M210.04,110.48c-12.77,0-23.11,10.33-23.11,23.11c0,12.77,10.34,23.11,23.11,23.11c12.78,0,23.12-10.34,23.12-23.11
+	C233.16,120.81,222.82,110.48,210.04,110.48z M210.04,142.44c-4.85,0-8.85-4-8.85-8.85c0-4.85,4-8.85,8.85-8.85
+	c4.86,0,8.86,4,8.86,8.85C218.9,138.44,214.9,142.44,210.04,142.44z M64.54,111.46c-12.78,0-23.11,10.34-23.11,23.11
+	c0,12.78,10.33,23.12,23.11,23.12c12.77,0,23.11-10.34,23.11-23.12C87.65,121.8,77.31,111.46,64.54,111.46z M64.54,143.43
+	c-4.85,0-8.85-4-8.85-8.86c0-4.85,4-8.85,8.85-8.85c4.85,0,8.85,4,8.85,8.85C73.39,139.43,69.39,143.43,64.54,143.43z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <strong>Pengantaran Cepat & Fresh</strong>
+                <p>
+                  Laundry yang telah selesai akan kami antar kembali dalam
+                  kondisi bersih, wangi, dan siap digunakan.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="harga">
+      <div class="container">
+        <div class="section-head">
+          <h2>
+            Paket <span class="eyebrow">Laundry</span> Sesuai Kebutuhan Anda
+          </h2>
+          <p>
+            Kami menyediakan berbagai pilihan layanan laundry dengan harga
+            terjangkau dan kualitas terbaik untuk memenuhi kebutuhan harian
+            Anda.
+          </p>
+        </div>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <h3>Paket Reguler</h3>
+            <p class="price-sub">
+              Cocok untuk laundry harian dengan harga ekonomis.
+            </p>
+            <div class="price-tag"><span>7000</span> / kg</div>
+            <ul class="price-features">
+              <li>✔ Estimasi selesai 2–3 hari</li>
+              <li>✔ Dicuci & dikeringkan</li>
+              <li>✔ Lipat rapi</li>
+            </ul>
+            <a href="#booking" class="btn btn-navy price-btn">
+              Pilih Paket →
+            </a>
+          </div>
+
+          <div class="price-card price-card-featured">
+            <span class="best-deal">Best Deal!</span>
+            <h3>Paket Express</h3>
+            <p class="price-sub">Layanan cepat untuk kebutuhan mendesak.</p>
+            <div class="price-tag"><span>12.000</span> / kg</div>
+            <ul class="price-features">
+              <li>✔ Selesai dalam 6–12 jam</li>
+              <li>✔ Prioritas pengerjaan</li>
+              <li>✔ Bersih & wangi maksimal</li>
+            </ul>
+            <a href="#booking" class="btn btn-orange price-btn"
+              >Pilih Paket →</a
+            >
+          </div>
+
+          <div class="price-card">
+            <h3>Paket Premium</h3>
+            <p class="price-sub">Perawatan ekstra untuk pakaian spesial.</p>
+            <div class="price-tag"><span>20.000</span> / kg</div>
+            <ul class="price-features">
+              <li>✔ Penanganan khusus</li>
+              <li>✔ Cocok untuk bahan sensitif</li>
+              <li>✔ Hasil lebih detail & rapi</li>
+            </ul>
+            <a href="#booking" class="btn btn-navy price-btn">
+              Pilih Paket →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Apa Kata <span class="eyebrow">Pelanggan</span> Kami</h2>
+          <p>
+            Kepuasan pelanggan adalah prioritas kami. Lihat pengalaman mereka
+            setelah menggunakan layanan laundry profesional kami.
+          </p>
+        </div>
+
+        <div class="testi-grid">
+          <div class="testi-card">
+            <span class="testi-stars">★★★★★</span>
+            <p class="testi-quote">
+              Pelayanannya sangat memuaskan. Cucian selalu bersih, wangi, dan
+              selesai tepat waktu. Sangat membantu untuk saya yang sibuk
+              bekerja.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://placehold.co/44x44/5B7FFF/ffffff?text=BA"
+                alt=""
+              />
+              <div><strong>Budi Anduk</strong><span>Pelanggan Tetap</span></div>
+              <span class="quote-mark">”</span>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <span class="testi-stars">★★★★★</span>
+            <p class="testi-quote">
+              Saya suka layanan antar jemputnya, jadi tidak perlu repot keluar
+              rumah. Hasil laundry juga rapi dan wangi tahan lama.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://placehold.co/44x44/FFA826/ffffff?text=SR"
+                alt=""
+              />
+              <div><strong>Siti Rahma</strong><span>Pelanggan</span></div>
+              <span class="quote-mark">”</span>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <span class="testi-stars">★★★★☆</span>
+            <p class="testi-quote">
+              Harganya terjangkau dengan kualitas yang bagus. Adminnya responsif
+              dan proses pengerjaannya cepat. Recommended banget.
+            </p>
+            <div class="testi-author">
+              <img
+                src="https://placehold.co/44x44/0E1B4D/ffffff?text=AP"
+                alt=""
+              />
+              <div><strong>Andi Pratama</strong><span>Pelanggan</span></div>
+              <span class="quote-mark">”</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container faq-inner">
+        <div class="faq-list">
+          <div class="faq-item faq-open">
+            <button class="faq-q">
+              <span class="faq-q-icon">❓</span>
+              Bagaimana proses laundry di sini?
+              <span class="faq-toggle">▾</span>
+            </button>
+            <p class="faq-a">
+              Prosesnya sangat mudah. Anda cukup menghubungi kami atau melakukan
+              booking, lalu tim kami akan menjemput laundry Anda (jika
+              menggunakan layanan pickup), mencuci dengan proses profesional,
+              dan mengantarkannya kembali setelah selesai.
+            </p>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-icon">❓</span>
+              Jenis pakaian apa saja yang bisa dicuci?
+              <span class="faq-toggle">▾</span>
+            </button>
+            <p class="faq-a">
+              Kami melayani berbagai jenis pakaian seperti baju harian, seragam,
+              jaket, bed cover, selimut, hingga pakaian berbahan khusus dengan
+              penanganan yang aman.
+            </p>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span class="faq-q-icon">❓</span>
+              Apakah saya bisa menjadwalkan pickup rutin setiap minggu?
+              <span class="faq-toggle">▾</span>
+            </button>
+            <p class="faq-a">
+              Tentu. Kami menyediakan layanan pickup rutin untuk pelanggan yang
+              ingin laundry mingguan atau harian agar lebih praktis dan hemat
+              waktu.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-side">
+          <h2>Pertanyaan Yang Sering <span class="eyebrow">Diajukan</span></h2>
+          <p>
+            Temukan jawaban dari pertanyaan yang paling sering ditanyakan
+            pelanggan mengenai layanan laundry kami.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Booking ===== -->
+    <section class="booking-premium" id="booking">
+      <div class="container">
+        <div class="booking-layout">
+          <div class="booking-left">
+            <span class="booking-badge">Easy Booking</span>
+            <h2>Booking Laundry Jadi Lebih Mudah</h2>
+            <p>
+              Jadwalkan pickup laundry Anda hanya dalam beberapa klik. Cepat,
+              praktis, dan tanpa ribet.
+            </p>
+
+            <div class="booking-benefits">
+              <div>
+                <i class="fa-solid fa-truck-fast"></i> Pickup & Delivery Gratis
+              </div>
+              <div>
+                <i class="fa-solid fa-bolt"></i> Proses Cepat & Tepat Waktu
+              </div>
+              <div>
+                <i class="fa-solid fa-shirt"></i> Bersih, Wangi & Higienis
+              </div>
+            </div>
+          </div>
+
+          <form class="premium-form" id="bookingForm">
+            <input id="name" type="text" placeholder="Nama Anda" required />
+            <input id="phone" type="tel" placeholder="No WhatsApp" required />
+
+            <input
+              id="address"
+              type="text"
+              placeholder="Alamat Pickup"
+              required
+            />
+
+            <div class="form-grid">
+              <select id="service" required>
+                <option value="">Pilih Layanan</option>
+                <option>Paket Reguler</option>
+                <option>Paket Express</option>
+                <option>Paket Premium</option>
+              </select>
+
+              <input id="date" type="date" required />
+            </div>
+
+            <textarea id="notes" placeholder="Catatan tambahan"></textarea>
+
+            <button type="submit">Booking Sekarang →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KONTAK & LOKASI ===== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="contact-badge">Contact Us</span>
+            <h2>Hubungi Kami</h2>
+            <p>
+              Punya pertanyaan atau ingin booking laundry? Hubungi kami kapan
+              saja, tim kami siap membantu.
+            </p>
+
+            <div class="contact-card">
+              <div class="contact-item">
+                <span>
+                  <svg
+                    width="40px"
+                    height="40px"
+                    viewBox="0 0 24 24"
+                    fill="#ffffff"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 12C19.7614 12 22 9.76142 22 7C22 4.23858 19.7614 2 17 2C14.2386 2 12 4.23858 12 7C12 7.79984 12.1878 8.55582 12.5217 9.22624C12.6105 9.4044 12.64 9.60803 12.5886 9.80031L12.2908 10.9133C12.1615 11.3965 12.6035 11.8385 13.0867 11.7092L14.1997 11.4114C14.392 11.36 14.5956 11.3895 14.7738 11.4783C15.4442 11.8122 16.2002 12 17 12Z"
+                      stroke="#1C274C"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2.00655 9.93309C1.93421 11.8412 2.41713 15.0817 5.6677 18.3323C6.45191 19.1165 7.23553 19.7396 8 20.2327M3.53781 6.93723C4.93076 5.54428 7.15317 5.73144 8.03759 7.31617L8.6866 8.4791C9.2723 9.52858 9.03718 10.9053 8.11471 11.8278C8.11471 11.8278 8.11471 11.8278 8.11471 11.8278C8.11459 11.8279 6.99588 12.9468 9.02451 14.9755C11.0525 17.0035 12.1714 15.8861 12.1722 15.8853C12.1722 15.8853 12.1722 15.8853 12.1722 15.8853C13.0947 14.9628 14.4714 14.7277 15.5209 15.3134L16.6838 15.9624C18.2686 16.8468 18.4557 19.0692 17.0628 20.4622C16.2258 21.2992 15.2004 21.9505 14.0669 21.9934C13.2529 22.0243 12.1963 21.9541 11 21.6111"
+                      stroke="#1C274C"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4>Telepon / WhatsApp</h4>
+                  <p>0812-3456-7890</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>
+                  <svg
+                    width="40px"
+                    height="40px"
+                    viewBox="0 0 24 24"
+                    fill="#ffffff"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.20404 15C3.43827 15.5883 3 16.2714 3 17C3 18.5705 5.03656 19.9297 8 20.5842M12 21C16.9706 21 21 19.2091 21 17C21 16.2714 20.5617 15.5883 19.796 15M12 17C8.68629 15.4444 6 12.6587 6 9.22222C6 5.78578 8.68629 3 12 3C15.3137 3 18 5.78578 18 9.22222C18 11.4856 16.8347 13.4667 15.0922 15M12 6.5V11.5M9.5 9H10M12 9H14.5"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4>Alamat</h4>
+                  <p>Klaten, Jawa Tengah</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>
+                  <svg
+                    width="40px"
+                    height="40px"
+                    viewBox="0 0 24 24"
+                    fill="#ffffff"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 7V12L9.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4>Jam Operasional</h4>
+                  <p>09:00 - 21:00 WIB</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18..."
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <svg
+              height="40px"
+              width="40px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <path
+                style="fill: #99774f"
+                d="M312.325,202.105h170.03c12.815,0,22.801,11.112,21.435,23.855l-27.717,258.695
+	c-1.174,10.955-10.418,19.261-21.435,19.261H312.325V202.105z"
+              />
+              <path
+                style="fill: #ffc0cf"
+                d="M396.126,320.674L396.126,320.674V191.326h43.116c5.953,0,10.779,4.826,10.779,10.779v64.674
+	C450.021,296.544,425.891,320.674,396.126,320.674z"
+              />
+              <path
+                style="fill: #dbdbdb"
+                d="M353.01,503.916H51.2c-23.812,0-43.116-19.304-43.116-43.116V29.642
+	c0-11.906,9.651-21.558,21.558-21.558h344.926c11.906,0,21.558,9.651,21.558,21.558V460.8
+	C396.126,484.612,376.822,503.916,353.01,503.916z"
+              />
+              <path
+                style="fill: #e5e5e5"
+                d="M396.126,29.642v64.674H8.084V29.642c0-11.906,9.651-21.558,21.558-21.558h344.926
+	C386.475,8.084,396.126,17.736,396.126,29.642z"
+              />
+              <path
+                style="fill: #9b9b9b"
+                d="M153.6,126.653H8.084V51.2H153.6c20.836,0,37.726,16.891,37.726,37.726l0,0
+	C191.326,109.762,174.436,126.653,153.6,126.653z M266.779,83.537L266.779,83.537c0-11.906-9.651-21.558-21.558-21.558l0,0
+	c-11.906,0-21.558,9.651-21.558,21.558l0,0c0,11.906,9.651,21.558,21.558,21.558l0,0C257.127,105.095,266.779,95.443,266.779,83.537
+	z M342.232,83.537L342.232,83.537c0-11.906-9.651-21.558-21.558-21.558l0,0c-11.906,0-21.558,9.651-21.558,21.558l0,0
+	c0,11.906,9.651,21.558,21.558,21.558l0,0C332.58,105.095,342.232,95.443,342.232,83.537z M353.01,309.895
+	c0-83.343-67.562-150.905-150.905-150.905S51.2,226.552,51.2,309.895S118.762,460.8,202.105,460.8S353.01,393.238,353.01,309.895z"
+              />
+              <path
+                style="fill: #c1c1c1"
+                d="M61.979,94.316H8.084V51.2h53.895H153.6c20.836,0,37.726,16.891,37.726,37.726l0,0
+	c0,1.83-0.138,3.628-0.389,5.389H153.6H61.979z"
+              />
+              <path
+                style="fill: #a2ccdb"
+                d="M202.105,417.684c-59.53,0-107.789-48.26-107.789-107.789s48.259-107.789,107.789-107.789
+	s107.789,48.26,107.789,107.789S261.635,417.684,202.105,417.684z"
+              />
+              <path
+                style="fill: #b5e1f4"
+                d="M309.895,309.895c0,59.53-48.259,107.789-107.789,107.789c-15.331,0-29.912-3.208-43.116-8.978
+	c38.067-16.634,64.674-54.613,64.674-98.812s-26.607-82.178-64.674-98.812c13.204-5.77,27.785-8.978,43.116-8.978
+	C261.635,202.105,309.895,250.364,309.895,309.895z"
+              />
+              <path
+                d="M194.021,245.221c0-4.466,3.62-8.084,8.084-8.084c40.119,0,72.758,32.639,72.758,72.758c0,4.466-3.62,8.084-8.084,8.084
+	s-8.084-3.618-8.084-8.084c0-31.203-25.385-56.589-56.589-56.589C197.641,253.305,194.021,249.687,194.021,245.221z M86.232,309.895
+	c0-63.892,51.98-115.874,115.874-115.874s115.874,51.981,115.874,115.874s-51.98,115.874-115.874,115.874
+	S86.232,373.787,86.232,309.895z M102.4,309.895c0,54.978,44.727,99.705,99.705,99.705s99.705-44.727,99.705-99.705
+	s-44.727-99.705-99.705-99.705S102.4,254.917,102.4,309.895z M361.095,309.895c0-87.667-71.322-158.989-158.989-158.989
+	c-38.498,0-75.643,13.938-104.596,39.247c-28.673,25.066-47.419,59.529-52.785,97.04c-0.632,4.419,2.438,8.514,6.858,9.147
+	c4.418,0.62,8.515-2.439,9.147-6.859c9.983-69.783,70.761-122.407,141.376-122.407c78.752,0,142.821,64.069,142.821,142.821
+	s-64.069,142.821-142.821,142.821c-74.637,0-137.214-58.249-142.462-132.611c-0.314-4.454-4.182-7.801-8.633-7.495
+	c-4.454,0.315-7.809,4.18-7.496,8.634c2.826,40.042,20.577,77.248,49.982,104.764c29.548,27.649,68.12,42.876,108.609,42.876
+	C289.773,468.884,361.095,397.562,361.095,309.895z M202.105,382.653c4.465,0,8.084-3.618,8.084-8.084
+	c0-4.466-3.62-8.084-8.084-8.084c-31.204,0-56.589-25.387-56.589-56.589c0-4.466-3.62-8.084-8.084-8.084
+	c-4.465,0-8.084,3.618-8.084,8.084C129.347,350.014,161.986,382.653,202.105,382.653z M512,503.916c0,4.466-3.62,8.084-8.084,8.084
+	h-64.674c-4.465,0-8.084-3.618-8.084-8.084s3.62-8.084,8.084-8.084h15.397c6.902,0,12.662-5.176,13.397-12.038l27.717-258.695
+	c0.413-3.851-0.786-7.56-3.375-10.442c-2.589-2.882-6.148-4.469-10.022-4.469h-24.25v56.589c0,31.437-23.524,57.481-53.895,61.454
+	V460.8c0,13.539-5.282,25.866-13.893,35.032h16.588c4.465,0,8.084,3.618,8.084,8.084S411.37,512,406.905,512H105.095
+	c-4.465,0-8.084-3.618-8.084-8.084s3.62-8.084,8.084-8.084H353.01c19.316,0,35.032-15.715,35.032-35.032V256
+	c0-4.466,3.62-8.084,8.084-8.084c4.465,0,8.084,3.618,8.084,8.084v55.875c21.418-3.83,37.726-22.594,37.726-45.096v-64.674
+	c0-1.486-1.209-2.695-2.695-2.695h-35.032v24.253c0,4.466-3.62,8.084-8.084,8.084c-4.465,0-8.084-3.618-8.084-8.084V102.4h-13.474
+	c-4.465,0-8.084-3.618-8.084-8.084c0-4.466,3.62-8.084,8.084-8.084h13.474V29.642c0-7.43-6.044-13.474-13.474-13.474H29.642
+	c-7.43,0-13.474,6.044-13.474,13.474v13.474H153.6c25.26,0,45.811,20.55,45.811,45.811s-20.55,45.811-45.811,45.811H16.168V460.8
+	c0,19.317,15.716,35.032,35.032,35.032h21.558c4.465,0,8.084,3.618,8.084,8.084S77.223,512,72.758,512H8.084
+	C3.62,512,0,508.382,0,503.916s3.62-8.084,8.084-8.084h5.809C5.282,486.666,0,474.339,0,460.8V29.642C0,13.298,13.297,0,29.642,0
+	h344.926c16.345,0,29.642,13.298,29.642,29.642v153.6h35.032c7.51,0,14.009,4.412,17.042,10.779h26.072
+	c8.399,0,16.436,3.583,22.048,9.829c5.614,6.247,8.32,14.619,7.426,22.971l-27.717,258.695c-0.397,3.699-1.456,7.176-3.054,10.315
+	h22.857C508.38,495.832,512,499.45,512,503.916z M16.168,59.284v59.284H153.6c16.345,0,29.642-13.298,29.642-29.642
+	S169.945,59.284,153.6,59.284H16.168z M245.221,113.179c-16.345,0-29.642-13.298-29.642-29.642s13.297-29.642,29.642-29.642
+	s29.642,13.298,29.642,29.642S261.566,113.179,245.221,113.179z M245.221,97.011c7.43,0,13.474-6.044,13.474-13.474
+	c0-7.43-6.044-13.474-13.474-13.474s-13.474,6.044-13.474,13.474C231.747,90.967,237.791,97.011,245.221,97.011z M40.421,102.4
+	h107.789c4.465,0,8.084-3.618,8.084-8.084c0-4.466-3.62-8.084-8.084-8.084H40.421c-4.465,0-8.084,3.618-8.084,8.084
+	C32.337,98.782,35.956,102.4,40.421,102.4z M320.674,113.179c-16.345,0-29.642-13.298-29.642-29.642s13.297-29.642,29.642-29.642
+	c16.345,0,29.642,13.298,29.642,29.642S337.019,113.179,320.674,113.179z M320.674,97.011c7.43,0,13.474-6.044,13.474-13.474
+	c0-7.43-6.044-13.474-13.474-13.474S307.2,76.107,307.2,83.537C307.2,90.967,313.244,97.011,320.674,97.011z"
+              />
+            </svg>
+            <span class="logo-text footer-logo-text">Laundrian</span>
+          </div>
+          <p>
+            Layanan laundry modern dengan pickup mudah, proses cepat, dan hasil
+            memuaskan.
+          </p>
+          <div class="socials">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="social-circle social-circle-dark"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="TikTok"
+              class="social-circle social-circle-dark"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-circle social-circle-dark"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#faq">FAQ's</a></li>
+            <li><a href="#service">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#contact">Kontak Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Layanan Kami</h4>
+          <ul>
+            <li><a href="#service">Laundry Express</a></li>
+            <li><a href="#service">Shoe Cleaning</a></li>
+            <li><a href="#service">Ironing Services</a></li>
+            <li><a href="#service">Dry Cleaning</a></li>
+            <li><a href="#service">Stain Cleaning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <ul class="contact-list">
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                +62 123-456-789
+              </li>
+
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                laundrian@site.com
+              </li>
+
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                16 Sunset St, Klaten
+              </li>
+
+              <li>
+                <i class="fa-solid fa-clock"></i>
+                Setiap Hari, 09:00 - 21:00
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright © 2026 Laundrian | Powered by Yudigital Studio</p>
+      </div>
+    </footer>
+
+    <script>
+      // Burger menu toggle (mobile)
+      const burger = document.querySelector(".burger");
+      const navLinks = document.querySelector(".nav-links");
+      if (burger) {
+        burger.addEventListener("click", () => {
+          navLinks.classList.toggle("nav-links-open");
+        });
+      }
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const btn = item.querySelector(".faq-q");
+
+        btn.addEventListener("click", () => {
+          const isOpen = item.classList.contains("faq-open");
+
+          document.querySelectorAll(".faq-item").forEach((faq) => {
+            faq.classList.remove("faq-open");
+          });
+
+          if (!isOpen) {
+            item.classList.add("faq-open");
+          }
+        });
+      });
+
+      //Booking
+      const form = document.getElementById("bookingForm");
+      const button = form.querySelector("button");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        button.innerText = "Menghubungkan ke WhatsApp...";
+        button.disabled = true;
+
+        const msg = `
+Halo, saya ingin booking laundry.
+`;
+
+        const url = `https://wa.me/628123456789?text=${encodeURIComponent(msg)}`;
+
+        setTimeout(() => {
+          window.open(url, "_blank");
+
+          button.innerText = "Booking Sekarang →";
+          button.disabled = false;
+        }, 800);
+      });
+    </script>
+
+    <!----floating wa ---->
+    <a
+      href="https://wa.me/628123456789"
+      class="floating-wa"
+      target="_blank"
+      aria-label="Chat WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </body>
+</html>
