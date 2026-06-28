@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kofi - Discover Premium Coffee House & Roastery</title>
+  <meta name="description" content="Discover Kofi Coffee House. Handcrafted espresso, single-origin pour-overs, and a cozy reservation lounge. Book a table or shop our premium featured collection today.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Playball&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="header">
+    <div class="container navbar-container">
+      <!-- Logo -->
+      <a href="#" class="nav-logo" id="navLogo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5 7H17V5C17 3.9 16.1 3 15 3H4C2.9 3 2 3.9 2 5V14C2 17.31 4.69 20 8 20H11C14.31 20 17 17.31 17 14V12H18.5C20.43 12 22 10.43 22 8.5C22 6.57 20.43 7 18.5 7ZM15 14C15 16.2 13.2 18 11 18H8C5.8 18 4 16.2 4 14V5H15V14ZM18.5 10H17V9H18.5C18.78 9 19 9.22 19 9.5C19 9.78 18.78 10 18.5 10ZM2 22H20V24H2C1.45 22 1.45 22 2 22Z" fill="currentColor"/>
+        </svg>
+        <span>Kofi</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#products" class="nav-link">Product</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li class="dropdown">
+            <a href="#reservation" class="nav-link dropdown-toggle">Pages 
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#reservation">Reservation</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </li>
+          <li><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <!-- Search Button -->
+        <button class="action-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="action-btn" id="cartBtn" aria-label="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">2</span>
+        </button>
+
+        <!-- Profile Button -->
+        <button class="action-btn" id="profileBtn" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Hamburger Toggle -->
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-beans"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="section-tagline">Since 2018 • Coffee Roasters</span>
+        <h1 class="hero-title">TIME TO DISCOVER COFFEE HOUSE</h1>
+        <p class="hero-desc">Experience the aroma of premium handcrafted coffee beans sourced directly from sustainable organic farms. Roasted to perfection every single day.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary">SHOP NOW</a>
+        </div>
+      </div>
+      
+      <div class="hero-image-wrapper">
+        <div class="hero-image-glow"></div>
+        <img src="images/hero_coffee.png" alt="Premium Splash Coffee Cup" class="hero-image">
+      </div>
+    </div>
+    
+    <!-- Hero Slider Dots -->
+    <div class="hero-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </section>
+
+  <!-- ==================== BUILD YOUR BASE ==================== -->
+  <section class="build-base-section" id="about">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Taste Info</span>
+        <h2 class="section-title">COFFEE BUILD YOUR BASE</h2>
+      </div>
+
+      <div class="build-base-grid">
+        <!-- Left Side Features -->
+        <div class="build-side left-side">
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Croissant SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.8 13.2c-0.6-0.6-1.5-0.8-2.3-0.5-0.6 0.2-1.2 0.3-1.8 0.3-2.1 0-3.9-1.2-4.9-3l1.8-1.8c0.6-0.6 0.8-1.5 0.5-2.3-0.3-0.8-1.1-1.3-2-1.3H12c-0.1 0-0.2 0-0.2 0.1L2.7 13.9c-0.6 0.6-0.8 1.5-0.5 2.3 0.3 0.8 1.1 1.3 2 1.3H6c0.6 0 1.2-0.1 1.8-0.3 2.1 0 3.9 1.2 4.9 3l-1.8 1.8c-0.6 0.6-0.8 1.5-0.5 2.3 0.3 0.8 1.1 1.3 2 1.3h2.1c0.1 0 0.2 0 0.2-0.1l9.1-9.1c0.6-0.6 0.8-1.5 0.5-2.3z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>CROISSANT</h3>
+              <p>Buttery, flaky french pastry baked fresh in-house every morning.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- French Toast SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H5c-1.1 0-2 0.9-2 2v14c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2V5c0-1.1-0.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm0 8H7v-2h10v2z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>FRENCH TOAST</h3>
+              <p>Thick brioche slices soaked in egg mixture with cinnamon sugar.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Pancake SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>PANCAKE</h3>
+              <p>Fluffy buttermilk stacks drizzled with raw maple syrup.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Bagel SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>BAGEL & CREAM</h3>
+              <p>Toasted sourdough bagel spread with whipped cream cheese.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="build-center reveal-on-scroll">
+          <div class="center-cup-holder">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600&auto=format&fit=crop" alt="Premium coffee base cup" class="center-cup-img">
+          </div>
+        </div>
+
+        <!-- Right Side Features -->
+        <div class="build-side right-side">
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Cold Brew SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 2h8v2H8V2zm8 18H8v-2h8v2zm0-4H8V6h8v10zM12 8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>COLD BREW</h3>
+              <p>Slow steeped for 24 hours, incredibly smooth and low-acid.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Chocolate Cup SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2 19c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8H2v11zM12 10c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zM4 5h16V3H4v2z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>CHOCOLATE CUP</h3>
+              <p>Rich dark Belgian hot chocolate topped with steamed milk foam.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Latte Macchiato SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4v2h16V2zm-2 6H6v11c0 1.66 1.34 3 3 3h6c1.66 0 3-1.34 3-3V8zM9 17h2v-4H9v4zm4 0h2v-4h-2v4z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>LATTE MACCHIATO</h3>
+              <p>Layered milk and espresso shots topped with microfoam.</p>
+            </div>
+          </div>
+
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-icon">
+              <!-- Espresso SVG -->
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+              </svg>
+            </div>
+            <div class="feature-info">
+              <h3>ESPRESSO</h3>
+              <p>Double shot of our signature house blend with gold crema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESERVATION AREA ==================== -->
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Check reservation</span>
+        <h2 class="section-title">RESERVATION AREA</h2>
+      </div>
+
+      <div class="reservation-grid">
+        <!-- Interactive Map Container -->
+        <div class="map-card-wrapper reveal-on-scroll">
+          <div id="reservationMap" class="map-container"></div>
+          <div class="map-overlay-info">
+            <h4>Kofi Roastery HQ</h4>
+            <p>123 Espresso Blvd, Arabica District</p>
+            <p><strong>Open:</strong> 7:00 AM - 10:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Booking Form Container -->
+        <div class="booking-card reveal-on-scroll">
+          <h3>BOOK A TABLE</h3>
+          <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-group">
+              <label for="bookDate">Date *</label>
+              <input type="date" id="bookDate" required>
+              <span class="error-msg">Please select a valid date.</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="bookTime">Time *</label>
+              <input type="time" id="bookTime" required>
+              <span class="error-msg">Please select a valid time.</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="bookGuests">Guests *</label>
+              <select id="bookGuests" required>
+                <option value="" disabled selected>Select Guests</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5+ People</option>
+              </select>
+              <span class="error-msg">Please choose number of guests.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="bookPhone">Phone Number *</label>
+              <input type="tel" id="bookPhone" placeholder="e.g. +62 812-3456-789" required>
+              <span class="error-msg">Please enter a valid phone number.</span>
+            </div>
+
+            <button type="submit" class="btn-submit">BOOK A TABLE</button>
+            <div class="form-success-msg" id="formSuccessMsg">
+              🎉 Your table has been reserved successfully! We will text you shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR POPULAR MENU ==================== -->
+  <section class="popular-menu-section" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Special Coffee</span>
+        <h2 class="section-title">OUR POPULAR MENU</h2>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Item 1 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=150&auto=format&fit=crop" alt="Double Espresso">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>Double Espresso</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$10.00</span>
+            </div>
+            <p class="menu-desc">Robust double shot of signature espresso beans.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=150&auto=format&fit=crop" alt="Caramel Macchiato">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>Caramel Macchiato</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$12.00</span>
+            </div>
+            <p class="menu-desc">Espresso shots layered over steamed milk and vanilla syrup.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=150&auto=format&fit=crop" alt="White Mocha">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>White Chocolate Mocha</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$15.00</span>
+            </div>
+            <p class="menu-desc">Creamy espresso paired with rich white chocolate sauce.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=150&auto=format&fit=crop" alt="Cold Brew Latte">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>Cold Brew Latte</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$12.00</span>
+            </div>
+            <p class="menu-desc">Slow-steeped cold brew cut with chilled fresh milk.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=150&auto=format&fit=crop" alt="Hazelnut Cappuccino">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>Hazelnut Cappuccino</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$13.50</span>
+            </div>
+            <p class="menu-desc">Espresso, warm milk, thick foam, infused with hazelnut.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="menu-item-card reveal-on-scroll">
+          <div class="menu-item-img">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=150&auto=format&fit=crop" alt="Americano Ice">
+          </div>
+          <div class="menu-item-content">
+            <div class="menu-item-title-row">
+              <h4>Americano On Ice</h4>
+              <span class="menu-line"></span>
+              <span class="menu-price">$11.00</span>
+            </div>
+            <p class="menu-desc">Double espresso shot poured over iced filtered water.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED COLLECTION ==================== -->
+  <section class="featured-collection-section" id="products">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Shop collections</span>
+        <h2 class="section-title">FEATURED COLLECTION</h2>
+      </div>
+
+      <div class="collection-grid">
+        <!-- Product 1 -->
+        <div class="product-card reveal-on-scroll">
+          <div class="product-img-holder">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=300&auto=format&fit=crop" alt="Kofi Arabica Gold">
+            <button class="add-to-cart-btn" aria-label="Add to cart">ADD TO CART</button>
+          </div>
+          <div class="product-info">
+            <div class="product-stars">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h4 class="product-title">Kofi Arabica Gold</h4>
+            <p class="product-price">$15.00</p>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card reveal-on-scroll">
+          <div class="product-img-holder">
+            <span class="product-badge badge-sale">SALE</span>
+            <img src="https://images.unsplash.com/photo-1580933079467-aa257dd3f79d?q=80&w=300&auto=format&fit=crop" alt="Kofi Espresso Blend">
+            <button class="add-to-cart-btn" aria-label="Add to cart">ADD TO CART</button>
+          </div>
+          <div class="product-info">
+            <div class="product-stars">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h4 class="product-title">Kofi Espresso Blend</h4>
+            <p class="product-price"><span class="old-price">$18.00</span> $14.50</p>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card reveal-on-scroll">
+          <div class="product-img-holder">
+            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=300&auto=format&fit=crop" alt="Kofi Robusta Classic">
+            <button class="add-to-cart-btn" aria-label="Add to cart">ADD TO CART</button>
+          </div>
+          <div class="product-info">
+            <div class="product-stars">
+              ⭐⭐⭐⭐
+            </div>
+            <h4 class="product-title">Kofi Robusta Classic</h4>
+            <p class="product-price">$13.00</p>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card reveal-on-scroll">
+          <div class="product-img-holder">
+            <span class="product-badge badge-new">NEW</span>
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=300&auto=format&fit=crop" alt="Kofi Decaf Delight">
+            <button class="add-to-cart-btn" aria-label="Add to cart">ADD TO CART</button>
+          </div>
+          <div class="product-info">
+            <div class="product-stars">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h4 class="product-title">Kofi Decaf Delight</h4>
+            <p class="product-price">$16.50</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT CLIENTS SAY ==================== -->
+  <section class="testimonial-section" id="testimonials">
+    <!-- Coffee bean floating decorations -->
+    <div class="bean-decor decor-1"></div>
+    <div class="bean-decor decor-2"></div>
+    
+    <div class="container testimonial-container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Client Testimonial</span>
+        <h2 class="section-title">WHAT CLIENTS SAY</h2>
+      </div>
+
+      <!-- Testimonial Slider -->
+      <div class="testimonial-slider-wrapper">
+        <div class="testimonial-slider" id="testimonialSlider">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide active">
+            <div class="client-avatar">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop" alt="Sarah Jenkins">
+            </div>
+            <p class="client-quote">"The atmosphere at Kofi is relaxing, but the coffee is what keeps me coming back. Their single-origin drip coffee has distinct fruity notes that I haven't tasted anywhere else. Absolutely outstanding!"</p>
+            <h4 class="client-name">Sarah Jenkins</h4>
+            <span class="client-role">Product Designer</span>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="client-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Marcus Vance">
+            </div>
+            <p class="client-quote">"I work remotely and spend many afternoons at coffee shops. Kofi is by far the best workspace. Great Wi-Fi, incredibly friendly baristas, and their cold brew gives the perfect midday kick."</p>
+            <h4 class="client-name">Marcus Vance</h4>
+            <span class="client-role">Software Architect</span>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="client-avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Elena Rostova">
+            </div>
+            <p class="client-quote">"Ordering my favorite coffee bags online is smooth and shipment is fast. The beans are freshly roasted (usually 2-3 days before arrival). The espresso blend crema is thick and flavorful!"</p>
+            <h4 class="client-name">Elena Rostova</h4>
+            <span class="client-role">Coffee Enthusiast</span>
+          </div>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="testimonialDots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KOFI SHOP GALLERY ==================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Photo gallery</span>
+        <h2 class="section-title">KOFI SHOP GALLERY</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=500&auto=format&fit=crop" alt="Fresh roasted beans">
+          <div class="gallery-hover">
+            <span>Beans Selection</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=500&auto=format&fit=crop" alt="Latte Art Pouring">
+          <div class="gallery-hover">
+            <span>Barista Craft</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=500&auto=format&fit=crop" alt="Coffee Table Setting">
+          <div class="gallery-hover">
+            <span>Cozy Corners</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=500&auto=format&fit=crop" alt="Bag and Mug">
+          <div class="gallery-hover">
+            <span>Premium Roastery</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=500&auto=format&fit=crop" alt="Cold Drip Glass">
+          <div class="gallery-hover">
+            <span>Cold Extraction</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal-on-scroll">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=500&auto=format&fit=crop" alt="Espresso Extraction">
+          <div class="gallery-hover">
+            <span>Gold Crema</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED BLOG ==================== -->
+  <section class="blog-section" id="blog">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">News & Article</span>
+        <h2 class="section-title">FEATURED BLOG</h2>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Article 1 -->
+        <article class="blog-card reveal-on-scroll">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Brewing coffee filter">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 June 24, 2026</span>
+              <span>👤 Admin</span>
+            </div>
+            <h3>How to master the pour over at home</h3>
+            <p>Unlock the delicate fruit notes and complex acidity of your coffee beans using basic pour-over techniques.</p>
+            <a href="#blog" class="read-more-link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card reveal-on-scroll">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600&auto=format&fit=crop" alt="Latte art barista">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 June 18, 2026</span>
+              <span>👤 Barista Team</span>
+            </div>
+            <h3>Latte art tips for beginners</h3>
+            <p>Learn the secrets of texturing velvet microfoam and the wrist movements required to pour a perfect tulip pattern.</p>
+            <a href="#blog" class="read-more-link">Read More &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card reveal-on-scroll">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=600&auto=format&fit=crop" alt="Fresh green beans in hand">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 June 10, 2026</span>
+              <span>👤 Founder</span>
+            </div>
+            <h3>Sourcing ethical organic beans</h3>
+            <p>Our journey to the highlands of Sidamo and Antigua to partner directly with local smallholder family farms.</p>
+            <a href="#blog" class="read-more-link">Read More &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a href="#" class="footer-logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.5 7H17V5C17 3.9 16.1 3 15 3H4C2.9 3 2 3.9 2 5V14C2 17.31 4.69 20 8 20H11C14.31 20 17 17.31 17 14V12H18.5C20.43 12 22 10.43 22 8.5C22 6.57 20.43 7 18.5 7ZM15 14C15 16.2 13.2 18 11 18H8C5.8 18 4 16.2 4 14V5H15V14ZM18.5 10H17V9H18.5C18.78 9 19 9.22 19 9.5C19 9.78 18.78 10 18.5 10ZM2 22H20V24H2C1.45 22 1.45 22 2 22Z" fill="currentColor"/>
+          </svg>
+          <span>Kofi</span>
+        </a>
+        <p class="brand-desc">A premium destination for coffee enthusiasts. We curate, roast, and serve the finest beans the world has to offer.</p>
+        <ul class="contact-list">
+          <li>
+            <span>📍</span> 123 Espresso Blvd, Arabica District, Jakarta
+          </li>
+          <li>
+            <span>✉️</span> support@kofihouse.com
+          </li>
+          <li>
+            <span>📞</span> +62 21-555-0199
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#products">Shop Products</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#blog">Blog & News</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#products">Fresh Coffee Bags</a></li>
+          <li><a href="#reservation">Table Booking</a></li>
+          <li><a href="#products">Roastery Membership</a></li>
+          <li><a href="#products">Gift Vouchers</a></li>
+          <li><a href="#about">Home Brewing Classes</a></li>
+          <li><a href="#about">Wholesale Beans Supply</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer-col newsletter-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe to receive roasting updates, brewing tips, and 10% off your first coffee bag purchase!</p>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <div class="input-group">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit" aria-label="Subscribe">Send</button>
+          </div>
+          <span class="news-success">Subscribed successfully! Check your inbox.</span>
+        </form>
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 Kofi Coffee House. All rights reserved. Made for coffee lovers.</p>
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="24">
+            <path d="M10.74 15.65h1.79l1.12-6.85h-1.79l-1.12 6.85zm6.54-6.62c-.37-.14-.95-.29-1.66-.29-1.84 0-3.14.98-3.15 2.38-.01 1.03.92 1.6 1.63 1.95.73.36.97.58.97.9-.01.48-.58.71-1.12.71-.75 0-1.15-.11-1.76-.38l-.24-.11-.26 1.63c.44.2 1.25.38 2.09.39 1.96 0 3.23-.97 3.25-2.47.01-.82-.49-1.45-1.57-1.96-.65-.33-.86-.55-.86-.88 0-.29.32-.6.99-.6.57-.01.99.13 1.31.27l.16.07.25-1.56zM8.38 9.03H5.21c-.34 0-.6.18-.73.47L2.1 15.54h1.91s.31-.87.38-1.07h2.33c.05.25.22 1.07.22 1.07h1.69L8.38 9.03zm-3.3 4.1c.15-.42.75-2.03.75-2.03l.43 1.18c.02.05.2.8.2.8H5.08v.05zm14.15-4.1l-1.4 6.85h1.72l1.4-6.85h-1.72z" fill="#1A1F71"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="24">
+            <circle cx="9" cy="12" r="7" fill="#EB001B" opacity="0.9"/>
+            <circle cx="15" cy="12" r="7" fill="#F79E1B" opacity="0.9"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="24">
+            <path d="M20 7.5c0-.8-.2-1.5-.6-2.1-.6-.8-1.6-1.4-2.8-1.4H8.8c-.5 0-1 .4-1.1.9L4.8 19.3c0 .3.2.6.5.6h3.4l.9-5.7c0-.5.4-.9.9-.9h1.7c3.3 0 5.7-1.6 6.4-4.8.2-.7.4-1.4.4-1.8z" fill="#003087"/>
+            <path d="M17.6 8.5c.2-.7.4-1.4.4-1.8 0-.8-.2-1.5-.6-2.1-.6-.8-1.6-1.4-2.8-1.4H8.8c-.5 0-1 .4-1.1.9L4.8 19.3c0 .3.2.6.5.6h3.4l.9-5.7c0-.5.4-.9.9-.9h1.7c3.3 0 5.7-1.6 6.4-4.8z" fill="#0079C1" opacity="0.75"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal overlay (interactivity) -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <button class="close-search-btn" id="closeSearchBtn">&times;</button>
+      <input type="text" placeholder="Search our products, menu, articles..." class="search-input" id="searchInput">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar drawer (interactivity) -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>YOUR CART</h3>
+      <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+    </div>
+    <div class="cart-items">
+      <div class="cart-item">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=80&auto=format&fit=crop" alt="Coffee Bag">
+        <div class="cart-item-details">
+          <h5>Kofi Arabica Gold</h5>
+          <p>$15.00 x 1</p>
+        </div>
+        <button class="remove-cart-item">&times;</button>
+      </div>
+      <div class="cart-item">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=80&auto=format&fit=crop" alt="Coffee Cup">
+        <div class="cart-item-details">
+          <h5>Caramel Macchiato</h5>
+          <p>$12.00 x 1</p>
+        </div>
+        <button class="remove-cart-item">&times;</button>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal:</span>
+        <strong>$27.00</strong>
+      </div>
+      <button class="btn-checkout">CHECKOUT NOW</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- Leaflet JS for Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
