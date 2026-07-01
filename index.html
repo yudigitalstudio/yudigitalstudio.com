@@ -923,6 +923,86 @@
       <div class="chip-marquee-track" id="chipMarqueeTrack"></div>
     </div>
 
+    <!---ARTIKEL--->
+    <section class="articles-section">
+      <div class="articles-header reveal">
+        <div class="section-label">ARTIKEL</div>
+        <h2 class="section-title">ARTIKEL <span>TERBARU</span></h2>
+        <p class="section-desc">
+          Insight dan tips seputar website, digital marketing, dan SEO untuk
+          membantu bisnis kamu berkembang.
+        </p>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-thumb">
+            <img
+              src="assets/img/kenapa-UMKM-butuh-website-di-2026.webp"
+              alt="Website UMKM"
+            />
+            <span class="badge">WEBSITE</span>
+          </div>
+
+          <div class="article-content">
+            <span class="date">29 Juni 2026</span>
+            <h3>Kenapa UMKM Butuh Website di 2026?</h3>
+            <p>
+              Website bukan cuma untuk perusahaan besar. UMKM pun butuh website
+              untuk bersaing dan meningkatkan kepercayaan pelanggan.
+            </p>
+
+            <a
+              href="/artikel/Kenapa-UMKM-Butuh-Website-di-2026/"
+              class="read-more"
+            >
+              BACA SELENGKAPNYA
+            </a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-thumb">
+            <img src="assets/img/article2.jpg" alt="" />
+            <span class="badge">HARGA</span>
+          </div>
+
+          <div class="article-content">
+            <span class="date">20 Mei 2026</span>
+            <h3>Berapa Harga Jasa Pembuatan Website di Klaten?</h3>
+            <p>
+              Simak faktor yang mempengaruhi harga website dan panduan memilih
+              paket sesuai kebutuhan bisnis.
+            </p>
+
+            <a href="/artikel/harga-jasa-website/" class="read-more">
+              BACA SELENGKAPNYA
+            </a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-thumb">
+            <img src="assets/img/article3.jpg" alt="" />
+            <span class="badge">TIPS</span>
+          </div>
+
+          <div class="article-content">
+            <span class="date">18 Mei 2026</span>
+            <h3>Website vs Instagram untuk Jualan, Mana Lebih Bagus?</h3>
+            <p>
+              Perbandingan lengkap antara website dan Instagram untuk jualan
+              agar bisnis kamu makin optimal.
+            </p>
+
+            <a href="/artikel/website-vs-instagram/" class="read-more">
+              BACA SELENGKAPNYA
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- KONTAK -->
     <section id="kontak">
       <div class="contact-content reveal">
@@ -1531,6 +1611,18 @@
           track.appendChild(pill);
         });
       })();
+    </script>
+
+    <!--ARTIKEL-->
+    <script>
+      window.addEventListener("scroll", () => {
+        reveals.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 80) {
+            el.classList.add("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>

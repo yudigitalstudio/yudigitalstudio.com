@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gudeg Bu Tjitro 1925® | Yogyakarta</title>
+    <meta
+      name="description"
+      content="Morph Modern Construction Studio. Membangun masa depan dengan kualitas terbaik, inovasi arsitektur, dan struktur kokoh yang tahan lama."
+    />
+    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header class="main-header" id="mainHeader">
+      <div class="container header-container">
+        <a href="#" class="logo" id="logoLink">
+          <span class="logo-dot"></span>gudegbutjitro1925<span
+            class="registered"
+            >®</span
+          >
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">Sejarah</a>
+
+          <a href="#restoran" class="nav-link"> Restoran </a>
+
+          <a href="#contact" class="nav-link"> Kaleng </a>
+
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle">
+              Layanan
+              <i class="fas fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+              <a href="#produk1" class="dropdown-item"> Maklon </a>
+
+              <a href="#produk2" class="dropdown-item"> Legalitas </a>
+
+              <a href="#produk3" class="dropdown-item"> Mitra Titip Jual </a>
+
+              <a href="#produk4" class="dropdown-item"> Mitra Magang </a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#contact" class="btn btn-primary btn-sm">Get in touch</a>
+          <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            aria-label="Toggle Menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="drawer-header">
+        <a href="#" class="logo">
+          <span class="logo-dot"></span>gudegbutjitro1925<span
+            class="registered"
+            >®</span
+          >
+        </a>
+        <button class="drawer-close" id="drawerClose">&times;</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#home" class="drawer-link"> Sejarah </a>
+
+        <a href="#about" class="drawer-link"> Restoran </a>
+
+        <a href="#contact" class="drawer-link"> Kaleng </a>
+
+        <details class="drawer-dropdown">
+          <summary class="drawer-summary">Layanan</summary>
+
+          <div class="drawer-submenu">
+            <a href="#produk1">Maklon</a>
+            <a href="#produk2">Legalitas</a>
+            <a href="#produk3">Mitra Titip Jual</a>
+            <a href="#produk4">Mitra Magang</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="hero-section"
+        style="
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+            url(&quot;assets/mitra-titip-jual.webp&quot;);
+        "
+      >
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title reveal-fade">
+              Mitra Titip Jual<br />
+              Gudeg Bu Tjitro<span class="registered-large">®</span><br /><span
+                class="highlight"
+                >1925</span
+              >
+            </h1>
+            <p class="hero-description">
+              Gudeg Bu Tjitro 1925 merupakan gudeg yang melegenda dan terkenal
+              di Yogyakarta, yang dirintis oleh Bu Tjitro Sastrodiprodjo pada
+              tahun 1925. Makanan tradisional ini turun temurun diwariskan
+              kepada keturunannya dengan tetap menggunakan resep warisan
+              leluhur.
+            </p>
+
+            <div class="hero-bottom reveal-fade delay-1">
+              <div class="hero-left-stats">
+                <div class="satisfaction-badge">
+                  <img
+                    src="../assets/logo-100-tahun.png"
+                    alt="Sertifikat Halal"
+                    class="badge-img"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="hero-right-cta reveal-fade delay-1">
+              <a href="#about" class="btn btn-primary btn-lg"
+                >Hubungi Kami <i class="fas fa-arrow-right ml-1"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer dark-bg">
+      <div class="container footer-grid">
+        <!-- Footer Col 1: Logo & Info -->
+        <div class="footer-col reveal-fade">
+          <a href="#" class="logo text-light mb-2">
+            <span class="logo-dot"></span>gudegbutjitro1925<span
+              class="registered"
+              >®</span
+            >
+          </a>
+          <p class="footer-desc">
+            Kami adalah pelopor gudeg kaleng pertama di Indonesia, menghadirkan
+            cita rasa khas Jogja dalam kemasan modern yang praktis dan tahan
+            lama.
+          </p>
+          <div class="footer-contact-details mt-2">
+            <p>
+              <i class="fas fa-map-marker-alt mr-1"></i> Jl. Kenanga No 254 A,
+              Maguwoharjo, Depok, Sleman, DI Yogyakarta
+            </p>
+            <p><i class="fas fa-phone-alt mr-1"></i> +62 (21) 555-0199</p>
+            <p><i class="fas fa-envelope mr-1"></i> hello@morphstudio.id</p>
+          </div>
+        </div>
+
+        <!-- Footer Col 2: Quick Links -->
+        <div class="footer-col reveal-fade delay-1">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Col 3: Newsletter & Socials -->
+        <div class="footer-col reveal-fade delay-2">
+          <h4 class="footer-title">Kemitraan</h4>
+          <p class="footer-desc mb-1">
+            Tertarik menjadi mitra distribusi, maklon, atau program magang? Tim
+            kami siap membantu kebutuhan bisnis Anda.
+          </p>
+          <a href="#contact" class="footer-cta-btn"> Jadi Mitra Kami → </a>
+          <div class="social-icons">
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container fb-container">
+          <p class="copyright">
+            &copy; 2026 Gudeg Bu Tjitro 1925®. All rights reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#">Designed by Yudigital Studio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Success Notification -->
+    <div class="toast-notification" id="toastNotification">
+      <div class="toast-content">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <div class="toast-text-box">
+          <h4 class="toast-title">Message Sent!</h4>
+          <p class="toast-msg">Terima kasih, pesan Anda berhasil dikirim.</p>
+        </div>
+      </div>
+      <button class="toast-close" id="toastClose">&times;</button>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="../index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const steps = document.querySelectorAll(
+          ".maklon-diagram-component .step-node",
+        );
+        const fillLine = document.getElementById("progress-line-fill");
+        const totalStepsNum = 7;
+
+        function updateProgress(activeIndex) {
+          const percent = ((activeIndex - 1) / (totalStepsNum - 1)) * 100;
+          const isMobileView = window.innerWidth <= 768;
+
+          if (isMobileView) {
+            fillLine.style.width = "100%";
+            fillLine.style.height = `${percent}%`;
+          } else {
+            fillLine.style.height = "100%";
+            fillLine.style.width = `${percent}%`;
+          }
+        }
+
+        function setActiveStep(index) {
+          steps.forEach((node) => {
+            const stepNum = parseInt(node.getAttribute("data-step"));
+            if (stepNum <= index) {
+              node.classList.add("active");
+            } else {
+              node.classList.remove("active");
+            }
+          });
+          updateProgress(index);
+
+          // Dispatch custom event if parent apps want to listen to step changes
+          const event = new CustomEvent("stepChanged", {
+            detail: { step: index },
+          });
+          document.dispatchEvent(event);
+        }
+
+        // Add click event listeners
+        steps.forEach((node) => {
+          node.addEventListener("click", () => {
+            const step = parseInt(node.getAttribute("data-step"));
+            setActiveStep(step);
+          });
+        });
+
+        // Run initial progress calculation
+        setActiveStep(1);
+
+        // Re-check layout on resize
+        window.addEventListener("resize", () => {
+          const activeNode = document.querySelector(
+            ".maklon-diagram-component .step-node.active:last-of-type",
+          );
+          if (activeNode) {
+            const currentStep = parseInt(activeNode.getAttribute("data-step"));
+            updateProgress(currentStep);
+          }
+        });
+      });
+    </script>
+    <script>
+      const marquee = document.querySelector(".marquee-track");
+
+      let position = 0;
+      const speed = 0.6;
+
+      function animateMarquee() {
+        position -= speed;
+
+        if (Math.abs(position) >= marquee.scrollWidth / 2) {
+          position = 0;
+        }
+
+        marquee.style.transform = `translateX(${position}px)`;
+
+        requestAnimationFrame(animateMarquee);
+      }
+
+      animateMarquee();
+    </script>
+  </body>
+</html>
