@@ -81,7 +81,7 @@
 /* ubah display ke flex untuk menampilkan panel client */
 .mode-switch {
   position: relative;
-  display: none; /*ubah menjadi flex untuk menampilkan panel client*/
+  display: flex; /*ubah menjadi flex untuk menampilkan panel client*/
   background: #0a0a0c;
   border: 0.5px solid #1e1e26;
   border-radius: 10px;

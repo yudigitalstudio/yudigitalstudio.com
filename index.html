@@ -1418,44 +1418,10 @@
         /* ---- Edit data testimoni di sini ---- */
         const testiData = [
           {
-            text: "Website-nya keren banget, pelanggan saya langsung percaya dan booking makin banyak. Prosesnya cepat dan hasilnya melebihi ekspektasi!",
-            name: "Budi Santoso",
-            role: "Pemilik Barbershop",
-            initials: "BS",
-            avatarBg: "#1a2a3a",
-            avatarColor: "#60a5fa",
-          },
-          {
-            text: "Tampilan websitenya profesional banget, banyak pelanggan yang tanya bikin di mana. Recommended banget buat yang mau upgrade bisnis!",
-            name: "Sari Wulandari",
-            role: "Owner Coffee Shop",
-            initials: "SW",
-            avatarBg: "#1a2e25",
-            avatarColor: "#4ade80",
-          },
-          {
-            text: "Respon cepat, revisi langsung dikerjain, hasilnya rapi. Websitenya mobile-friendly dan loading-nya ngebut. Puas banget!",
-            name: "Rizky Pratama",
-            role: "Pemilik Laundry",
-            initials: "RP",
-            avatarBg: "#2e2212",
-            avatarColor: "#fbbf24",
-          },
-          {
-            text: "Dari yang ga ngerti website sama sekali, sekarang toko online saya udah jalan. Tim-nya sabar banget neranginnya!",
-            name: "Dewi Lestari",
-            role: "Owner Toko Online",
-            initials: "DL",
-            avatarBg: "#2a1a2e",
-            avatarColor: "#c084fc",
-          },
-          {
-            text: "Desainnya kece, sesuai sama vibe bisnis saya. Banyak yang kira saya hire agency mahal. Worth it banget!",
-            name: "Andi Firmansyah",
-            role: "Fotografer Wedding",
-            initials: "AF",
-            avatarBg: "#1e2a2e",
-            avatarColor: "#22d3ee",
+            text: "Pelayanannya ramah dan responsif. Setiap revisi langsung dikerjakan tanpa ribet. Hasil websitenya rapi, mudah digunakan, dan sesuai dengan identitas bisnis kami.",
+            name: "Gudeg Bu Tjitro 1925",
+            role: "Perusahaan Pengalengan Makanan Jogja",
+            avatar: "assets/img/avatar/gudegbutjitro1925.com.png",
           },
         ];
 
@@ -1484,7 +1450,9 @@
 </div>
         <p class="testi-text">"${d.text}"</p>
         <div class="testi-person">
-          <div class="testi-avatar" style="background:${d.avatarBg};color:${d.avatarColor};">${d.initials}</div>
+          <div class="testi-avatar">
+    <img src="${d.avatar}" alt="${d.name}">
+</div>
           <div>
             <p class="testi-name">${d.name}</p>
             <p class="testi-role">${d.role}</p>
