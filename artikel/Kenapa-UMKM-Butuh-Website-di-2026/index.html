@@ -17,8 +17,8 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="/assets/css/style.css" />
 
@@ -215,6 +215,9 @@
         display: flex;
         gap: 14px;
         margin-top: 20px;
+        text-decoration: none;
+        color: inherit;
+        display: block; /* atau flex, tergantung layout lo */
       }
 
       .mini-article img {
@@ -886,11 +889,18 @@
             <h3>Artikel Lainnya</h3>
 
             <div class="mini-article">
-              <img src="assets/img/a1.jpg" />
-              <div>
-                <h4>Harga Jasa Website</h4>
-                <span>5 menit baca</span>
-              </div>
+              <a
+                href="https://yudigitalstudio.com/artikel/Kenapa-UMKM-Butuh-Website-di-2026/"
+                class="mini-article"
+              >
+                <img
+                  src="/artikel/Berapa-Harga-Pembuatan-Website/img/Berapa-Harga-Pembuatan-Website.webp"
+                />
+                <div>
+                  <h4>Berapa Harga Pembuatan Website</h4>
+                  <span>6 menit baca</span>
+                </div>
+              </a>
             </div>
 
             <div class="mini-article">
