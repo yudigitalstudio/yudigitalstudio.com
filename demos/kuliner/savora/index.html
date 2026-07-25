@@ -383,8 +383,37 @@
               <input type="number" placeholder="Jumlah Tamu" min="1" required />
             </div>
             <div class="book__row">
-              <input type="date" required />
-              <input type="time" required />
+              <div
+                class="field-wrap is-empty"
+                data-placeholder="Tanggal Reservasi"
+              >
+                <input type="date" id="bookDate" required />
+                <span class="field-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="3" y="5" width="18" height="16" rx="2" />
+                    <path d="M8 3v4M16 3v4M3 10h18" />
+                  </svg>
+                </span>
+              </div>
+              <div class="field-wrap is-empty" data-placeholder="Jam Reservasi">
+                <input type="time" id="bookTime" required />
+                <span class="field-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" />
+                  </svg>
+                </span>
+              </div>
             </div>
             <textarea
               placeholder="Pesan tambahan (opsional)"

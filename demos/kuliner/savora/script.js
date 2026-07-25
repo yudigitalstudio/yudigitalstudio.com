@@ -288,6 +288,18 @@ Catatan: ${pesan || "-"}`;
   e.target.reset();
 });
 
+/* ---------- Custom placeholder untuk date & time ---------- */
+document
+  .querySelectorAll(
+    '.field-wrap input[type="date"], .field-wrap input[type="time"]',
+  )
+  .forEach((input) => {
+    const wrap = input.closest(".field-wrap");
+    input.addEventListener("input", () => {
+      wrap.classList.toggle("is-empty", !input.value);
+    });
+  });
+
 /* ---------- Newsletter form ---------- */
 document.getElementById("newsForm").addEventListener("submit", (e) => {
   e.preventDefault();
