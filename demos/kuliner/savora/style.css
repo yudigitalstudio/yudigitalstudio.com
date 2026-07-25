@@ -1065,6 +1065,12 @@ button {
   border-color: var(--gold);
   background: rgba(247, 242, 231, 0.1);
 }
+.book__form input[type="date"]::-webkit-calendar-picker-indicator,
+.book__form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(1) saturate(3) hue-rotate(5deg);
+  cursor: pointer;
+  opacity: 0.9;
+}
 .book__form .btn {
   margin-top: 8px;
 }
