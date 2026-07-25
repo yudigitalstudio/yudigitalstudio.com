@@ -26,6 +26,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 html {
   scroll-behavior: smooth;
@@ -1324,6 +1325,12 @@ button {
   margin-bottom: 24px;
   align-items: flex-start;
 }
+.footer__brand .brand--footer-logo {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 24px;
+  margin-left: -20px;
+}
 .footer__brand .eyebrow {
   margin-top: 10px;
   margin-bottom: 16px;
@@ -1511,6 +1518,9 @@ button {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
+  .footer__brand .brand--footer-logo {
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 860px) {
@@ -1572,6 +1582,9 @@ button {
     justify-content: center;
     text-align: center;
   }
+  .footer__brand .brand--footer-logo {
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1588,4 +1601,26 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .footer__brand .brand--footer-logo {
+    margin-left: 0 !important;
+  }
+}
+
+#footerBrandBox {
+  text-align: center;
+}
+#footerBrandBox .footer-logo-text {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--cream);
+  margin: 0;
+}
+#footerBrandBox .footer-logo-tag {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 6px 0 20px;
 }

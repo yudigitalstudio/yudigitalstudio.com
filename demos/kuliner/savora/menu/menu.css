@@ -289,38 +289,6 @@
   margin-bottom: 30px;
 }
 
-/* ---------- Footer CTA (replaces newsletter) ---------- */
-.footer__cta {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.footer__cta h4 {
-  color: var(--cream);
-  margin-bottom: 12px;
-  font-size: 1.05rem;
-}
-.footer__cta p {
-  color: var(--cream-soft);
-  font-size: 0.88rem;
-  margin-bottom: 20px;
-}
-.footer__dishes {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-.footer__dish {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border: 3px solid var(--gold);
-  flex-shrink: 0;
-}
-
 /* ---------- WhatsApp floating button ---------- */
 .wa-float {
   position: fixed;
