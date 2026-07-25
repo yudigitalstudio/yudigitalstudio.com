@@ -281,7 +281,7 @@ Tanggal: ${tanggal.value}
 Jam: ${waktu.value}
 Catatan: ${pesan || "-"}`;
 
-  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  const waUrl = `https://wa.me/${6281222255086}?text=${encodeURIComponent(text)}`;
   window.open(waUrl, "_blank");
 
   showToast("Membuka WhatsApp...");
