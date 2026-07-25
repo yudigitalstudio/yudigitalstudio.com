@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rasa &mdash; Where Taste Meets Elegance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,500&family=Dancing+Script:wght@600;700&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#home" class="brand">
+          <span class="brand__name">Savora</span>
+          <span class="brand__tagline"><i></i>Food &amp; Drinks<i></i></span>
+        </a>
+
+        <nav class="nav__links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#story">Tentang Kami</a>
+          <a href="#services">Layanan</a>
+          <a href="#testimonials">Testimoni</a>
+          <a href="#gallery">Galeri</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+
+        <div class="nav__actions">
+          <a href="#book" class="btn btn--gold">Reservasi</a>
+          <button class="nav__burger" id="burger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div
+        class="hero__bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1900&q=80&quot;);
+        "
+      ></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__grain"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light reveal">
+          &mdash; Fine Dining Experience &mdash;
+        </p>
+        <h1 class="hero__title">
+          <span class="reveal reveal--1">Where Taste Meets</span>
+          <span class="script reveal reveal--2">elegance</span>
+        </h1>
+        <p class="hero__sub reveal reveal--3">
+          Racikan hidangan autentik, disajikan dengan sentuhan seni, di ruang
+          yang dirancang untuk momen berharga Anda.
+        </p>
+        <div class="hero__cta reveal reveal--4">
+          <a href="#book" class="btn btn--gold">Pesan Meja</a>
+          <a href="#menu" class="btn btn--ghost">Lihat Menu</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span></span>
+      </div>
+      <div class="hero__curve">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+          <path
+            fill="#F7F2E7"
+            d="M0,90 L0,50 C 300,90 500,0 600,0 C 700,0 900,90 1200,50 L1200,90 Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ================= SELECTIONS ================= -->
+    <section class="selections" id="selections">
+      <div class="container">
+        <p class="eyebrow center">&mdash; Special Fine Dine &mdash;</p>
+        <h2 class="section-title center">Delicious Selections</h2>
+
+        <div class="selections__grid">
+          <div class="sel-card reveal reveal--left">
+            <div
+              class="sel-card__img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <h3>Appetizers</h3>
+            <p>
+              Sajian pembuka ringan yang membangkitkan selera sebelum hidangan
+              utama.
+            </p>
+            <a href="#menu" class="link-arrow">Lihat Menu &rarr;</a>
+          </div>
+
+          <div class="sel-card sel-card--lg reveal reveal--zoom">
+            <div
+              class="sel-card__img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <h3>Main Dishes</h3>
+            <p>
+              Rasa kaya dan racikan otentik, menjadikan setiap hidangan utama
+              tak terlupakan.
+            </p>
+            <a href="#menu" class="link-arrow">Lihat Menu &rarr;</a>
+          </div>
+
+          <div class="sel-card reveal reveal--right">
+            <div
+              class="sel-card__img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <h3>Desserts</h3>
+            <p>
+              Akhiri santapan dengan kreasi manis yang memanjakan lidah hingga
+              suapan terakhir.
+            </p>
+            <a href="#menu" class="link-arrow">Lihat Menu &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STORY ================= -->
+    <section class="story" id="story">
+      <div class="story__bg"></div>
+      <div class="container story__grid">
+        <div class="story__text reveal reveal--right">
+          <p class="eyebrow eyebrow--light">&mdash; Our Story &mdash;</p>
+          <h2 class="section-title section-title--light">
+            Nikmati Setiap Momen bersama <span class="script">Savora</span>
+          </h2>
+          <p class="story__desc">
+            Sejak dibuka, dapur kami berpegang pada satu prinsip sederhana:
+            bahan segar, teknik yang matang, dan rasa yang jujur. Setiap piring
+            adalah cerita tentang tempat asal bahan dan tangan yang meraciknya.
+          </p>
+
+          <div class="story__features">
+            <div class="story__feature">
+              <span class="story__icon"
+                ><img src="assets/leaf-svgrepo-com .svg" alt="Organic"
+              /></span>
+              <div>
+                <h4>Bahan Organik</h4>
+                <p>Dipilih langsung dari petani lokal setiap pagi.</p>
+              </div>
+            </div>
+            <div class="story__feature">
+              <span class="story__icon"
+                ><img
+                  src="assets/tree-decidious-svgrepo-com.svg"
+                  alt="Suasana Segar"
+              /></span>
+              <div>
+                <h4>Suasana Segar</h4>
+                <p>Ruang hangat yang dirancang untuk bersantai.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story__booking">
+            <div>
+              <p class="story__booking-label">Booking Request</p>
+              <p class="story__booking-num">+62 812 3456 7890</p>
+            </div>
+            <a href="#book" class="btn btn--outline-light">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="story__media reveal reveal--left">
+          <div
+            class="story__img story__img--main"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="story__img story__img--small"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=500&q=80&quot;);
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div class="story__video container">
+        <div
+          class="story__video-frame"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=80&quot;);
+          "
+        >
+          <button class="play-btn" id="playBtn" aria-label="Play video">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MENU ================= -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <p class="eyebrow center">&mdash; Special Fine Dine &mdash;</p>
+        <h2 class="section-title section-title--light center">
+          Delicious Menu
+        </h2>
+
+        <div class="menu__tabs" id="menuTabs">
+          <button class="menu__tab is-active" data-tab="starter">
+            Starter
+          </button>
+          <button class="menu__tab" data-tab="main">Main Dishes</button>
+          <button class="menu__tab" data-tab="dessert">Desserts</button>
+          <button class="menu__tab" data-tab="drinks">Drinks</button>
+        </div>
+
+        <div class="menu__panel">
+          <div class="menu__list" id="menuList">
+            <!-- injected by JS -->
+          </div>
+
+          <div class="menu__showcase">
+            <div
+              class="menu__showcase-img"
+              id="menuShowcaseImg"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <span class="menu__watermark" id="menuWatermark">STARTER</span>
+          </div>
+        </div>
+
+        <p class="menu__hours">
+          Buka setiap hari mulai pukul 07:00 &ndash; 23:00
+        </p>
+        <div class="menu__cta">
+          <a href="menu/index.html" class="btn btn--gold">Lihat Semua Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="services">
+      <div class="container services__grid">
+        <div class="services__col">
+          <p class="eyebrow">&mdash; Our Services &mdash;</p>
+          <h2 class="section-title">Ruang Sempurna untuk Setiap Momen</h2>
+
+          <div class="service-item reveal">
+            <h4>Party &amp; Celebrations</h4>
+            <p>Ruang privat untuk perayaan spesial bersama orang terkasih.</p>
+          </div>
+          <div class="service-item reveal">
+            <h4>Luxury Fine Dining</h4>
+            <p>Pengalaman bersantap eksklusif dengan sajian pilihan chef.</p>
+          </div>
+        </div>
+
+        <div class="services__media reveal">
+          <div class="services__carousel" id="servicesCarousel">
+            <div
+              class="services__img is-active"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <div
+              class="services__img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+            <div
+              class="services__img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="services__col">
+          <div class="service-item reveal">
+            <h4>Banquet Hall</h4>
+            <p>Kapasitas besar untuk pertemuan dan acara korporat.</p>
+          </div>
+          <div class="service-item reveal">
+            <h4>Outdoor Catering</h4>
+            <p>Layanan katering profesional untuk acara di luar ruangan.</p>
+          </div>
+          <a href="#contact" class="btn btn--outline">Hubungi Kami</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonials" id="testimonials">
+      <div
+        class="testimonials__bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80&quot;);
+        "
+      ></div>
+      <div class="testimonials__overlay"></div>
+
+      <div class="container testimonials__inner">
+        <p class="eyebrow eyebrow--light">&mdash; Reviews &mdash;</p>
+        <h2 class="section-title section-title--light">Testimonials</h2>
+
+        <div class="testi-slider reveal">
+          <span class="testi-quote">&ldquo;</span>
+          <p class="testi-text" id="testiText">
+            Pengalaman bersantap yang tak terlupakan. Setiap hidangan adalah
+            maha karya, dan suasananya begitu sempurna dari awal hingga akhir
+            kunjungan kami.
+          </p>
+          <p class="testi-name" id="testiName">Anisa Putri</p>
+          <p class="testi-role" id="testiRole">Food Blogger</p>
+
+          <div class="testi-avatars" id="testiAvatars">
+            <button
+              class="testi-avatar is-active"
+              data-i="0"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80&quot;);
+              "
+            ></button>
+            <button
+              class="testi-avatar"
+              data-i="1"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80&quot;);
+              "
+            ></button>
+            <button
+              class="testi-avatar"
+              data-i="2"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80&quot;);
+              "
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BOOK A TABLE ================= -->
+    <section class="book" id="book">
+      <div class="container book__inner">
+        <div class="book__card reveal">
+          <p class="eyebrow center">&mdash; Reservasi Online &mdash;</p>
+          <h2 class="section-title section-title--light center">
+            Book A Table
+          </h2>
+          <p class="book__note center">
+            Untuk grup di atas 8 orang, silakan hubungi +62 812 3456 7890
+          </p>
+
+          <form class="book__form" id="bookForm">
+            <div class="book__row">
+              <input type="text" placeholder="Nama Anda" required />
+              <input type="tel" placeholder="Nomor Telepon" required />
+            </div>
+            <div class="book__row">
+              <input type="email" placeholder="Email" required />
+              <input type="number" placeholder="Jumlah Tamu" min="1" required />
+            </div>
+            <div class="book__row">
+              <input type="date" required />
+              <input type="time" required />
+            </div>
+            <textarea
+              placeholder="Pesan tambahan (opsional)"
+              rows="3"
+            ></textarea>
+            <button type="submit" class="btn btn--gold btn--full">
+              Kirim Reservasi
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <p class="eyebrow center">&mdash; Our Moments &mdash;</p>
+        <h2 class="section-title center">Photo Gallery</h2>
+
+        <div class="gallery__grid">
+          <div
+            class="gallery__item reveal reveal--left"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="gallery__item reveal reveal--zoom"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="gallery__item reveal reveal--right"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="gallery__item reveal reveal--left"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="gallery__item reveal reveal--zoom"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+          <div
+            class="gallery__item reveal reveal--right"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80&quot;);
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAPS & LOCATION ================= -->
+    <section class="location" id="location">
+      <div
+        class="location__bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80&quot;);
+        "
+      ></div>
+      <div class="location__overlay"></div>
+      <div class="location__deco"></div>
+      <div class="container">
+        <p class="eyebrow eyebrow--light center">&mdash; Find Us &mdash;</p>
+        <h2 class="section-title section-title--light center">
+          Lokasi &amp; Kontak
+        </h2>
+
+        <div class="location__grid">
+          <div class="location__map-wrap reveal reveal--left">
+            <div class="location__map">
+              <iframe
+                src="https://www.google.com/maps?q=Candi%20Prambanan%2C%20Sleman%2C%20Yogyakarta&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div class="location__badge">
+              <span class="location__badge-icon"
+                ><img
+                  src="assets/address-location-map-svgrepo-com.svg"
+                  alt="Lokasi"
+              /></span>
+              <div>
+                <p class="location__badge-title">Savora Restaurant</p>
+                <p class="location__badge-sub">Candi Prambanan, Sleman</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="location__info reveal reveal--right">
+            <div class="location__item">
+              <span class="location__icon"
+                ><img
+                  src="assets/address-location-map-svgrepo-com.svg"
+                  alt="Alamat"
+              /></span>
+              <div>
+                <h4>Alamat</h4>
+                <p>Jl. Prambanan Indah No. 17, Sleman, Yogyakarta</p>
+              </div>
+            </div>
+            <div class="location__item">
+              <span class="location__icon"
+                ><img src="assets/clock-seven-svgrepo-com.svg" alt="Jam Buka"
+              /></span>
+              <div>
+                <h4>Jam Buka</h4>
+                <p>Setiap hari &middot; 07:00 &ndash; 23:00</p>
+              </div>
+            </div>
+            <div class="location__item">
+              <span class="location__icon"
+                ><img
+                  src="assets/phone-outgoing-svgrepo-com.svg"
+                  alt="Reservasi"
+              /></span>
+              <div>
+                <h4>Reservasi</h4>
+                <p>+62 812 3456 7890</p>
+              </div>
+            </div>
+            <a href="#book" class="btn btn--gold">Pesan Meja Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="contact">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a
+            href="#home"
+            class="brand"
+            style="
+              align-items: center;
+              text-align: center;
+              margin: 0 auto 24px;
+              margin-left: -20px;
+            "
+          >
+            <span class="brand__name">Savora</span>
+            <span class="brand__tagline"><i></i>Food &amp; Drinks<i></i></span>
+          </a>
+          <p class="eyebrow eyebrow--light">&mdash; Visit Us &mdash;</p>
+          <p>Jl. Prambanan Indah No. 17<br />Sleman, Yogyakarta</p>
+          <p>Buka &middot; 07:00 &ndash; 23:00</p>
+          <p>Booking Request: +62 812 3456 7890</p>
+        </div>
+
+        <div class="footer__links">
+          <h4>Jelajahi</h4>
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#story">Story</a>
+          <a href="#services">Layanan</a>
+          <a href="#gallery">Galeri</a>
+        </div>
+
+        <div class="footer__cta">
+          <h4>Siap Menikmati Momen Spesial?</h4>
+          <p>Reservasi meja Anda sekarang, kami tunggu kedatangannya.</p>
+          <a href="#book" class="btn btn--gold">Pesan Meja</a>
+          <div class="footer__dishes">
+            <div
+              class="footer__dish"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=300&q=80&quot;);
+              "
+            ></div>
+            <div
+              class="footer__dish"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=300&q=80&quot;);
+              "
+            ></div>
+            <div
+              class="footer__dish"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=300&q=80&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom container">
+        <p>&copy; 2026 Rasa Restaurant. All rights reserved.</p>
+        <p>Designed by YUDIGITAL STUDIO</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- Floating WA -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Savora%2C%20saya%20ingin%20bertanya%20tentang%20reservasi."
+      target="_blank"
+      class="wa-float"
+      aria-label="Chat WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.5 14.4c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"
+        />
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3C8.6 21.5 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"
+        />
+      </svg>
+      <span class="wa-float__ping"></span>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+      /* ---------- Services image carousel ---------- */
+      const svcImgs = document.querySelectorAll(
+        "#servicesCarousel .services__img",
+      );
+      let svcIndex = 0;
+      if (svcImgs.length > 1) {
+        setInterval(() => {
+          svcImgs[svcIndex].classList.remove("is-active");
+          svcIndex = (svcIndex + 1) % svcImgs.length;
+          svcImgs[svcIndex].classList.add("is-active");
+        }, 4000);
+      }
+    </script>
+  </body>
+</html>

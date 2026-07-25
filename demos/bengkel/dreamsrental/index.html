@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreamsRental - Rental Mobil Impian Anda</title>
+    <meta
+      name="description"
+      content="Sewa mobil premium dengan mudah bersama DreamsRental. Pilih armada terbaik, dapatkan harga terbaik, dan pesan secara cepat, aman, dan nyaman."
+    />
+    <meta
+      name="keywords"
+      content="rental mobil, sewa mobil, mobil premium, dreamsrental, booking kendaraan"
+    />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="header" id="header">
+      <div class="container">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-car-side logo-icon"></i>
+          Dreams<span>Rental</span>
+        </a>
+
+        <!-- Navbar Links -->
+        <nav>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="#" class="nav-link active">Beranda</a></li>
+            <li><a href="#popular-cars" class="nav-link">Mobil</a></li>
+            <li><a href="#how-it-works" class="nav-link">Tentang</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#footer" class="nav-link">Kontak</a></li>
+            <!-- Mobile Specific Actions -->
+            <li class="nav-actions-mobile" style="display: none">
+              <button
+                class="btn btn-outline"
+                onclick="showToast('info', 'Fitur masuk masih simulasi')"
+              >
+                Masuk
+              </button>
+              <button
+                class="btn btn-primary"
+                onclick="showToast('info', 'Fitur daftar masih simulasi')"
+              >
+                Daftar
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- CTA Buttons Desktop -->
+        <div class="nav-actions">
+          <a href="#footer" class="btn btn-primary">Hubungi Kami</a>
+        </div>
+
+        <!-- Hamburger Menu Toggle -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <!-- Background Diagonal Accents -->
+        <div class="hero-bg-ribbon-yellow"></div>
+        <div class="hero-bg-ribbon-orange"></div>
+
+        <div class="container">
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            <div class="hero-title-tag">
+              <i class="fa-solid fa-sparkles"></i> Layanan Rental Mobil 100%
+              Terpercaya
+            </div>
+            <h1>Temukan Mobil Terbaik <span>Untuk Perjalanan Anda</span></h1>
+            <p class="hero-desc">
+              Pilih mobil sesuai kebutuhan, dapatkan harga terbaik, pesan dalam
+              hitungan detik, dan berkendara dengan nyaman serta aman.
+            </p>
+            <div class="hero-buttons">
+              <a href="#popular-cars" class="btn btn-primary"
+                >Mulai Pesan <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#how-it-works" class="btn btn-white"
+                ><i class="fa-solid fa-play"></i> Lihat Cara Kerja</a
+              >
+            </div>
+          </div>
+
+          <!-- Hero Car Image -->
+          <div class="hero-image-wrapper">
+            <img src="assets/hero.webp" alt="Mobil SUV hitam DreamsRental" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH FILTER BAR PANEL -->
+      <section class="search-panel-container">
+        <div class="container">
+          <div class="search-panel">
+            <form class="search-form" id="search-form">
+              <div class="search-group">
+                <label for="pickup-loc"
+                  ><i class="fa-solid fa-location-dot"></i> Lokasi
+                  Jemput</label
+                >
+                <div class="search-input-wrapper">
+                  <i class="fa-solid fa-map-pin"></i>
+                  <select id="pickup-loc" required>
+                    <option value="" disabled selected>Pilih lokasi</option>
+                    <option value="Jakarta">Jakarta, Indonesia</option>
+                    <option value="Bali">Bali, Indonesia</option>
+                    <option value="Surabaya">Surabaya, Indonesia</option>
+                    <option value="Bandung">Bandung, Indonesia</option>
+                    <option value="Yogyakarta">Yogyakarta, Indonesia</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="search-group">
+                <label for="pickup-date"
+                  ><i class="fa-solid fa-calendar-day"></i> Tanggal Jemput</label
+                >
+                <div class="search-input-wrapper">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="date" id="pickup-date" required />
+                </div>
+              </div>
+
+              <div class="search-group">
+                <label for="return-date"
+                  ><i class="fa-solid fa-calendar-day"></i> Tanggal Kembali</label
+                >
+                <div class="search-input-wrapper">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="date" id="return-date" required />
+                </div>
+              </div>
+
+              <div class="search-group">
+                <label for="pickup-time"
+                  ><i class="fa-solid fa-clock"></i> Jam Jemput</label
+                >
+                <div class="search-input-wrapper">
+                  <i class="fa-solid fa-clock"></i>
+                  <input type="time" id="pickup-time" value="10:00" required />
+                </div>
+              </div>
+
+              <div class="search-group">
+                <label for="return-time"
+                  ><i class="fa-solid fa-clock"></i> Jam Kembali</label
+                >
+                <div class="search-input-wrapper">
+                  <i class="fa-solid fa-clock"></i>
+                  <input type="time" id="return-time" value="10:00" required />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i> Cari
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section-padding" id="how-it-works">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Cara <span>Kerjanya</span></h2>
+            <div class="divider"></div>
+            <p>
+              Ikuti 3 langkah sederhana untuk menyewa mobil impian Anda dengan
+              mudah dan konfirmasi cepat.
+            </p>
+          </div>
+
+          <div class="how-it-works-grid">
+            <div class="step-card">
+              <div class="step-icon-wrapper">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h3>1. Pilih Lokasi</h3>
+              <p>
+                Tentukan lokasi pengambilan kendaraan, lalu atur tanggal dan
+                jam sewa dengan mudah.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-icon-wrapper">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <h3>2. Pesan Mobil</h3>
+              <p>
+                Pilih kendaraan favorit dari armada premium kami yang bersih
+                dan terawat.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-icon-wrapper">
+                <i class="fa-solid fa-key"></i>
+              </div>
+              <h3>3. Ambil & Berangkat</h3>
+              <p>
+                Konfirmasi pesanan, ambil kunci di lokasi, lalu mulai
+                perjalanan Anda dengan tenang.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPLORE MOST POPULAR CARS (TABS / GRID) -->
+      <section class="section-padding popular-cars" id="popular-cars">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Jelajahi <span>Mobil Terpopuler Kami</span></h2>
+            <div class="divider"></div>
+            <p>
+              Pilih dari berbagai mobil bersih dan premium yang sesuai dengan
+              gaya perjalanan Anda.
+            </p>
+          </div>
+
+          <!-- Filter Tab Buttons -->
+          <div class="tab-controls">
+            <button class="tab-btn active" data-filter="all">Semua</button>
+            <button class="tab-btn" data-filter="suv">SUV</button>
+            <button class="tab-btn" data-filter="sedan">Sedan</button>
+            <button class="tab-btn" data-filter="coupe">Coupe</button>
+            <button class="tab-btn" data-filter="hybrid">Hybrid</button>
+            <button class="tab-btn" data-filter="luxury">Luxury</button>
+          </div>
+
+          <div class="search-result-summary" id="search-result-summary" hidden>
+            <span id="search-result-text"></span>
+            <button type="button" id="reset-search-filter">Hapus Filter</button>
+          </div>
+
+          <!-- Cars Grid -->
+          <div class="cars-grid" id="cars-grid">
+            <!-- Car Card 1 (Silverado) -->
+            <div
+              class="car-card"
+              data-category="suv"
+              data-locations="Jakarta,Bandung,Surabaya"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">SUV / Pickup</span>
+                <img src="assets/car-silverado.png" alt="Chevrolet Silverado" />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Chevrolet Silverado</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 4.8
+                  </div>
+                </div>
+                <div class="car-price">$80 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Manual</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <span>Diesel</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>5 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal(
+                      'Chevrolet Silverado',
+                      80,
+                      'assets/car-silverado.png',
+                    )
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Card 2 (Blue SUV) -->
+            <div
+              class="car-card"
+              data-category="suv"
+              data-locations="Bali,Yogyakarta,Bandung"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">SUV / Crossover</span>
+                <img src="assets/car-blue-suv.png" alt="Toyota RAV4" />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Toyota RAV4 SUV</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 4.9
+                  </div>
+                </div>
+                <div class="car-price">$75 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Otomatis</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <span>Bensin</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>5 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal(
+                      'Toyota RAV4 SUV',
+                      75,
+                      'assets/car-blue-suv.png',
+                    )
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Card 3 (Yellow Coupe) -->
+            <div
+              class="car-card"
+              data-category="coupe"
+              data-locations="Jakarta,Bali"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">Coupe / Sport</span>
+                <img src="assets/car-yellow-sportscar.png" alt="Ford Mustang" />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Ford Mustang Coupe</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 5.0
+                  </div>
+                </div>
+                <div class="car-price">$120 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Otomatis</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <span>Bensin</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid lock-open fa-users"></i>
+                    <span>4 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal(
+                      'Ford Mustang Coupe',
+                      120,
+                      'assets/car-yellow-sportscar.png',
+                    )
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Card 4 (Red Sedan / App Car) -->
+            <div
+              class="car-card"
+              data-category="sedan"
+              data-locations="Jakarta,Surabaya,Yogyakarta"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">Sedan / Luxury</span>
+                <img src="assets/app-car.png" alt="Audi A6 Sedan" />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Audi A6 Sedan</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 4.7
+                  </div>
+                </div>
+                <div class="car-price">$90 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Otomatis</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <span>Bensin</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>5 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal('Audi A6 Sedan', 90, 'assets/app-car.png')
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Card 5 (SUV / Hero Car) -->
+            <div
+              class="car-card"
+              data-category="luxury"
+              data-locations="Bali,Jakarta"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">Luxury / SUV</span>
+                <img src="assets/hero-car.png" alt="Range Rover SUV" />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Range Rover SUV</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 4.9
+                  </div>
+                </div>
+                <div class="car-price">$160 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Otomatis</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <span>Bensin</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>7 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal(
+                      'Range Rover SUV',
+                      160,
+                      'assets/hero-car.png',
+                    )
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Card 6 (Tesla Model S - Hybrid/Electric placeholder) -->
+            <div
+              class="car-card"
+              data-category="hybrid"
+              data-locations="Jakarta,Bandung"
+            >
+              <div class="car-image-container">
+                <span class="car-tag">Listrik / Hybrid</span>
+                <img
+                  src="assets/app-car.png"
+                  alt="Tesla Model S"
+                  style="filter: hue-rotate(90deg)"
+                />
+              </div>
+              <div class="car-details-wrapper">
+                <div class="car-title-row">
+                  <h3>Tesla Model S</h3>
+                  <div class="car-rating">
+                    <i class="fa-solid fa-star"></i> 5.0
+                  </div>
+                </div>
+                <div class="car-price">$140 <span>/ hari</span></div>
+                <div class="car-specs">
+                  <div class="spec-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Otomatis</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Listrik</span>
+                  </div>
+                  <div class="spec-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>5 Kursi</span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-secondary btn-rent"
+                  onclick="
+                    openBookingModal('Tesla Model S', 140, 'assets/app-car.png')
+                  "
+                >
+                  Sewa Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="no-results" id="no-results" hidden>
+            <i class="fa-solid fa-car-burst"></i>
+            <h3>Mobil belum tersedia untuk filter ini</h3>
+            <p>Coba pilih lokasi lain atau ubah kategori mobil.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOST POPULAR CAR TYPES / CATEGORIES -->
+      <section class="section-padding">
+        <div class="container text-center">
+          <div class="section-header">
+            <h2>Jenis Mobil <span>Terpopuler</span></h2>
+            <div class="divider"></div>
+            <p>
+              Temukan kendaraan yang sesuai kebutuhan Anda lewat kategori
+              berikut.
+            </p>
+          </div>
+
+          <div class="car-types-grid">
+            <div class="type-card">
+              <div class="type-icon"><i class="fa-solid fa-car"></i></div>
+              <h3>Hatchback</h3>
+              <span>15 Mobil</span>
+            </div>
+            <div class="type-card">
+              <div class="type-icon"><i class="fa-solid fa-car-side"></i></div>
+              <h3>Sedan</h3>
+              <span>22 Mobil</span>
+            </div>
+            <div class="type-card">
+              <div class="type-icon">
+                <i class="fa-solid fa-truck-pickup"></i>
+              </div>
+              <h3>SUV</h3>
+              <span>18 Mobil</span>
+            </div>
+            <div class="type-card">
+              <div class="type-icon"><i class="fa-solid fa-car-rear"></i></div>
+              <h3>Coupe</h3>
+              <span>12 Mobil</span>
+            </div>
+            <div class="type-card">
+              <div class="type-icon">
+                <i class="fa-solid fa-charging-station"></i>
+              </div>
+              <h3>Hybrid</h3>
+              <span>10 Mobil</span>
+            </div>
+          </div>
+
+          <a href="#popular-cars" class="view-all-link"
+            >Lihat Semua Jenis Mobil <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </section>
+
+      <!-- FACTS BY THE NUMBERS -->
+      <section class="section-padding stats" id="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fa-solid fa-user-group"></i>
+              </div>
+              <div class="stat-info">
+                <h3 class="counter" data-target="15000">0</h3>
+                <p>Pelanggan Puas</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fa-solid fa-house-chimney"></i>
+              </div>
+              <div class="stat-info">
+                <h3 class="counter" data-target="250">0</h3>
+                <p>Lokasi Rental</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fa-solid fa-car-tunnel"></i>
+              </div>
+              <div class="stat-info">
+                <h3 class="counter" data-target="650">0</h3>
+                <p>Unit Armada</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="stat-info">
+                <h3 class="counter" data-target="20">0</h3>
+                <p>Tahun Melayani</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECOMMENDED CAR RENTAL DEALS -->
+      <section class="section-padding recommended-deals">
+        <div class="container text-center">
+          <div class="section-header">
+            <h2>Rekomendasi <span>Promo Rental Mobil</span></h2>
+            <div class="divider"></div>
+            <p>
+              Dapatkan penawaran terbaik untuk rental mingguan atau bulanan
+              dengan perlindungan asuransi.
+            </p>
+          </div>
+
+          <!-- Carousel / Slider -->
+          <div class="carousel-outer">
+            <button
+              class="carousel-nav-btn prev"
+              id="carousel-prev"
+              aria-label="Slide sebelumnya"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              class="carousel-nav-btn next"
+              id="carousel-next"
+              aria-label="Slide berikutnya"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="carousel-container">
+              <div class="carousel-track" id="carousel-track">
+                <!-- Deal 1 -->
+                <div class="car-card">
+                  <div class="car-image-container">
+                    <span class="car-tag">Promo Eksklusif</span>
+                    <img
+                      src="assets/car-yellow-sportscar.png"
+                      alt="Ford Mustang"
+                    />
+                  </div>
+                  <div class="car-details-wrapper">
+                    <div class="car-title-row">
+                      <h3>Ford Mustang GT</h3>
+                      <div class="car-rating">
+                        <i class="fa-solid fa-star"></i> 5.0
+                      </div>
+                    </div>
+                    <div class="car-price">$110 <span>/ hari</span></div>
+                    <div class="car-specs">
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gears"></i><span>Otomatis</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gas-pump"></i><span>Bensin</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-users"></i><span>4 Kursi</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-secondary btn-rent"
+                      onclick="
+                        openBookingModal(
+                          'Ford Mustang GT',
+                          110,
+                          'assets/car-yellow-sportscar.png',
+                        )
+                      "
+                    >
+                      Sewa Sekarang
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Deal 2 -->
+                <div class="car-card">
+                  <div class="car-image-container">
+                    <span class="car-tag">Promo Populer</span>
+                    <img src="assets/hero-car.png" alt="Range Rover SUV" />
+                  </div>
+                  <div class="car-details-wrapper">
+                    <div class="car-title-row">
+                      <h3>Range Rover Sport</h3>
+                      <div class="car-rating">
+                        <i class="fa-solid fa-star"></i> 4.9
+                      </div>
+                    </div>
+                    <div class="car-price">$150 <span>/ hari</span></div>
+                    <div class="car-specs">
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gears"></i><span>Otomatis</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gas-pump"></i><span>Bensin</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-users"></i><span>7 Kursi</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-secondary btn-rent"
+                      onclick="
+                        openBookingModal(
+                          'Range Rover Sport',
+                          150,
+                          'assets/hero-car.png',
+                        )
+                      "
+                    >
+                      Sewa Sekarang
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="car-card">
+                  <div class="car-image-container">
+                    <span class="car-tag">Paling Hemat</span>
+                    <img src="assets/app-car.png" alt="Audi A6 Sedan" />
+                  </div>
+                  <div class="car-details-wrapper">
+                    <div class="car-title-row">
+                      <h3>Audi A6 S-Line</h3>
+                      <div class="car-rating">
+                        <i class="fa-solid fa-star"></i> 4.8
+                      </div>
+                    </div>
+                    <div class="car-price">$85 <span>/ hari</span></div>
+                    <div class="car-specs">
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gears"></i><span>Otomatis</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gas-pump"></i><span>Bensin</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-users"></i><span>5 Kursi</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-secondary btn-rent"
+                      onclick="
+                        openBookingModal(
+                          'Audi A6 S-Line',
+                          85,
+                          'assets/app-car.png',
+                        )
+                      "
+                    >
+                      Sewa Sekarang
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Deal 4 (Extra for sliding) -->
+                <div class="car-card">
+                  <div class="car-image-container">
+                    <span class="car-tag">Spesial Pickup</span>
+                    <img
+                      src="assets/car-silverado.png"
+                      alt="Chevrolet Silverado"
+                    />
+                  </div>
+                  <div class="car-details-wrapper">
+                    <div class="car-title-row">
+                      <h3>Silverado Custom</h3>
+                      <div class="car-rating">
+                        <i class="fa-solid fa-star"></i> 4.8
+                      </div>
+                    </div>
+                    <div class="car-price">$75 <span>/ hari</span></div>
+                    <div class="car-specs">
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gears"></i><span>Manual</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-gas-pump"></i><span>Diesel</span>
+                      </div>
+                      <div class="spec-item">
+                        <i class="fa-solid fa-users"></i><span>5 Kursi</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-secondary btn-rent"
+                      onclick="
+                        openBookingModal(
+                          'Silverado Custom',
+                          75,
+                          'assets/car-silverado.png',
+                        )
+                      "
+                    >
+                      Sewa Sekarang
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="deals-footer">
+            <a href="#popular-cars" class="btn btn-outline">Lihat Semua Promo</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="section-padding">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Kenapa <span>Pilih Kami</span></h2>
+            <div class="divider"></div>
+            <p>
+              Kami menghadirkan pengalaman rental yang nyaman, transparan, dan
+              bisa diandalkan untuk setiap perjalanan.
+            </p>
+          </div>
+
+          <div class="why-choose-grid">
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h3>Booking Mudah & Cepat</h3>
+              <p>
+                Proses booking online kami simpel dan cepat. Dapatkan
+                konfirmasi pesanan dalam hitungan menit.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-tag"></i></div>
+              <h3>Garansi Harga Terbaik</h3>
+              <p>
+                Kami menawarkan harga kompetitif tanpa biaya tersembunyi. Semua
+                detail sewa disampaikan secara transparan.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+              <h3>Dukungan Pelanggan 24/7</h3>
+              <p>
+                Tim bantuan kami siap membantu kapan saja, mulai dari proses
+                booking sampai perjalanan selesai.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS ("What People say about us?") -->
+      <section class="section-padding testimonials">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Apa Kata <span>Pelanggan Kami?</span></h2>
+            <div class="divider"></div>
+            <p>
+              Simak pengalaman pelanggan yang sudah menggunakan layanan
+              DreamsRental untuk perjalanan mereka.
+            </p>
+          </div>
+
+          <div class="testimonials-grid" id="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testi-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>
+                "Mobilnya bersih, kondisinya sangat bagus, dan sudah siap saat
+                saya datang. Proses booking di website juga cepat. Layanannya
+                mantap!"
+              </p>
+              <div class="testi-user">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120"
+                  alt="Lucas Joseph"
+                />
+                <div class="user-info">
+                  <h4>Lucas Joseph</h4>
+                  <span>Pelancong Bisnis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testi-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p>
+                "Customer support-nya responsif banget! Saya perlu memperpanjang
+                masa sewa saat road trip di Bali, dan semuanya beres lewat
+                WhatsApp dalam beberapa menit."
+              </p>
+              <div class="testi-user">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120"
+                  alt="Alisha Smith"
+                />
+                <div class="user-info">
+                  <h4>Alisha Smith</h4>
+                  <span>Wisatawan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials-slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
+      <section class="section-padding faq">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Pertanyaan <span>Yang Sering Diajukan</span></h2>
+            <div class="divider"></div>
+            <p>
+              Temukan jawaban singkat seputar dokumen, biaya, asuransi, dan
+              detail pemesanan.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <!-- Question 1 -->
+            <div class="faq-item active">
+              <button class="faq-question">
+                Bagaimana cara memesan mobil di DreamsRental?
+                <span class="faq-icon-box"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Untuk memesan mobil, masukkan lokasi jemput, tanggal, dan jam
+                  sewa pada form pencarian. Pilih mobil yang tersedia, klik
+                  "Sewa Sekarang", isi data kontak, lalu konfirmasi pesanan.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Dokumen apa saja yang diperlukan untuk menyewa mobil?
+                <span class="faq-icon-box"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Anda membutuhkan SIM yang masih berlaku, kartu identitas atau
+                  paspor, serta kartu pembayaran yang valid untuk proses
+                  verifikasi dan deposit.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Apakah ada batas jarak tempuh harian?
+                <span class="faq-icon-box"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Sebagian besar paket rental kami menyediakan opsi jarak tempuh
+                  fleksibel. Untuk kategori mobil tertentu seperti luxury atau
+                  sport, batas jarak tempuh akan dijelaskan pada perjanjian sewa.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Apakah pesanan bisa dibatalkan atau diubah?
+                <span class="faq-icon-box"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Bisa. Anda dapat membatalkan atau mengubah pesanan hingga 24
+                  jam sebelum waktu jemput. Pembatalan kurang dari 24 jam dapat
+                  dikenakan biaya transaksi.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Bagaimana kebijakan bahan bakar saat pengembalian?
+                <span class="faq-icon-box"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  Kami menggunakan kebijakan full-to-full. Mobil diterima dengan
+                  tangki penuh dan dikembalikan dalam kondisi yang sama agar
+                  tidak ada biaya pengisian tambahan.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APP DOWNLOAD BANNER -->
+      <section class="app-banner">
+        <div class="container">
+          <div class="app-banner-card">
+            <div class="app-content">
+              <h2>Aplikasi DreamsRental Tersedia Untuk Anda</h2>
+              <p>
+                Pesan mobil kapan saja, kelola reservasi, dan dapatkan kupon
+                eksklusif khusus pengguna aplikasi. Tersedia untuk Android dan
+                iOS.
+              </p>
+              <div class="app-buttons">
+                <a
+                  href="#"
+                  class="app-btn"
+                  onclick="
+                    showToast('success', 'Unduhan aplikasi Play Store dimulai!')
+                  "
+                >
+                  <i class="fa-brands fa-google-play"></i>
+                  <div class="app-btn-text">
+                    <span>Dapatkan di</span>
+                    <span>Google Play</span>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="app-btn"
+                  onclick="
+                    showToast('success', 'Unduhan aplikasi App Store dimulai!')
+                  "
+                >
+                  <i class="fa-brands fa-apple"></i>
+                  <div class="app-btn-text">
+                    <span>Unduh di</span>
+                    <span>App Store</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="app-image-wrapper">
+              <img
+                src="assets/app-car.png"
+                alt="Mobil sport merah aplikasi DreamsRental"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWS & INSIGHTS (BLOG) -->
+      <section class="section-padding" id="blog">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Artikel & <span>Insight Untuk Anda</span></h2>
+            <div class="divider"></div>
+            <p>
+              Dapatkan informasi terbaru seputar tren perjalanan, review mobil,
+              tips keselamatan, dan ide destinasi.
+            </p>
+          </div>
+
+          <div class="blog-grid">
+            <!-- Post 1 -->
+            <div class="blog-card">
+              <div class="blog-image-wrapper">
+                <span class="badge badge-primary blog-category-badge"
+                  >Road Trip</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=400"
+                  alt="Panduan road trip"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span
+                    ><i class="fa-regular fa-calendar"></i> 25 Juni 2026</span
+                  >
+                  <span><i class="fa-regular fa-user"></i> Admin</span>
+                </div>
+                <h3>
+                  <a
+                    href="#"
+                    onclick="
+                      showToast('info', 'Konten artikel segera hadir!')
+                    "
+                    >Panduan Lengkap Road Trip di Indonesia</a
+                  >
+                </h3>
+                <p>
+                  Temukan rute indah, destinasi tersembunyi, titik pengisian
+                  bahan bakar, dan etika berkendara lokal untuk perjalanan yang
+                  nyaman.
+                </p>
+                <a
+                  href="#"
+                  class="read-more-link"
+                  onclick="
+                    showToast('info', 'Konten artikel segera hadir!')
+                  "
+                  >Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="blog-card">
+              <div class="blog-image-wrapper">
+                <span class="badge badge-primary blog-category-badge"
+                  >Keamanan</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=400"
+                  alt="Pengecekan keselamatan mobil"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span
+                    ><i class="fa-regular fa-calendar"></i> 20 Juni 2026</span
+                  >
+                  <span><i class="fa-regular fa-user"></i> Tim Teknis</span>
+                </div>
+                <h3>
+                  <a
+                    href="#"
+                    onclick="
+                      showToast('info', 'Konten artikel segera hadir!')
+                    "
+                    >5 Pengecekan Mobil Sebelum Perjalanan Jauh</a
+                  >
+                </h3>
+                <p>
+                  Utamakan keselamatan. Pelajari cara memeriksa ban, oli mesin,
+                  respons rem, dan kondisi aki sebelum berangkat.
+                </p>
+                <a
+                  href="#"
+                  class="read-more-link"
+                  onclick="
+                    showToast('info', 'Konten artikel segera hadir!')
+                  "
+                  >Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="blog-card">
+              <div class="blog-image-wrapper">
+                <span class="badge badge-primary blog-category-badge"
+                  >Ulasan</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=400"
+                  alt="SUV vs Sedan"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span
+                    ><i class="fa-regular fa-calendar"></i> 15 Juni 2026</span
+                  >
+                  <span><i class="fa-regular fa-user"></i> Tim Review</span>
+                </div>
+                <h3>
+                  <a
+                    href="#"
+                    onclick="
+                      showToast('info', 'Konten artikel segera hadir!')
+                    "
+                    >SUV vs Sedan: Mobil Mana yang Cocok Untuk Disewa?</a
+                  >
+                </h3>
+                <p>
+                  Bandingkan ruang kabin, efisiensi bahan bakar, kemampuan di
+                  berbagai medan, dan biaya sewa harian SUV serta Sedan.
+                </p>
+                <a
+                  href="#"
+                  class="read-more-link"
+                  onclick="
+                    showToast('info', 'Konten artikel segera hadir!')
+                  "
+                  >Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Col 1: About -->
+          <div class="footer-about">
+            <a href="#" class="logo">
+              <i class="fa-solid fa-car-side logo-icon"></i>
+              Dreams<span>Rental</span>
+            </a>
+            <p>
+              DreamsRental menyediakan layanan rental mobil yang andal,
+              berkualitas, dan hemat. Nikmati perjalanan liburan maupun bisnis
+              dengan rasa aman dan nyaman.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-btn" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div class="footer-col">
+            <h3>Perusahaan</h3>
+            <ul class="footer-links">
+              <li><a href="#how-it-works">Tentang Kami</a></li>
+              <li><a href="#popular-cars">Armada Kami</a></li>
+              <li><a href="#blog">Artikel & Blog</a></li>
+              <li>
+                <a
+                  href="#"
+                  onclick="showToast('info', 'Halaman karier segera hadir!')"
+                  >Karier</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="showToast('info', 'Halaman syarat layanan segera hadir!')"
+                  >Syarat Layanan</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Vehicle Types -->
+          <div class="footer-col">
+            <h3>Kendaraan</h3>
+            <ul class="footer-links">
+              <li><a href="#popular-cars">SUV & Crossover</a></li>
+              <li><a href="#popular-cars">Sedan & Hatchback</a></li>
+              <li><a href="#popular-cars">Coupe & Sport</a></li>
+              <li><a href="#popular-cars">Listrik & Hybrid</a></li>
+              <li><a href="#popular-cars">Luxury Premium</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact & Newsletter -->
+          <div class="footer-col footer-newsletter">
+            <h3>Berlangganan</h3>
+            <p>
+              Ikuti newsletter kami untuk mendapatkan kupon diskon eksklusif
+              dan info promo lebih awal.
+            </p>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="email" placeholder="Alamat email Anda" required />
+              <button
+                type="submit"
+                class="newsletter-submit"
+                aria-label="Kirim newsletter"
+              >
+                <i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </form>
+            <ul
+              class="footer-contact-info"
+              style="margin-top: var(--spacing-md)"
+            >
+              <li><i class="fa-solid fa-phone"></i> +62 (21) 555-0199</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i> support@dreamsrental.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 DreamsRental. Hak cipta dilindungi. Dibuat dengan
+            <i class="fa-solid fa-heart" style="color: var(--primary)"></i> by
+            Yu Digital Studio.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#" onclick="showToast('info', 'Kebijakan privasi masih simulasi')"
+              >Kebijakan Privasi</a
+            >
+            <a href="#" onclick="showToast('info', 'Syarat dan ketentuan masih simulasi')"
+              >Syarat & Ketentuan</a
+            >
+            <a href="#" onclick="showToast('info', 'Sitemap masih simulasi')"
+              >Sitemap</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL BOOKING WINDOW -->
+    <div class="modal-overlay" id="booking-modal-overlay">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3>Pesan Mobil Anda</h3>
+          <span class="modal-close" id="modal-close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <!-- Car Brief Info -->
+          <div class="modal-car-preview">
+            <img
+              src=""
+              id="modal-preview-img"
+              alt="Preview mobil"
+              class="modal-car-image"
+            />
+            <div class="modal-car-info">
+              <h4 id="modal-preview-title">Nama Model Mobil</h4>
+              <div class="price" id="modal-preview-price">$00 / hari</div>
+            </div>
+          </div>
+
+          <!-- Booking Fields Form -->
+          <form class="booking-form" id="booking-form">
+            <div class="booking-group">
+              <label for="book-name">Nama Lengkap</label>
+              <input
+                type="text"
+                id="book-name"
+                required
+                placeholder="Nama Anda"
+              />
+            </div>
+            <div class="booking-group">
+              <label for="book-email">Alamat Email</label>
+              <input
+                type="email"
+                id="book-email"
+                required
+                placeholder="nama@email.com"
+              />
+            </div>
+            <div class="booking-group">
+              <label for="book-phone">Nomor Telepon</label>
+              <input
+                type="tel"
+                id="book-phone"
+                required
+                placeholder="+62 812-3456-789"
+              />
+            </div>
+            <div class="booking-group">
+              <label for="book-loc">Lokasi Jemput & Kembali</label>
+              <select id="book-loc" required>
+                <option value="" disabled selected>Pilih lokasi</option>
+                <option value="Jakarta">Jakarta, Indonesia</option>
+                <option value="Bali">Bali, Indonesia</option>
+                <option value="Surabaya">Surabaya, Indonesia</option>
+                <option value="Bandung">Bandung, Indonesia</option>
+                <option value="Yogyakarta">Yogyakarta, Indonesia</option>
+              </select>
+            </div>
+            <div class="booking-group">
+              <label for="book-start">Tanggal & Jam Jemput</label>
+              <input type="datetime-local" id="book-start" required />
+            </div>
+            <div class="booking-group">
+              <label for="book-end">Tanggal & Jam Kembali</label>
+              <input type="datetime-local" id="book-end" required />
+            </div>
+            <div class="booking-group full-width">
+              <label for="book-driver">Pakai Sopir?</label>
+              <select id="book-driver">
+                <option value="no">Lepas Kunci (Tanpa Sopir)</option>
+                <option value="yes">Dengan Sopir (+$15/hari)</option>
+              </select>
+            </div>
+
+            <div class="modal-footer full-width">
+              <button
+                type="button"
+                class="btn btn-outline"
+                id="btn-cancel-booking"
+              >
+                Batal
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Konfirmasi Pesanan
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript logic file -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
