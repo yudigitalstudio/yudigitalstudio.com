@@ -277,13 +277,27 @@ button {
 .brand__name {
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--cream);
   letter-spacing: 0.02em;
+}
+.brand__name__footer {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  margin-left: 33px;
 }
 .brand--center {
   align-items: center;
   text-align: center;
+}
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -23px;
 }
 .footer__brand .brand--center {
   align-items: center;
@@ -1575,7 +1589,12 @@ button {
     grid-template-columns: 1fr 1fr;
   }
   .footer__brand .brand--footer-logo {
+    align-items: center;
     margin-left: 0 !important;
+  }
+  .footer__brand {
+    align-items: center;
+    margin-top: 0;
   }
 }
 
@@ -1643,7 +1662,12 @@ button {
     text-align: center;
   }
   .footer__brand .brand--footer-logo {
+    align-items: center;
     margin-left: 0 !important;
+  }
+  .footer__brand {
+    align-items: center;
+    margin-top: 0;
   }
 }
 
@@ -1663,24 +1687,11 @@ button {
   }
 
   .footer__brand .brand--footer-logo {
+    align-items: center;
     margin-left: 0 !important;
   }
-}
-
-#footerBrandBox {
-  text-align: center;
-}
-#footerBrandBox .footer-logo-text {
-  font-family: "Fraunces", serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--cream);
-  margin: 0;
-}
-#footerBrandBox .footer-logo-tag {
-  font-size: 0.62rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin: 6px 0 20px;
+  .footer__brand {
+    align-items: center;
+    margin-top: 0;
+  }
 }
