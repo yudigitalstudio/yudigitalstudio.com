@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sajiara - Fine Dining & Steakhouse</title>
+    <meta
+      name="description"
+      content="Experience premium dry-aged steaks, gourmet cuisines, and hand-crafted cocktails at Caverta. Enjoy a luxurious fine-dining experience in a cozy, elegant atmosphere."
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header class="main-header" id="header">
+      <div class="header-container">
+        <!-- Top Row: Logo + Action Button -->
+        <div class="header-top-row">
+          <!-- Center Logo -->
+          <div class="logo-container">
+            <a href="#hero" class="logo">
+              <span class="logo-main">SAJIARA</span>
+              <span class="logo-ornament" aria-hidden="true">
+                <span class="ornament-line"></span>
+                <span class="ornament-diamond"></span>
+                <span class="ornament-line"></span>
+              </span>
+              <span class="logo-sub">FINE DINING</span>
+            </a>
+          </div>
+
+          <!-- Action Button + Mobile Toggle -->
+          <div class="header-controls">
+            <div class="header-action">
+              <a href="#reservation" class="btn btn-gold btn-header"
+                >Book A Table</a
+              >
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button
+              class="mobile-nav-toggle"
+              id="mobile-toggle"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Full Navigation -->
+        <nav class="main-nav desktop-nav">
+          <ul>
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#story" class="nav-link">Tentang Kami</a></li>
+            <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#reservation" class="nav-link">Reservasi</a></li>
+            <li><a href="#blog" class="nav-link">Artikel</a></li>
+            <li><a href="#footer" class="nav-link">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <button
+        class="mobile-drawer-close"
+        id="mobile-close"
+        aria-label="Close menu"
+      >
+        &times;
+      </button>
+      <div class="mobile-drawer-logo">
+        <span class="logo-main">SAJIARA</span>
+        <span class="logo-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line"></span>
+        </span>
+        <span class="logo-sub">FINE DINING</span>
+      </div>
+      <nav class="mobile-nav-links">
+        <ul>
+          <li><a href="#hero" class="mobile-link">Home</a></li>
+          <li><a href="#story" class="mobile-link">Our Story</a></li>
+          <li><a href="#experience" class="mobile-link">Experience</a></li>
+          <li><a href="#menu" class="mobile-link">Menu</a></li>
+          <li><a href="#reservation" class="mobile-link">Reservation</a></li>
+          <li><a href="#blog" class="mobile-link">Blog</a></li>
+          <li><a href="#footer" class="mobile-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#reservation" class="btn btn-gold">Book A Table</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-image-half reveal-on-scroll slide-left">
+        <img
+          src="assets/images/hero_steak.jpg"
+          alt="Premium Steak Dish"
+          class="hero-image"
+        />
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content reveal-on-scroll slide-right">
+          <span class="hero-subtitle">STEAK HOUSE</span>
+          <h1 class="hero-title">SAJIARA</h1>
+          <p class="hero-tagline">
+            Cita rasa istimewa dan suasana elegan di jantung kota, untuk momen
+            bersantap yang tak terlupakan.
+          </p>
+          <div class="hero-cta-wrapper">
+            <a href="#menu" class="btn btn-red"
+              >Lihat Menu <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section" id="story">
+      <div class="container">
+        <div class="story-header reveal-on-scroll text-center">
+          <span class="section-badge">CERITA KAMI</span>
+          <h2 class="section-title">Berdiri Sejak 1987</h2>
+        </div>
+
+        <div class="story-text-grid reveal-on-scroll">
+          <div class="story-col">
+            <p>
+              Selama hampir empat dekade, Caverta telah menjadi bagian dari
+              perjalanan kuliner dengan menghadirkan pengalaman bersantap yang
+              istimewa dan tak terlupakan. Kami menghadirkan cita rasa khas
+              steakhouse melalui teknik pemanggangan terbaik, aroma smoky dari
+              kayu bakar, serta pelayanan yang hangat dan berkelas.
+            </p>
+          </div>
+          <div class="story-col">
+            <p>
+              Kami hanya menggunakan potongan daging USDA Prime pilihan, yang
+              kami dry-age sendiri hingga 35 hari untuk menghasilkan cita rasa
+              daging yang lebih kaya, lembut, dan gurih dengan karakter buttery
+              yang khas.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Image Grid Layout -->
+        <div class="story-image-gallery reveal-on-scroll">
+          <div class="gallery-left-large">
+            <div class="gallery-img-container">
+              <img
+                src="assets/images/interior_cozy.jpg"
+                alt="Cozy Dining Booths"
+                class="gallery-img"
+              />
+              <div class="gallery-overlay">
+                <span>COZY AMBIANCE</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-right-stack">
+            <div class="gallery-img-container">
+              <img
+                src="assets/images/plated_dish.jpg"
+                alt="Gourmet Plated Meal"
+                class="gallery-img"
+              />
+              <div class="gallery-overlay">
+                <span>GOURMET PLATING</span>
+              </div>
+            </div>
+            <div class="gallery-img-container">
+              <img
+                src="assets/images/chef_prep.jpg"
+                alt="Chef Preparing Steak"
+                class="gallery-img"
+              />
+              <div class="gallery-overlay">
+                <span>ARTISANAL PREPARATION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Tastes Section -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">PENGALAMAN KULINER</span>
+          <h2 class="section-title">Nikmati Cita Rasa yang Menggugah Selera</h2>
+        </div>
+
+        <div class="taste-grid">
+          <!-- Card 1 -->
+          <div class="taste-card reveal-on-scroll fade-in" style="--delay: 1">
+            <div class="taste-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=80"
+                alt="NY Cut Sirloin"
+                class="taste-img"
+              />
+            </div>
+            <h3 class="taste-name">Sirloin Bakar Nusantara</h3>
+            <p class="taste-desc">
+              Daging sapi pilihan yang dipanggang sempurna, disajikan dengan
+              kentang panggang, sayuran segar, dan saus lada hitam khas rumah.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="taste-card reveal-on-scroll fade-in" style="--delay: 2">
+            <div class="taste-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=500&auto=format&fit=crop&q=80"
+                alt="Prime Rib"
+                class="taste-img"
+              />
+            </div>
+            <h3 class="taste-name">Rib Eye Premium</h3>
+            <p class="taste-desc">
+              Rib eye bertekstur juicy dengan tingkat kematangan sesuai selera,
+              disajikan bersama jagung bakar dan butter herb.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="taste-card reveal-on-scroll fade-in" style="--delay: 3">
+            <div class="taste-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?w=500&auto=format&fit=crop&q=80"
+                alt="Bone-In Rib"
+                class="taste-img"
+              />
+            </div>
+            <h3 class="taste-name">Bone-In Bakar Rempah</h3>
+            <p class="taste-desc">
+              Steak bone-in yang dibumbui rempah pilihan, dipanggang di atas
+              bara api hingga menghasilkan aroma smokey yang menggugah selera.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div class="taste-card reveal-on-scroll fade-in" style="--delay: 4">
+            <div class="taste-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&auto=format&fit=crop&q=80"
+                alt="BBQ For Two"
+                class="taste-img"
+              />
+            </div>
+            <h3 class="taste-name">Signature BBQ Platter</h3>
+            <p class="taste-desc">
+              Pilihan daging premium yang dipanggang sempurna, terdiri dari beef
+              ribs, brisket, sosis premium, serta aneka pelengkap favorit.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center experience-action reveal-on-scroll">
+          <a href="#menu" class="btn btn-red">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase Alternating Section -->
+    <section class="showcase-section">
+      <!-- Row 1 -->
+      <div class="showcase-row">
+        <div class="showcase-media reveal-on-scroll slide-right">
+          <img
+            src="https://images.unsplash.com/photo-1558030006-450675393462?w=800&auto=format&fit=crop&q=80"
+            alt="Wagyu Steaks Cooking"
+            class="showcase-img"
+          />
+        </div>
+        <div class="showcase-text-box reveal-on-scroll slide-left">
+          <span class="showcase-badge">FILOSOFI KAMI</span>
+          <h3 class="showcase-heading">Steakhouse Bukan Sekadar Soal Daging</h3>
+          <p class="showcase-paragraph">
+            Bagi kami, pengalaman bersantap yang luar biasa bukan hanya tentang
+            hidangan yang tersaji di meja. Semua indera harus ikut merasakan.
+            Mulai dari aroma khas kayu ek putih yang terbakar, suara daging
+            pilihan yang mendesis saat menyentuh panggangan, hingga sensasi
+            menggenggam peralatan makan khusus yang dirancang dengan detail.
+            Semua semakin lengkap dengan wine pairing pilihan yang
+            direkomendasikan langsung oleh sommelier berpengalaman kami.
+          </p>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="showcase-row alternate">
+        <div class="showcase-text-box reveal-on-scroll slide-right">
+          <span class="showcase-badge">RUANG KAMI</span>
+          <h3 class="showcase-heading">Mari Duduk dan Nikmati Suasananya</h3>
+          <p class="showcase-paragraph">
+            Mulai dari sofa kulit yang nyaman hingga suasana hangat di bar
+            cocktail pribadi kami, setiap sudut Caverta dirancang untuk
+            menghadirkan perpaduan kenyamanan, keintiman, dan gaya yang elegan.
+            Santai sejenak sambil menikmati cocktail racikan tangan kami,
+            sementara para chef terbaik Caverta menyiapkan potongan daging
+            pilihan sesuai selera Anda. Karena di Caverta, pengalaman bersantap
+            bukan hanya tentang apa yang tersaji di atas meja, tetapi juga
+            tentang suasana, kenyamanan, dan momen yang Anda nikmati di
+            dalamnya.
+          </p>
+        </div>
+        <div class="showcase-media reveal-on-scroll slide-left">
+          <img
+            src="assets/images/bar_cocktails.jpg"
+            alt="Caverta Cocktail Bar"
+            class="showcase-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Food Menu Section -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">HIDANGAN UNGGULAN</span>
+          <h2 class="section-title">Nikmati Sajian Terbaik dari Dapur Kami</h2>
+        </div>
+
+        <!-- Tab Headers -->
+        <div class="menu-tabs-wrapper reveal-on-scroll">
+          <ul class="menu-tabs">
+            <li class="tab-item active" data-target="starters">Starters</li>
+            <li class="tab-item" data-target="mains">Main Dishes</li>
+            <li class="tab-item" data-target="desserts">Desserts</li>
+            <li class="tab-item" data-target="drinks">Drinks</li>
+          </ul>
+        </div>
+
+        <!-- Tab Content Pane -->
+        <div class="menu-content-wrapper reveal-on-scroll">
+          <!-- Starters Pane -->
+          <div class="menu-pane active" id="starters">
+            <div class="menu-grid">
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Carpaccio Daging Premium</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp95.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Irisan tipis daging sapi premium dengan parmesan, rocket
+                    segar, dan saus signature.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Iga Bakar Madu</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp115.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Iga sapi yang dipanggang perlahan dengan saus madu spesial
+                    dan taburan wijen.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Jamur Panggang Keju</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp78.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Jamur portobello panggang dengan lelehan keju dan garlic
+                    butter.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Salmon Asap</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp110.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Salmon asap premium disajikan dengan cream cheese dan roti
+                    panggang.
+                  </p>
+                </div>
+              </div>
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Udang Crispy</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp98.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Udang goreng renyah dengan saus sweet chili khas restoran.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Calamari Crispy</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp89.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Cumi goreng tepung renyah disajikan dengan lemon dan saus
+                    aioli.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Beef Pepper Slice</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp119.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Irisan tipis ribeye panggang dengan lada hitam dan roasted
+                    garlic.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Keju Panggang Balsamic</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp82.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Keju panggang dengan saus balsamic dan madu pilihan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Dishes Pane -->
+          <div class="menu-pane" id="mains">
+            <div class="menu-grid">
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Tomahawk Signature Berdua</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp495.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Wagyu pilihan dengan tekstur lembut, disajikan bersama
+                    mashed potato dan saus jamur.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">T-Bone Steak Premium</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp425.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Steak T-Bone juicy dengan garlic butter dan sayuran
+                    panggang.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Ayam Panggang Rempah</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp165.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Ayam panggang berbumbu rempah dengan kentang wedges dan saus
+                    lada hitam.
+                  </p>
+                </div>
+              </div>
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Salmon Panggang</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp245.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Fillet salmon panggang dengan butter lemon dan sayuran
+                    segar.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Lamb Chop Premium</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp365.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Lamb chop panggang dengan mashed potato dan saus rosemary.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desserts Pane -->
+          <div class="menu-pane" id="desserts">
+            <div class="menu-grid">
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Lava Cake Cokelat</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp68.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Kue cokelat hangat dengan lelehan di tengah, disajikan
+                    bersama es krim vanila.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Crème Brûlée</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp62.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Dessert creamy dengan lapisan karamel renyah yang dibuat
+                    fresh setiap hari.
+                  </p>
+                </div>
+              </div>
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Panna Cotta Berry</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp65.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Panna cotta lembut dengan saus buah berry yang segar.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Tiramisu Klasik</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp60.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Tiramisu klasik dengan aroma kopi dan taburan bubuk kakao
+                    premium.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks Pane -->
+          <div class="menu-pane" id="drinks">
+            <div class="menu-grid">
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Es Kopi Signature</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp38.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Perpaduan espresso, susu segar, dan gula aren dengan rasa
+                    yang creamy.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Lychee Sparkling</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp42.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Minuman soda segar dengan rasa leci dan potongan buah asli.
+                  </p>
+                </div>
+              </div>
+              <div class="menu-col">
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Passion Mojito</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp40.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Perpaduan markisa, mint segar, dan soda yang menyegarkan.
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <div class="menu-item-header">
+                    <h4 class="menu-item-title">Lemon Tea Premium</h4>
+                    <span class="menu-item-dots"></span>
+                    <span class="menu-item-price">Rp32.000</span>
+                  </div>
+                  <p class="menu-item-desc">
+                    Teh pilihan dengan irisan lemon segar yang cocok dinikmati
+                    bersama steak.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wide Banner Image Section -->
+    <section class="banner-wide-section reveal-on-scroll">
+      <div
+        class="banner-wide-bg"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&auto=format&fit=crop&q=80&quot;);
+        "
+      ></div>
+      <div class="banner-overlay-dark"></div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+      <div class="container text-center reveal-on-scroll">
+        <div class="quote-icon">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <p class="testimonial-quote">
+          "Setiap hidangan disajikan dengan penuh perhatian terhadap kualitas
+          dan cita rasa. Mulai dari aroma daging yang dipanggang hingga
+          pelayanan yang hangat, semuanya memberikan pengalaman bersantap yang
+          berkesan. Salah satu restoran steak terbaik yang pernah saya
+          kunjungi."
+        </p>
+        <h5 class="testimonial-author">ANDI SAPUTRA, KRITIKUS KULINER</h5>
+      </div>
+    </section>
+
+    <!-- Book A Table Reservation Section -->
+    <section class="reservation-section" id="reservation">
+      <div class="container container-narrow reveal-on-scroll">
+        <div class="reservation-box">
+          <span class="reservation-subtitle">RESERVASI</span>
+          <h2 class="reservation-title">Pesan Meja Anda</h2>
+          <p class="reservation-text">
+            Pilih tanggal, waktu, dan jumlah tamu sesuai keinginan Anda. Kami
+            siap menyambut dan menghadirkan pengalaman bersantap yang istimewa.
+          </p>
+
+          <form class="reservation-form" id="booking-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-date" class="sr-only">Date</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-calendar input-icon"></i>
+                  <input type="date" id="booking-date" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="booking-time" class="sr-only">Time</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-clock input-icon"></i>
+                  <select id="booking-time" required>
+                    <option value="" disabled selected>Time</option>
+                    <option value="17:00">05:00 PM</option>
+                    <option value="17:30">05:30 PM</option>
+                    <option value="18:00">06:00 PM</option>
+                    <option value="18:30">06:30 PM</option>
+                    <option value="19:00">07:00 PM</option>
+                    <option value="19:30">07:30 PM</option>
+                    <option value="20:00">08:00 PM</option>
+                    <option value="20:30">08:30 PM</option>
+                    <option value="21:00">09:00 PM</option>
+                    <option value="21:30">09:30 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="booking-guests" class="sr-only">Guests</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-users input-icon"></i>
+                  <select id="booking-guests" required>
+                    <option value="" disabled selected>Guests</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+                    <option value="7+">7+ People</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-submit text-center">
+              <button type="submit" class="btn btn-white" id="submit-booking">
+                Pesan Meja
+              </button>
+            </div>
+          </form>
+
+          <!-- Feedback Message Container -->
+          <div class="booking-feedback" id="booking-feedback">
+            <div class="feedback-spinner" id="feedback-spinner"></div>
+            <div class="feedback-success" id="feedback-success">
+              <div class="success-checkmark-wrapper">
+                <div class="checkmark-circle">
+                  <div class="checkmark-draw"></div>
+                </div>
+              </div>
+              <h3>Table Reserved!</h3>
+              <p id="success-message"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location / Map Section -->
+    <section class="map-section" id="blog">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-badge">LOKASI</span>
+          <h2 class="section-title">Temukan Kami</h2>
+        </div>
+      </div>
+      <div class="map-wrapper reveal-on-scroll">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=GANTI_DENGAN_EMBED_LINK_LO"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="footer">
+      <div class="container footer-container">
+        <div class="footer-left reveal-on-scroll">
+          <div class="logo-container footer-logo">
+            <span class="logo-main">SAJIARA</span>
+            <span class="logo-sub">FINE DINING</span>
+          </div>
+          <p class="footer-desc">
+            Nikmati perpaduan steak premium, minuman pilihan, dan pelayanan
+            berkelas yang dirancang untuk menciptakan momen bersantap yang tak
+            terlupakan.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a href="#" aria-label="X"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+          <div class="footer-meta">
+            &copy; 2026 Sajiara Fine Dining. All rights reserved.
+          </div>
+        </div>
+
+        <div class="footer-right reveal-on-scroll">
+          <h3 class="footer-title">Datang & Kunjungi Kami</h3>
+          <p class="footer-info">Jl.pemuda selatan<br />Klaten, Jawa Tengah</p>
+          <p class="footer-info">
+            <strong>Reservasi:</strong> +62 8123456789<br /><strong
+              >Email:</strong
+            >
+            reservations@sajiara.com
+          </p>
+          <p class="footer-info">
+            <strong>Jam buka:</strong> Setiap hari: 08:00 - 21:00
+          </p>
+          <div class="footer-action">
+            <a href="#reservation" class="btn btn-red"
+              >BOOK A TABLE <i class="fa-solid fa-calendar-check"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP - ELEGAN SOFT GOLD -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Sajiara,%20saya%20mau%20reservasi%20atau%20take%20away"
+      target="_blank"
+      class="floating-wa"
+    >
+      <!-- Icon WA -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+
+      <!-- Teks pake huruf kecil/awal kapital biar ramah -->
+      <span>Reservasi</span>
+    </a>
+
+    <!-- JS Scripts -->
+    <script src="app.js"></script>
+  </body>
+</html>
