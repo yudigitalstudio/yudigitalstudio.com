@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CAVERTA FINE DINING - DESIGN SYSTEM & STYLESHEET
+   SAJIARA FINE DINING - DESIGN SYSTEM & STYLESHEET
    ========================================================================== */
 
 /* --- CSS Variables & Design Tokens --- */
@@ -1338,6 +1338,7 @@ section {
 .map-wrapper {
   margin-top: 40px;
   width: 100vw;
+  max-width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
