@@ -705,33 +705,16 @@ section {
   overflow: hidden;
   transition: transform 0.5s;
 }
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .project-card:hover .project-thumb {
   transform: scale(1.03);
 }
-.p1 {
-  background-image: url("../img/kumis-dan-sisir.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.p2 {
-  background-image: url("../img/blackgold-coffee.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.p3 {
-  background-image: url("/assets/img/gudegbutjitro1925.com.webp");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-}
-.p4 {
-  background-image: url("../img/pria-rapi-barbershop.webp");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-}
+
 .project-info {
   padding: 1.5rem;
   background: var(--surface);
